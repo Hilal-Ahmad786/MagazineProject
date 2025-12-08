@@ -1,0 +1,159 @@
+{
+  "articles": [
+    {
+      "id": "art_001",
+      "slug": "gurbet-ayrilik-ozlem",
+      "title": "Gurbet: Ayrılığın ve Özlemin Sessiz Çığlığı",
+      "subtitle": "Modern insanın içsel yolculuğu",
+      "excerpt": "Gurbet sadece fiziksel bir uzaklık değil, aynı zamanda ruhun derinliklerinde yaşanan bir aidiyet arayışıdır. Bu yazıda, gurbetin çok boyutlu anlamını ve modern insan üzerindeki etkilerini keşfediyoruz.",
+      "content": "<h2>Gurbetin Çok Yönlü Anlamı</h2><p>Gurbet, Türk edebiyatında ve kültüründe özel bir yere sahiptir. Sadece coğrafi bir uzaklık olarak değil, aynı zamanda ruhsal bir kopuş olarak da anlaşılır. Yunus Emre'nin dizelerinde, Fuzuli'nin gazellerinde, modern şairlerin nazmında hep karşımıza çıkar bu kavram.</p><p>Modern dünyada gurbet, fiziksel mesafenin ötesine geçmiştir. Artık insanlar kendi şehirlerinde, hatta kendi evlerinde gurbet yaşayabilir. Bu, aidiyet duygusunun kaybı, toplumsal bağların zayıflaması ve bireyselleşmenin bir sonucudur.</p><h2>Özlem ve Aidiyet</h2><p>Gurbetin en temel bileşenlerinden biri özlemdir. İnsan, uzakta olduğu yere, insanlara, hatta geçmişine özlem duyar. Bu özlem, bazen tatlı bir acı olarak, bazen de katlanılamaz bir ağırlık olarak kendini gösterir.</p><p>Aidiyet arayışı ise gurbetin bir başka yüzüdür. İnsan, kendini ait hissettiği bir yere, bir topluluğa, bir fikre ihtiyaç duyar. Bu ihtiyacın karşılanmaması, modern çağın en büyük ruhsal krizlerinden birini oluşturur.</p><h2>Sonuç</h2><p>Gurbet, insanın kendisiyle ve dünyayla ilişkisini sorguladığı bir alandır. Bu soruşturma, bazen acı verici olsa da, insanın kendini daha derin anlamasına da yol açabilir. Belki de gurbet, bir kayıp değil, bir keşif sürecidir.</p>",
+      "contentFormat": "html",
+      "featuredImage": {
+        "url": "/images/articles/gurbet-001.jpg",
+        "alt": "Gurbet temalı soyut görsel",
+        "caption": "Fotoğraf: Unsplash",
+        "width": 1200,
+        "height": 800
+      },
+      "authorId": "author_001",
+      "issueId": "issue_008",
+      "themeIds": ["theme_gurbet", "theme_aidiyet"],
+      "publishDate": "2025-09-15T10:00:00Z",
+      "updatedDate": "2025-09-16T14:30:00Z",
+      "readingTime": 8,
+      "viewCount": 1247,
+      "featured": true,
+      "order": 1,
+      "seo": {
+        "metaTitle": "Gurbet: Ayrılığın ve Özlemin Sessiz Çığlığı | Mazhar Dergisi",
+        "metaDescription": "Gurbet sadece fiziksel bir uzaklık değil, aynı zamanda ruhun derinliklerinde yaşanan bir aidiyet arayışıdır.",
+        "keywords": ["gurbet", "ayrılık", "özlem", "aidiyet", "edebi deneme"],
+        "ogImage": "/images/articles/gurbet-001-og.jpg"
+      },
+      "status": "published",
+      "locale": "tr"
+    },
+    {
+      "id": "art_002",
+      "slug": "otogar-gurbet-ben-aglamak",
+      "title": "Otogar=Gurbet, Ben=Ağlamak",
+      "subtitle": "Otogarlarda beklerken",
+      "excerpt": "Otogarlar, gurbetin somutlaştığı mekanlardır. Burada her veda, her karşılaşma, gurbetin farklı bir yüzünü gösterir. Bu yazı, otogarların duygusal coğrafyasını keşfediyor.",
+      "content": "<h2>Otogarın Sembolik Anlamı</h2><p>Otogar, gelip geçenlerin mekânıdır. Kimse orada kalmaz, herkes bir yolculuğun parçasıdır. Bu geçicilik hali, otogarı gurbetin en somut temsillerinden biri yapar.</p><p>Veda sahneleri, bekleyişler, karşılaşmalar... Otogar, duyguların yoğunlaştığı bir yerdir. Burada zaman farklı akar, her an bir sona erişin başlangıcıdır.</p><h2>Ağlamak ve Vedalaşmak</h2><p>Otogarda ağlamak, toplumsal normlara rağmen sıkça yaşanan bir durumdur. Bu gözyaşları, sadece ayrılığın değil, aynı zamanda belirsizliğin ve gelecek kaygısının da göstergesidir.</p>",
+      "contentFormat": "html",
+      "featuredImage": {
+        "url": "/images/articles/otogar-001.jpg",
+        "alt": "Otogar bekleme salonu",
+        "width": 1200,
+        "height": 800
+      },
+      "authorId": "author_002",
+      "issueId": "issue_008",
+      "themeIds": ["theme_gurbet", "theme_sehir"],
+      "publishDate": "2025-09-10T08:00:00Z",
+      "readingTime": 6,
+      "viewCount": 856,
+      "featured": true,
+      "order": 2,
+      "seo": {
+        "metaTitle": "Otogar=Gurbet, Ben=Ağlamak | Mazhar Dergisi",
+        "metaDescription": "Otogarlar, gurbetin somutlaştığı mekanlardır. Her veda, her karşılaşma farklı bir hikaye anlatır.",
+        "keywords": ["otogar", "gurbet", "veda", "yolculuk", "şehir"],
+        "ogImage": "/images/articles/otogar-001-og.jpg"
+      },
+      "status": "published",
+      "locale": "tr"
+    },
+    {
+      "id": "art_003",
+      "slug": "estetik-goze-mi-kalbe-mi",
+      "title": "Estetik: Göze mi Kalbe mi Hitap Ediyor?",
+      "subtitle": "Güzellik algısının değişen yüzü",
+      "excerpt": "Estetik kavramı, tarih boyunca farklı anlamlar kazanmıştır. Modern dünyada estetik, göze mi yoksa kalbe mi hitap eder? Bu sorunun peşinden gidiyoruz.",
+      "content": "<h2>Estetik Nedir?</h2><p>Estetik, Yunanca 'aisthesis' (algı, duyum) kelimesinden gelir. Güzellik felsefesi olarak da bilinir. Antik çağlardan bu yana filozoflar, sanatçılar ve düşünürler estetiğin doğasını tartışmışlardır.</p><p>Platon için estetik, ideaların yansımasıdır. Aristoteles ise sanatı mimesis (taklit) olarak tanımlar. Modern estetik teorisi, Kant'ın 'Yargı Gücünün Eleştirisi' eseriyle sistematik bir form kazanmıştır.</p><h2>Modern Estetik ve Tüketim</h2><p>Günümüzde estetik, tüketim kültürünün bir parçası haline gelmiştir. Instagram'dan Pinterest'e, moda endüstrisinden mimarlığa her alanda estetik kaygılar ön plandadır.</p><p>Ancak bu estetik anlayışı, yüzeyseldir. Göze hitap eder, ama kalbe dokunmaz. Gerçek estetik deneyim ise, derin bir duygusal ve entelektüel tepkiyi gerektirir.</p>",
+      "contentFormat": "html",
+      "featuredImage": {
+        "url": "/images/articles/estetik-001.jpg",
+        "alt": "Soyut sanat eseri",
+        "width": 1200,
+        "height": 800
+      },
+      "authorId": "author_003",
+      "issueId": "issue_009",
+      "themeIds": ["theme_estetik", "theme_sanat"],
+      "publishDate": "2025-11-05T10:00:00Z",
+      "readingTime": 10,
+      "viewCount": 1532,
+      "featured": true,
+      "order": 1,
+      "seo": {
+        "metaTitle": "Estetik: Göze mi Kalbe mi Hitap Ediyor? | Mazhar Dergisi",
+        "metaDescription": "Modern dünyada estetik, göze mi yoksa kalbe mi hitap eder? Güzellik algısının değişen yüzü üzerine bir deneme.",
+        "keywords": ["estetik", "güzellik", "sanat felsefesi", "modern sanat"],
+        "ogImage": "/images/articles/estetik-001-og.jpg"
+      },
+      "status": "published",
+      "locale": "tr"
+    },
+    {
+      "id": "art_004",
+      "slug": "sehir-ve-yalnizlik",
+      "title": "Şehir ve Yalnızlık: Modern İnsanın Paradoksu",
+      "excerpt": "Milyonlarca insanın yaşadığı şehirlerde nasıl olur da insan bu kadar yalnız hissedebilir? Modern kent yaşamının yarattığı yalnızlık paradoksunu inceliyoruz.",
+      "content": "<h2>Kalabalıkta Yalnızlık</h2><p>Georg Simmel'in 'Metropol ve Zihinsel Yaşam' adlı eserinde belirttiği gibi, büyük şehirler insana çok sayıda uyaran sunar. Ancak bu uyaran bolluğu, paradoksal olarak duygusal donukluğa ve yalnızlığa yol açar.</p><p>Şehirde insan sürekli başkalarıyla karşılaşır, ama gerçek anlamda kimseyle buluşmaz. Her yüz bir maskedir, her karşılaşma yüzeyseldir.</p>",
+      "contentFormat": "html",
+      "featuredImage": {
+        "url": "/images/articles/sehir-001.jpg",
+        "alt": "Şehir manzarası",
+        "width": 1200,
+        "height": 800
+      },
+      "authorId": "author_004",
+      "issueId": "issue_008",
+      "themeIds": ["theme_sehir", "theme_modern"],
+      "publishDate": "2025-09-20T14:00:00Z",
+      "readingTime": 7,
+      "viewCount": 743,
+      "featured": false,
+      "order": 3,
+      "seo": {
+        "metaTitle": "Şehir ve Yalnızlık: Modern İnsanın Paradoksu | Mazhar Dergisi",
+        "metaDescription": "Milyonlarca insanın yaşadığı şehirlerde yalnızlık nasıl mümkün olur? Modern kent yaşamının paradoksu.",
+        "keywords": ["şehir", "yalnızlık", "modern hayat", "sosyoloji"],
+        "ogImage": "/images/articles/sehir-001-og.jpg"
+      },
+      "status": "published",
+      "locale": "tr"
+    },
+    {
+      "id": "art_005",
+      "slug": "zaman-ve-anlam-arayisi",
+      "title": "Zaman ve Anlam Arayışı",
+      "excerpt": "Zaman, felsefenin en eski sorularından biridir. Modern insanın zamanla ilişkisi nasıl şekilleniyor?",
+      "content": "<h2>Zamanın Doğası</h2><p>Augustinus şöyle der: 'Zaman nedir? Bana sormazsan biliyorum, sorduğunda bilmiyorum.' Bu paradoks, zamanın kavranması zor doğasını gösterir.</p>",
+      "contentFormat": "html",
+      "featuredImage": {
+        "url": "/images/articles/zaman-001.jpg",
+        "alt": "Saat ve zaman kavramı",
+        "width": 1200,
+        "height": 800
+      },
+      "authorId": "author_001",
+      "issueId": "issue_009",
+      "themeIds": ["theme_zaman", "theme_felsefe"],
+      "publishDate": "2025-11-10T10:00:00Z",
+      "readingTime": 9,
+      "viewCount": 621,
+      "featured": false,
+      "order": 2,
+      "seo": {
+        "metaTitle": "Zaman ve Anlam Arayışı | Mazhar Dergisi",
+        "metaDescription": "Zaman nedir ve modern insan zamanla nasıl bir ilişki kuruyor?",
+        "keywords": ["zaman", "felsefe", "anlam", "modernite"],
+        "ogImage": "/images/articles/zaman-001-og.jpg"
+      },
+      "status": "published",
+      "locale": "tr"
+    }
+  ]
+}

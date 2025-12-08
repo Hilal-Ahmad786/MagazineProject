@@ -1,0 +1,58 @@
+/* Theme Variables for Dark/Light Mode */
+
+:root {
+  /* Default: Dark Theme */
+  --color-bg-primary: #000000;
+  --color-bg-secondary: #111111;
+  --color-bg-tertiary: #1a1a1a;
+  --color-bg-card: #1f2937;
+  
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #9ca3af;
+  --color-text-tertiary: #6b7280;
+  
+  --color-accent: #facc15;
+  --color-accent-hover: #fde047;
+  
+  --color-border: #374151;
+  --color-border-light: #4b5563;
+}
+
+html.light {
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #f9fafb;
+  --color-bg-tertiary: #f3f4f6;
+  --color-bg-card: #ffffff;
+  
+  --color-text-primary: #111827;
+  --color-text-secondary: #4b5563;
+  --color-text-tertiary: #9ca3af;
+  
+  --color-accent: #ca8a04;
+  --color-accent-hover: #a16207;
+  
+  --color-border: #e5e7eb;
+  --color-border-light: #d1d5db;
+}
+
+/* Utility classes using CSS variables */
+.bg-theme-primary { background-color: var(--color-bg-primary); }
+.bg-theme-secondary { background-color: var(--color-bg-secondary); }
+.bg-theme-tertiary { background-color: var(--color-bg-tertiary); }
+.bg-theme-card { background-color: var(--color-bg-card); }
+
+.text-theme-primary { color: var(--color-text-primary); }
+.text-theme-secondary { color: var(--color-text-secondary); }
+.text-theme-tertiary { color: var(--color-text-tertiary); }
+
+.text-theme-accent { color: var(--color-accent); }
+.bg-theme-accent { background-color: var(--color-accent); }
+
+.border-theme { border-color: var(--color-border); }
+.border-theme-light { border-color: var(--color-border-light); }
+
+/* Smooth transitions for theme changes */
+body,
+.theme-transition {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}

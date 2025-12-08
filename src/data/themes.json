@@ -1,0 +1,82 @@
+{
+  "themes": [
+    {
+      "id": "theme_gurbet",
+      "slug": "gurbet",
+      "name": "Gurbet",
+      "description": "Ayrılık, özlem ve aidiyet duygusunun edebi yansımaları",
+      "image": "/images/themes/gurbet.jpg",
+      "color": "#8B7355",
+      "relatedThemes": ["theme_aidiyet", "theme_yolculuk"],
+      "active": true,
+      "locale": "tr"
+    },
+    {
+      "id": "theme_estetik",
+      "slug": "estetik",
+      "name": "Estetik",
+      "description": "Güzellik, sanat ve algı üzerine düşünceler",
+      "image": "/images/themes/estetik.jpg",
+      "color": "#C9A66B",
+      "relatedThemes": ["theme_sanat", "theme_felsefe"],
+      "active": true,
+      "locale": "tr"
+    },
+    {
+      "id": "theme_sehir",
+      "slug": "sehir",
+      "name": "Şehir",
+      "description": "Modern kent yaşamı ve toplumsal dönüşüm",
+      "color": "#4A4A4A",
+      "relatedThemes": ["theme_modern", "theme_yalnizlik"],
+      "active": true,
+      "locale": "tr"
+    },
+    {
+      "id": "theme_zaman",
+      "slug": "zaman",
+      "name": "Zaman",
+      "description": "Zamanın doğası, geçicilik ve kalıcılık",
+      "color": "#1A1A1A",
+      "relatedThemes": ["theme_felsefe", "theme_anlam"],
+      "active": true,
+      "locale": "tr"
+    },
+    {
+      "id": "theme_aidiyet",
+      "slug": "aidiyet",
+      "name": "Aidiyet",
+      "description": "Ait olma duygusu ve kimlik arayışı",
+      "color": "#2E7D32",
+      "active": true,
+      "locale": "tr"
+    },
+    {
+      "id": "theme_sanat",
+      "slug": "sanat",
+      "name": "Sanat",
+      "description": "Sanat felsefesi ve estetik deneyim",
+      "color": "#C62828",
+      "active": true,
+      "locale": "tr"
+    },
+    {
+      "id": "theme_modern",
+      "slug": "modern-hayat",
+      "name": "Modern Hayat",
+      "description": "Çağdaş yaşamın sorunları ve olanakları",
+      "color": "#1976D2",
+      "active": true,
+      "locale": "tr"
+    },
+    {
+      "id": "theme_felsefe",
+      "slug": "felsefe",
+      "name": "Felsefe",
+      "description": "Felsefi düşünce ve varoluşsal sorular",
+      "color": "#F57C00",
+      "active": true,
+      "locale": "tr"
+    }
+  ]
+}

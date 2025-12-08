@@ -1,0 +1,51 @@
+{
+  "general": {
+    "siteName": "Mazhar Dergisi",
+    "tagline": "Aylık Düşünce ve Edebiyat Dergisi",
+    "description": "Mazhar Dergisi, edebi derinlik ve muhafazakar entelektüalizmi bir araya getiren aylık bir yayındır.",
+    "url": "https://mazhardergisi.com",
+    "locale": "tr",
+    "timezone": "Europe/Istanbul",
+    "logo": {
+      "main": "/images/logo/mazhar-logo.svg",
+      "mobile": "/images/logo/mazhar-logo-mobile.svg",
+      "light": "/images/logo/mazhar-logo-light.svg",
+      "dark": "/images/logo/mazhar-logo-dark.svg"
+    },
+    "favicon": "/favicon.ico",
+    "appleTouchIcon": "/apple-touch-icon.png"
+  },
+  "contact": {
+    "email": "iletisim@mazhardergisi.com",
+    "guestAuthorEmail": "konukyazar@mazhardergisi.com",
+    "phone": "+90 555 000 0000",
+    "address": "İstanbul, Türkiye"
+  },
+  "social": {
+    "instagram": "https://instagram.com/mazhardergisi",
+    "twitter": "https://twitter.com/mazhardergisi",
+    "facebook": "https://facebook.com/mazhardergisi",
+    "linkedin": "https://linkedin.com/company/mazhardergisi",
+    "youtube": ""
+  },
+  "seo": {
+    "defaultMetaTitle": "Mazhar Dergisi - Aylık Düşünce ve Edebiyat Dergisi",
+    "defaultMetaDescription": "Edebi derinlik ve muhafazakar entelektüalizmi bir araya getiren aylık yayın. Her sayı bir tema etrafında örülü düşündürücü yazılar.",
+    "keywords": ["edebiyat dergisi", "düşünce dergisi", "edebi yazılar", "türk edebiyatı", "entelektüel dergi"],
+    "googleAnalyticsId": "",
+    "googleSiteVerification": "",
+    "facebookAppId": ""
+  },
+  "features": {
+    "darkMode": true,
+    "newsletter": true,
+    "search": true,
+    "comments": false,
+    "guestAuthors": true
+  },
+  "pagination": {
+    "articlesPerPage": 12,
+    "authorsPerPage": 16,
+    "issuesPerPage": 12
+  }
+}

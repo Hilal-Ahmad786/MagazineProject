@@ -1,0 +1,84 @@
+{
+  "quotes": [
+    {
+      "id": "quote_001",
+      "text": "Gurbet sadece uzaklıkta değil, kalpte yaşanır.",
+      "source": "Mehmet Oktay Yetiş",
+      "sourceType": "author",
+      "language": "tr",
+      "active": true
+    },
+    {
+      "id": "quote_002",
+      "text": "Estetik, göze değil gönle hitap eder.",
+      "source": "9. Sayı Manifestosu",
+      "sourceType": "manifesto",
+      "language": "tr",
+      "active": true
+    },
+    {
+      "id": "quote_003",
+      "text": "Şehir, insanı hem yaklaştırır hem uzaklaştırır.",
+      "source": "Ayşe Nur Kaya",
+      "sourceType": "author",
+      "language": "tr",
+      "active": true
+    },
+    {
+      "id": "quote_004",
+      "text": "Zaman nedir? Bana sormazsan biliyorum, sorduğunda bilmiyorum.",
+      "source": "Augustinus",
+      "sourceType": "literature",
+      "language": "tr",
+      "active": true
+    },
+    {
+      "id": "quote_005",
+      "text": "Aidiyet, sadece bir yere değil, kendine ait olmaktır.",
+      "source": "8. Sayı Manifestosu",
+      "sourceType": "manifesto",
+      "language": "tr",
+      "active": true
+    },
+    {
+      "id": "quote_006",
+      "text": "Otogar, vedaların ve buluşmaların mekânıdır.",
+      "source": "Furkan Ahmet Aydın",
+      "sourceType": "author",
+      "language": "tr",
+      "active": true
+    },
+    {
+      "id": "quote_007",
+      "text": "Sanat, gerçeği taklit değil, gerçeğin yorumudur.",
+      "source": "Ahmet Talha Çamcı",
+      "sourceType": "author",
+      "language": "tr",
+      "active": true
+    },
+    {
+      "id": "quote_008",
+      "text": "Modern hayat, hız ve yüzeyselliğin zaferidir.",
+      "source": "Mazhar Dergisi",
+      "sourceType": "manifesto",
+      "language": "tr",
+      "active": true
+    },
+    {
+      "id": "quote_009",
+      "text": "Felsefe, sorular sormaktan çekinmeyen bir cesaret ister.",
+      "source": "Mehmet Oktay Yetiş",
+      "sourceType": "author",
+      "language": "tr",
+      "active": true
+    },
+    {
+      "id": "quote_010",
+      "text": "Edebiyat, insanın kendisiyle yüzleşme sanatıdır.",
+      "source": "Mazhar Dergisi",
+      "sourceType": "manifesto",
+      "language": "tr",
+      "active": true
+    }
+  ]
+}

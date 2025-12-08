@@ -1,0 +1,98 @@
+{
+  "authors": [
+    {
+      "id": "author_001",
+      "slug": "mehmet-oktay-yetis",
+      "fullName": "Mehmet Oktay Yetiş",
+      "role": "founder",
+      "title": "Editör & Kurucu Yazar",
+      "profileImage": "/images/authors/mehmet-oktay-yetis.jpg",
+      "shortBio": "Editör ve kurucu yazar. Edebi düşünce ve modern hayatın kesişim noktalarını keşfeden yazılar kaleme alıyor.",
+      "longBio": "Mehmet Oktay Yetiş, Mazhar Dergisi'nin kurucu yazarlarından ve editörlerinden biridir. Uzun yıllardır edebi düşünce ile modern hayatın kesişim noktalarını araştırıyor. Özellikle gurbet, aidiyet ve estetik kavramları üzerine derinlemesine çalışmalar yapıyor. Yazıları, okuyucuyu düşündürmeyi ve sorgul amaçlıyor.",
+      "email": "mehmet@mazhardergisi.com",
+      "phone": "+90 555 123 4567",
+      "social": {
+        "twitter": "mehmetoktayyetis",
+        "linkedin": "mehmetoktayyetis",
+        "website": "https://mehmetoktayyetis.com"
+      },
+      "joinDate": "2024-01-15",
+      "stats": {
+        "articleCount": 12,
+        "issueCount": 3,
+        "totalViews": 15847
+      },
+      "active": true,
+      "locale": "tr"
+    },
+    {
+      "id": "author_002",
+      "slug": "furkan-ahmet-aydin",
+      "fullName": "Furkan Ahmet Aydın",
+      "role": "founder",
+      "title": "Kurucu Yazar",
+      "profileImage": "/images/authors/furkan-ahmet-aydin.jpg",
+      "shortBio": "Kurucu yazar. Şiir ve düzyazı arasında gidip gelen, duygusal derinliği kelimelere döken bir kalem.",
+      "longBio": "Furkan Ahmet Aydın, Mazhar Dergisi'nin kurucu yazarlarındandır. Şiir ve düzyazı arasında köprü kuran yazıları ile tanınır. Gurbet, ayrılık ve özlem temalarını ustalıkla işler. Her yazısında okuyucuya yeni bir pencere açmayı hedefler.",
+      "email": "furkan@mazhardergisi.com",
+      "social": {
+        "twitter": "furkanaaydin",
+        "instagram": "furkanaaydin"
+      },
+      "joinDate": "2024-01-15",
+      "stats": {
+        "articleCount": 8,
+        "issueCount": 2,
+        "totalViews": 9632
+      },
+      "active": true,
+      "locale": "tr"
+    },
+    {
+      "id": "author_003",
+      "slug": "ahmet-talha-camci",
+      "fullName": "Ahmet Talha Çamcı",
+      "role": "editor",
+      "title": "Editör",
+      "profileImage": "/images/authors/ahmet-talha-camci.jpg",
+      "shortBio": "Editör. Estetik ve sanat felsefesi üzerine yazan, görsel ve yazınsal sanatın kesişimini inceleyen bir araştırmacı.",
+      "longBio": "Ahmet Talha Çamcı, Mazhar Dergisi editörüdür. Estetik felsefesi ve modern sanat üzerine çalışmalar yapar. Görsel sanatlar ve edebiyatın kesişim noktalarını araştırır. Yazılarında sanatın toplumsal ve bireysel etkileri üzerine derin analizler sunar.",
+      "email": "ahmet@mazhardergisi.com",
+      "social": {
+        "linkedin": "ahmetcamci",
+        "website": "https://ahmetcamci.com"
+      },
+      "joinDate": "2024-03-01",
+      "stats": {
+        "articleCount": 6,
+        "issueCount": 2,
+        "totalViews": 7421
+      },
+      "active": true,
+      "locale": "tr"
+    },
+    {
+      "id": "author_004",
+      "slug": "ayse-nur-kaya",
+      "fullName": "Ayşe Nur Kaya",
+      "role": "guest",
+      "title": "Konuk Yazar",
+      "profileImage": "/images/authors/ayse-nur-kaya.jpg",
+      "shortBio": "Konuk yazar. Sosyoloji ve edebiyatı harmanlayarak toplumsal meseleleri kaleme alan genç bir araştırmacı.",
+      "longBio": "Ayşe Nur Kaya, sosyoloji alanında çalışan genç bir araştırmacı ve yazardır. Toplumsal meseleleri edebi bir dille anlatma konusunda yeteneklidir. Modern kent yaşamı ve kimlik arayışları üzerine derinlemesine yazılar kaleme alır.",
+      "email": "aysenur@example.com",
+      "social": {
+        "twitter": "aysenur_kaya",
+        "instagram": "aysenur_kaya"
+      },
+      "joinDate": "2025-09-01",
+      "stats": {
+        "articleCount": 2,
+        "issueCount": 1,
+        "totalViews": 1847
+      },
+      "active": true,
+      "locale": "tr"
+    }
+  ]
+}
