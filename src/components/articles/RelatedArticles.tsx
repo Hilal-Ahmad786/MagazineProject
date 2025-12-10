@@ -26,6 +26,16 @@ export function RelatedArticles({ articles }: RelatedArticlesProps) {
               {/* Yellow accent bar */}
               <div className="h-1 bg-yellow-400" />
 
+              {article.image && (
+                <div className="relative h-48 mb-4 overflow-hidden">
+                  <img
+                    src={article.image}
+                    alt={article.title}
+                    className="absolute inset-0 h-full w-full object-cover"
+                  />
+                </div>
+              )}
+
               <div className="p-6">
                 {/* Theme */}
                 {article.themeIds && article.themeIds[0] && (
@@ -39,9 +49,9 @@ export function RelatedArticles({ articles }: RelatedArticlesProps) {
                 </h3>
 
                 <div className="flex items-center gap-2 text-xs text-gray-500">
-                  <span>{article.author?.fullName || 'Yazar'}</span>
+                  <span>{article.author?.name || 'Yazar'}</span>
                   <span>•</span>
-                  <span>{article.readingTime} dk</span>
+                  <span>{article.readTime} dk</span>
                 </div>
               </div>
             </article>

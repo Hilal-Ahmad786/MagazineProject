@@ -12,8 +12,8 @@ export async function GET() {
     title: article.title,
     link: `${SITE_URL}/yazilar/${article.slug}`,
     description: article.excerpt || '',
-    pubDate: new Date(article.publishDate).toUTCString(),
-    author: article.author?.fullName || 'Mazhar Dergisi',
+    pubDate: new Date(article.date).toUTCString(),
+    author: article.author?.name || 'Mazhar Dergisi',
     category: article.themeIds?.[0] || 'Genel',
   }))
 

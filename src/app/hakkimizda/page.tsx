@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { ROUTES } from '@/lib/constants/routes'
 import { getFeaturedAuthors } from '@/lib/data/authors'
+import { AUTHOR_ROLE_LABELS } from '@/types/author'
 
 export const metadata: Metadata = {
   title: 'Hakkımızda | Mazhar Dergisi',
@@ -228,23 +229,23 @@ export default async function AboutPage() {
                 href={`${ROUTES.AUTHORS}/${author.slug}`}
                 className="group block text-center"
               >
-                <div className="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden bg-gradient-to-br from-yellow-400 to-yellow-500 group-hover:scale-110 transition-transform duration-300">
-                  {author.profileImage ? (
+                <div className="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden bg-gray-800 text-yellow-400 text-4xl font-bold">
+                  {author.avatar ? (
                     <img
-                      src={author.profileImage}
-                      alt={author.fullName}
+                      src={author.avatar}
+                      alt={author.name}
                       className="w-full h-full object-cover"
                     />
                   ) : (
-                    <div className="w-full h-full flex items-center justify-center text-4xl font-black text-black">
-                      {author.fullName.charAt(0)}
+                    <div className="w-full h-full flex items-center justify-center bg-gray-800 text-yellow-400 text-4xl font-bold">
+                      {author.name.charAt(0)}
                     </div>
                   )}
                 </div>
-                <h3 className="text-xl font-bold group-hover:text-yellow-400 transition-colors">
-                  {author.fullName}
+                <h3 className="text-xl font-bold text-white mb-1 group-hover:text-yellow-400 transition-colors">
+                  {author.name}
                 </h3>
-                <p className="text-gray-500 text-sm">{author.title}</p>
+                <p className="text-gray-500 text-sm">{AUTHOR_ROLE_LABELS[author.role]}</p>
               </Link>
             ))}
           </div>

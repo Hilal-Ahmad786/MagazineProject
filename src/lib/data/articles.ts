@@ -4,14 +4,13 @@ import articlesData from '@/data/articles.json'
 import authorsData from '@/data/authors.json'
 
 // Extended Article type with populated author
-export interface ArticleWithAuthor extends Omit<Article, 'featuredImage'> {
-  featuredImage?: string
+export interface ArticleWithAuthor extends Omit<Article, 'author'> {
   author?: {
     id: string
-    fullName: string
+    name: string
     slug: string
-    profileImage?: string
-    title?: string
+    avatar: string
+    role?: string
     shortBio?: string
   }
 }
@@ -21,13 +20,17 @@ function populateAuthor(article: any): ArticleWithAuthor {
   const author = authorsData.authors.find((a: any) => a.id === article.authorId)
   return {
     ...article,
-    featuredImage: article.featuredImage?.url || null,
+    image: article.featuredImage?.url || article.image || '',
+    date: article.publishDate,
+    readTime: article.readingTime,
+    category: 'Makale',
+    tags: article.themeIds || [],
     author: author ? {
       id: author.id,
-      fullName: author.fullName,
+      name: author.fullName,
       slug: author.slug,
-      profileImage: author.profileImage,
-      title: author.title,
+      avatar: author.profileImage,
+      role: author.title, // Map title to role
       shortBio: author.shortBio
     } : undefined
   }

@@ -1,7 +1,8 @@
 'use client'
 
 import { useState, useRef, useEffect } from 'react'
-import { useLanguage, Locale } from '@/contexts/LanguageContext'
+import { useLanguage } from '@/contexts/LanguageContext'
+import { type Locale } from '@/lib/i18n/translations'
 
 const languages: { code: Locale; label: string; flag: string }[] = [
   { code: 'tr', label: 'Türkçe', flag: '🇹🇷' },
@@ -51,10 +52,10 @@ export function LanguageSwitcher({ variant = 'default' }: LanguageSwitcherProps)
         >
           <span>{currentLang.flag}</span>
           <span className="text-sm font-bold">{currentLang.code.toUpperCase()}</span>
-          <svg 
-            className={`w-4 h-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} 
-            fill="none" 
-            stroke="currentColor" 
+          <svg
+            className={`w-4 h-4 transition-transform ${isOpen ? 'rotate-180' : ''}`}
+            fill="none"
+            stroke="currentColor"
             viewBox="0 0 24 24"
           >
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -70,9 +71,8 @@ export function LanguageSwitcher({ variant = 'default' }: LanguageSwitcherProps)
                   setLocale(lang.code)
                   setIsOpen(false)
                 }}
-                className={`flex items-center gap-3 w-full px-4 py-3 text-left hover:bg-gray-700 transition-colors ${
-                  lang.code === locale ? 'text-yellow-400' : ''
-                }`}
+                className={`flex items-center gap-3 w-full px-4 py-3 text-left hover:bg-gray-700 transition-colors ${lang.code === locale ? 'text-yellow-400' : ''
+                  }`}
               >
                 <span>{lang.flag}</span>
                 <span className="text-sm">{lang.label}</span>
@@ -91,11 +91,10 @@ export function LanguageSwitcher({ variant = 'default' }: LanguageSwitcherProps)
         <button
           key={lang.code}
           onClick={() => setLocale(lang.code)}
-          className={`flex items-center gap-2 px-4 py-2 text-sm font-bold transition-colors ${
-            lang.code === locale
+          className={`flex items-center gap-2 px-4 py-2 text-sm font-bold transition-colors ${lang.code === locale
               ? 'bg-yellow-400 text-black'
               : 'text-gray-400 hover:text-white'
-          }`}
+            }`}
         >
           <span>{lang.flag}</span>
           <span>{lang.code.toUpperCase()}</span>

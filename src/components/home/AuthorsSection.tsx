@@ -25,27 +25,27 @@ export function AuthorsSection({ authors }: AuthorsSectionProps) {
               className="group text-center"
             >
               <div className="relative w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden bg-yellow-400">
-                {author.profileImage ? (
-                  <img 
-                    src={author.profileImage} 
-                    alt={author.fullName}
-                    className="w-full h-full object-cover"
+                {author.avatar ? (
+                  <img
+                    src={author.avatar}
+                    alt={author.name}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                 ) : (
-                  <div className="w-full h-full flex items-center justify-center text-4xl font-black text-black">
-                    {author.fullName.charAt(0)}
+                  <div className="w-full h-full flex items-center justify-center text-black font-bold text-4xl">
+                    {author.name.charAt(0)}
                   </div>
                 )}
-                <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-20 transition-opacity" />
               </div>
-              
-              <h3 className="font-bold text-lg mb-1 group-hover:text-yellow-400 transition-colors">
-                {author.fullName}
+              <h3 className="text-xl font-bold mb-1 group-hover:text-yellow-400 transition-colors">
+                {author.name}
               </h3>
-              
-              <p className="text-sm text-gray-400">
-                {author.title}
-              </p>
+              {author.role && (
+                <p className="text-sm text-gray-400 uppercase tracking-wider">
+                  {author.role}
+                </p>
+              )}
+              {/* title removed */}
             </Link>
           ))}
         </div>

@@ -26,8 +26,8 @@ export async function GET() {
       title: article.title,
       content_text: article.excerpt || '',
       summary: article.excerpt || '',
-      date_published: article.publishDate,
-      authors: article.author ? [{ name: article.author.fullName }] : [],
+      date_published: article.date,
+      authors: article.author ? [{ name: article.author.name }] : [],
       tags: article.themeIds || [],
     })),
   }

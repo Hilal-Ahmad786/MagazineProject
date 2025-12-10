@@ -39,9 +39,9 @@ export function AuthorArticles({ articles, authorName }: AuthorArticlesProps) {
 
               {/* Image */}
               <div className="w-40 md:w-56 flex-shrink-0 bg-gradient-to-br from-yellow-400 to-yellow-500 relative overflow-hidden hidden sm:block">
-                {article.featuredImage ? (
+                {article.image ? (
                   <img
-                    src={article.featuredImage}
+                    src={article.image}
                     alt={article.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
@@ -54,38 +54,31 @@ export function AuthorArticles({ articles, authorName }: AuthorArticlesProps) {
 
               {/* Content */}
               <div className="flex-1 p-6 md:p-8 flex flex-col justify-center">
-                <div className="flex flex-wrap items-center gap-3 mb-3">
-                  {/* Theme tag */}
-                  {article.themeIds && article.themeIds[0] && (
-                    <span className="px-3 py-1 bg-yellow-400/10 text-yellow-400 text-xs font-bold uppercase tracking-wider">
-                      {article.themeIds[0]}
-                    </span>
-                  )}
-
-                  {/* Date */}
-                  {article.publishDate && (
-                    <span className="text-xs text-gray-500">
-                      {formatDate(article.publishDate, 'short')}
-                    </span>
-                  )}
-                </div>
+                {/* Theme tag */}
+                {article.themeIds && article.themeIds[0] && (
+                  <span className="inline-block px-3 py-1 bg-yellow-400 text-black text-xs font-bold uppercase tracking-wider mb-3 w-fit">
+                    {article.themeIds[0]}
+                  </span>
+                )}
 
                 <h3 className="text-xl md:text-2xl font-bold mb-2 group-hover:text-yellow-400 transition-colors">
                   {article.title}
                 </h3>
 
-                {article.subtitle && (
-                  <p className="text-gray-400 text-sm mb-2">
-                    {article.subtitle}
+                {article.excerpt && (
+                  <p className="text-gray-400 text-sm mb-2 line-clamp-2">
+                    {article.excerpt}
                   </p>
                 )}
 
-                <p className="text-gray-500 text-sm line-clamp-2 mb-4 hidden md:block">
-                  {article.excerpt}
-                </p>
-
-                <div className="flex items-center gap-4 text-xs text-gray-500 uppercase tracking-wider">
-                  <span>{article.readingTime} dk okuma</span>
+                <div className="flex items-center gap-2 text-xs text-gray-500 mt-auto">
+                  {article.date && (
+                    <time dateTime={article.date}>
+                      {formatDate(article.date, 'short')}
+                    </time>
+                  )}
+                  <span>•</span>
+                  <span>{article.readTime} dk okuma</span>
                   {article.viewCount && article.viewCount > 0 && (
                     <>
                       <span>•</span>

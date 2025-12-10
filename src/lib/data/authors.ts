@@ -2,23 +2,32 @@ import { Author } from '@/types/author'
 import authorsData from '@/data/authors.json'
 
 export async function getAllAuthors(): Promise<Author[]> {
-  return authorsData.authors as unknown as Author[]
+  return authorsData.authors.map((author) => ({
+    ...author,
+    name: author.fullName,
+    avatar: author.profileImage,
+    role: author.title,
+    bio: author.longBio || '',
+    joinedAt: author.joinDate,
+  })) as unknown as Author[]
 }
 
 export async function getActiveAuthors(): Promise<Author[]> {
-  return authorsData.authors.filter(author => author.active) as unknown as Author[]
+  const authors = await getAllAuthors()
+  return authors.filter((author) => author.active)
 }
 
 export async function getAuthorBySlug(slug: string): Promise<Author | null> {
-  return (authorsData.authors.find(author => author.slug === slug) || null) as unknown as Author | null
+  const authors = await getAllAuthors()
+  return authors.find((a) => a.slug === slug) || null
 }
 
 export async function getAuthorsByRole(role: string): Promise<Author[]> {
-  return authorsData.authors.filter(author => author.role === role) as unknown as Author[]
+  const authors = await getAllAuthors()
+  return authors.filter((author) => author.role?.toLowerCase().includes(role.toLowerCase()))
 }
 
-export async function getFeaturedAuthors(limit: number = 8): Promise<Author[]> {
-  return authorsData.authors
-    .filter(author => author.active)
-    .slice(0, limit) as unknown as Author[]
+export async function getFeaturedAuthors(limit: number = 3): Promise<Author[]> {
+  const authors = await getAllAuthors()
+  return authors.slice(0, limit)
 }

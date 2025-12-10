@@ -16,20 +16,19 @@ export function DashboardClient() {
   }
 
   const articlesRead = Object.keys(data.articleStats).length
-  const avgReadTime = articlesRead > 0 
+  const avgReadTime = articlesRead > 0
     ? Math.round(data.totalReadTime / articlesRead)
     : 0
 
   // Get articles with stats for TopArticles
-  const topArticleIds = getMostViewedArticles(5)
-  const topArticles = topArticleIds.map(id => {
-    const stats = data.articleStats[id]
+  const topArticleStats = getMostViewedArticles(5)
+  const topArticles = topArticleStats.map(stats => {
     return {
-      id,
-      title: `Yazı ${id.slice(0, 8)}...`, // You'd fetch real titles from your data
-      slug: id,
-      views: stats?.views || 0,
-      readTime: stats?.readTime || 0,
+      id: stats.articleId,
+      title: `Yazı ${stats.articleId.slice(0, 8)}...`, // You'd fetch real titles from your data
+      slug: stats.articleId,
+      views: stats.views,
+      readTime: stats.readTime,
     }
   })
 

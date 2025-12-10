@@ -24,9 +24,9 @@ export function ArticleCard({ article, variant = 'default' }: ArticleCardProps) 
 
           {/* Image */}
           <div className="w-48 h-40 flex-shrink-0 bg-gradient-to-br from-yellow-400 to-yellow-500 relative overflow-hidden">
-            {article.featuredImage ? (
+            {article.image ? (
               <img
-                src={article.featuredImage}
+                src={article.image}
                 alt={article.title}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
@@ -54,10 +54,12 @@ export function ArticleCard({ article, variant = 'default' }: ArticleCardProps) 
               {article.excerpt}
             </p>
 
-            <div className="flex items-center gap-3 text-xs text-gray-500">
-              <span>{article.author?.fullName || 'Yazar'}</span>
+            <div className="flex items-center text-xs text-gray-500 mb-3 space-x-2">
+              <span className="uppercase tracking-wider text-yellow-600 font-bold">
+                {article.themeIds?.[0] || 'GENEL'}
+              </span>
               <span>•</span>
-              <span>{article.readingTime} dk</span>
+              <span>{article.readTime} dk</span>
             </div>
           </div>
         </article>
@@ -76,9 +78,9 @@ export function ArticleCard({ article, variant = 'default' }: ArticleCardProps) 
 
         {/* Image */}
         <div className={`w-full bg-gradient-to-br from-yellow-400 to-yellow-500 relative overflow-hidden ${isLarge ? 'h-72' : 'h-48'}`}>
-          {article.featuredImage ? (
+          {article.image ? (
             <img
-              src={article.featuredImage}
+              src={article.image}
               alt={article.title}
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             />
@@ -102,9 +104,9 @@ export function ArticleCard({ article, variant = 'default' }: ArticleCardProps) 
             {article.title}
           </h3>
 
-          {article.subtitle && isLarge && (
+          {article.excerpt && isLarge && (
             <p className="text-yellow-400/80 text-sm mb-3">
-              {article.subtitle}
+              {article.excerpt}
             </p>
           )}
 
@@ -116,19 +118,21 @@ export function ArticleCard({ article, variant = 'default' }: ArticleCardProps) 
             {article.author && (
               <div className="flex items-center gap-2">
                 <div className="w-6 h-6 rounded-full bg-yellow-400 flex items-center justify-center text-black font-bold text-xs">
-                  {article.author.fullName.charAt(0)}
+                  {article.author.name.charAt(0)}
                 </div>
-                <span>{article.author.fullName}</span>
+                <span>{article.author?.name}</span>
+                <span>•</span>
+                <span>{article.readTime} dk okuma</span>
               </div>
             )}
-            <span>•</span>
-            <span>{article.readingTime} dk</span>
-            {article.publishDate && (
-              <>
-                <span className="hidden sm:inline">•</span>
-                <span className="hidden sm:inline">{formatDate(article.publishDate, 'short')}</span>
-              </>
-            )}
+
+            <time className="text-gray-500 text-xs mt-2 block">
+              {new Date(article.date).toLocaleDateString('tr-TR', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+              })}
+            </time>
           </div>
         </div>
       </article>

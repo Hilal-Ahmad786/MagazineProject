@@ -7,61 +7,168 @@
    Creating an optimized production build ...
  ✓ Compiled successfully
    Linting and checking validity of types ...
+
+./src/contexts/SearchContext.tsx
+173:27  Warning: React Hook useCallback received a function whose dependencies are unknown. Pass an inline function instead.  react-hooks/exhaustive-deps
+
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/basic-features/eslint#disabling-rules
    Collecting page data ...
  ⚠ Using edge runtime on a page currently disables static generation for that page
-   Generating static pages (0/30) ...
-   Generating static pages (7/30) 
-   Generating static pages (14/30) 
+   Generating static pages (0/32) ...
+   Generating static pages (8/32) 
+Error: Event handlers cannot be passed to Client Component props.
+  {onClick: function onClick, className: ..., children: ...}
+            ^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at ek (/Users/hilalahamd/MyRestProjects/Mezhar/mazhar-dergisi-v2-option5/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:140440)
+    at Object.toJSON (/Users/hilalahamd/MyRestProjects/Mezhar/mazhar-dergisi-v2-option5/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135629)
+    at stringify (<anonymous>)
+    at eP (/Users/hilalahamd/MyRestProjects/Mezhar/mazhar-dergisi-v2-option5/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142093)
+    at eE (/Users/hilalahamd/MyRestProjects/Mezhar/mazhar-dergisi-v2-option5/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142572)
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Timeout._onTimeout (/Users/hilalahamd/MyRestProjects/Mezhar/mazhar-dergisi-v2-option5/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:150373)
+    at listOnTimeout (node:internal/timers:608:17)
+    at process.processTimers (node:internal/timers:543:7) {
+  digest: '2345320722'
+}
+Error: Event handlers cannot be passed to Client Component props.
+  {onClick: function onClick, className: ..., children: ...}
+            ^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at ek (/Users/hilalahamd/MyRestProjects/Mezhar/mazhar-dergisi-v2-option5/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:140440)
+    at Object.toJSON (/Users/hilalahamd/MyRestProjects/Mezhar/mazhar-dergisi-v2-option5/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135629)
+    at stringify (<anonymous>)
+    at eP (/Users/hilalahamd/MyRestProjects/Mezhar/mazhar-dergisi-v2-option5/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142093)
+    at eE (/Users/hilalahamd/MyRestProjects/Mezhar/mazhar-dergisi-v2-option5/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142572)
+    at Timeout._onTimeout (/Users/hilalahamd/MyRestProjects/Mezhar/mazhar-dergisi-v2-option5/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135349)
+    at listOnTimeout (node:internal/timers:608:17)
+    at process.processTimers (node:internal/timers:543:7) {
+  digest: '3055755160'
+}
+Error: Event handlers cannot be passed to Client Component props.
+  {onClick: function onClick, className: ..., children: ...}
+            ^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at ek (/Users/hilalahamd/MyRestProjects/Mezhar/mazhar-dergisi-v2-option5/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:140440)
+    at Object.toJSON (/Users/hilalahamd/MyRestProjects/Mezhar/mazhar-dergisi-v2-option5/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135629)
+    at stringify (<anonymous>)
+    at eP (/Users/hilalahamd/MyRestProjects/Mezhar/mazhar-dergisi-v2-option5/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142093)
+    at eE (/Users/hilalahamd/MyRestProjects/Mezhar/mazhar-dergisi-v2-option5/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142572)
+    at Timeout._onTimeout (/Users/hilalahamd/MyRestProjects/Mezhar/mazhar-dergisi-v2-option5/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135349)
+    at listOnTimeout (node:internal/timers:608:17)
+    at process.processTimers (node:internal/timers:543:7) {
+  digest: '3055755160'
+}
+   Generating static pages (16/32) 
  ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
  ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
  ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
  ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
  ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
-   Generating static pages (22/30) 
  ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
- ✓ Generating static pages (30/30)
-   Finalizing page optimization ...
-   Collecting build traces ...
+   Generating static pages (24/32) 
+ ⚠ Sending SIGTERM signal to Next.js build worker due to timeout of 60 seconds. Subsequent errors may be a result of the worker exiting.
+ ⚠ Restarted static page generation for /offline because it took more than 60 seconds
+ ⚠ See more info here https://nextjs.org/docs/messages/static-page-generation-timeout
+Error: Event handlers cannot be passed to Client Component props.
+  {onClick: function onClick, className: ..., children: ...}
+            ^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at ek (/Users/hilalahamd/MyRestProjects/Mezhar/mazhar-dergisi-v2-option5/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:140440)
+    at Object.toJSON (/Users/hilalahamd/MyRestProjects/Mezhar/mazhar-dergisi-v2-option5/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135629)
+    at stringify (<anonymous>)
+    at eP (/Users/hilalahamd/MyRestProjects/Mezhar/mazhar-dergisi-v2-option5/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142093)
+    at eE (/Users/hilalahamd/MyRestProjects/Mezhar/mazhar-dergisi-v2-option5/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142572)
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Timeout._onTimeout (/Users/hilalahamd/MyRestProjects/Mezhar/mazhar-dergisi-v2-option5/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:150373)
+    at listOnTimeout (node:internal/timers:608:17)
+    at process.processTimers (node:internal/timers:543:7) {
+  digest: '2345320722'
+}
+Error: Event handlers cannot be passed to Client Component props.
+  {onClick: function onClick, className: ..., children: ...}
+            ^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at ek (/Users/hilalahamd/MyRestProjects/Mezhar/mazhar-dergisi-v2-option5/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:140440)
+    at Object.toJSON (/Users/hilalahamd/MyRestProjects/Mezhar/mazhar-dergisi-v2-option5/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135629)
+    at stringify (<anonymous>)
+    at eP (/Users/hilalahamd/MyRestProjects/Mezhar/mazhar-dergisi-v2-option5/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142093)
+    at eE (/Users/hilalahamd/MyRestProjects/Mezhar/mazhar-dergisi-v2-option5/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142572)
+    at Timeout._onTimeout (/Users/hilalahamd/MyRestProjects/Mezhar/mazhar-dergisi-v2-option5/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135349)
+    at listOnTimeout (node:internal/timers:608:17)
+    at process.processTimers (node:internal/timers:543:7) {
+  digest: '3055755160'
+}
+Error: Event handlers cannot be passed to Client Component props.
+  {onClick: function onClick, className: ..., children: ...}
+            ^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at ek (/Users/hilalahamd/MyRestProjects/Mezhar/mazhar-dergisi-v2-option5/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:140440)
+    at Object.toJSON (/Users/hilalahamd/MyRestProjects/Mezhar/mazhar-dergisi-v2-option5/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135629)
+    at stringify (<anonymous>)
+    at eP (/Users/hilalahamd/MyRestProjects/Mezhar/mazhar-dergisi-v2-option5/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142093)
+    at eE (/Users/hilalahamd/MyRestProjects/Mezhar/mazhar-dergisi-v2-option5/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142572)
+    at Timeout._onTimeout (/Users/hilalahamd/MyRestProjects/Mezhar/mazhar-dergisi-v2-option5/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135349)
+    at listOnTimeout (node:internal/timers:608:17)
+    at process.processTimers (node:internal/timers:543:7) {
+  digest: '3055755160'
+}
+ ⚠ Sending SIGTERM signal to Next.js build worker due to timeout of 60 seconds. Subsequent errors may be a result of the worker exiting.
+ ⚠ Restarted static page generation for /offline because it took more than 60 seconds
+Error: Event handlers cannot be passed to Client Component props.
+  {onClick: function onClick, className: ..., children: ...}
+            ^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at ek (/Users/hilalahamd/MyRestProjects/Mezhar/mazhar-dergisi-v2-option5/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:140440)
+    at Object.toJSON (/Users/hilalahamd/MyRestProjects/Mezhar/mazhar-dergisi-v2-option5/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135629)
+    at stringify (<anonymous>)
+    at eP (/Users/hilalahamd/MyRestProjects/Mezhar/mazhar-dergisi-v2-option5/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142093)
+    at eE (/Users/hilalahamd/MyRestProjects/Mezhar/mazhar-dergisi-v2-option5/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142572)
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Timeout._onTimeout (/Users/hilalahamd/MyRestProjects/Mezhar/mazhar-dergisi-v2-option5/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:150373)
+    at listOnTimeout (node:internal/timers:608:17)
+    at process.processTimers (node:internal/timers:543:7) {
+  digest: '2345320722'
+}
+Error: Event handlers cannot be passed to Client Component props.
+  {onClick: function onClick, className: ..., children: ...}
+            ^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at ek (/Users/hilalahamd/MyRestProjects/Mezhar/mazhar-dergisi-v2-option5/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:140440)
+    at Object.toJSON (/Users/hilalahamd/MyRestProjects/Mezhar/mazhar-dergisi-v2-option5/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135629)
+    at stringify (<anonymous>)
+    at eP (/Users/hilalahamd/MyRestProjects/Mezhar/mazhar-dergisi-v2-option5/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142093)
+    at eE (/Users/hilalahamd/MyRestProjects/Mezhar/mazhar-dergisi-v2-option5/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142572)
+    at Timeout._onTimeout (/Users/hilalahamd/MyRestProjects/Mezhar/mazhar-dergisi-v2-option5/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135349)
+    at listOnTimeout (node:internal/timers:608:17)
+    at process.processTimers (node:internal/timers:543:7) {
+  digest: '3055755160'
+}
+Error: Event handlers cannot be passed to Client Component props.
+  {onClick: function onClick, className: ..., children: ...}
+            ^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at ek (/Users/hilalahamd/MyRestProjects/Mezhar/mazhar-dergisi-v2-option5/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:140440)
+    at Object.toJSON (/Users/hilalahamd/MyRestProjects/Mezhar/mazhar-dergisi-v2-option5/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135629)
+    at stringify (<anonymous>)
+    at eP (/Users/hilalahamd/MyRestProjects/Mezhar/mazhar-dergisi-v2-option5/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142093)
+    at eE (/Users/hilalahamd/MyRestProjects/Mezhar/mazhar-dergisi-v2-option5/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142572)
+    at Timeout._onTimeout (/Users/hilalahamd/MyRestProjects/Mezhar/mazhar-dergisi-v2-option5/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135349)
+    at listOnTimeout (node:internal/timers:608:17)
+    at process.processTimers (node:internal/timers:543:7) {
+  digest: '3055755160'
+}
+ ⚠ Sending SIGTERM signal to Next.js build worker due to timeout of 60 seconds. Subsequent errors may be a result of the worker exiting.
 
-Route (app)                               Size     First Load JS
-┌ ○ /                                     1.55 kB          98 kB
-├ ○ /_not-found                           159 B            88 kB
-├ ƒ /api                                  0 B                0 B
-├ ƒ /api/author-application               0 B                0 B
-├ ƒ /api/contact                          0 B                0 B
-├ ƒ /api/og                               0 B                0 B
-├ ○ /api/stats                            0 B                0 B
-├ ƒ /api/view                             0 B                0 B
-├ ○ /dashboard                            2.9 kB         99.4 kB
-├ ○ /feed                                 0 B                0 B
-├ ○ /feed.json                            0 B                0 B
-├ ○ /hakkimizda                           189 B          96.7 kB
-├ ○ /iletisim                             1.45 kB        89.3 kB
-├ ○ /offline                              949 B          88.8 kB
-├ ● /oku/[id]                             1.4 kB         89.2 kB
-├   ├ /oku/issue_008
-├   └ /oku/issue_009
-├ ○ /sayilar                              189 B          96.7 kB
-├ ○ /yazar-ol                             1.88 kB        89.7 kB
-├ ○ /yazarlar                             1.7 kB          105 kB
-├ ● /yazarlar/[slug]                      189 B          96.7 kB
-├   ├ /yazarlar/mehmet-oktay-yetis
-├   ├ /yazarlar/furkan-ahmet-aydin
-├   ├ /yazarlar/ahmet-talha-camci
-├   └ /yazarlar/ayse-nur-kaya
-├ ○ /yazilar                              10.3 kB         114 kB
-└ ● /yazilar/[slug]                       6.14 kB         103 kB
-    ├ /yazilar/gurbet-ayrilik-ozlem
-    ├ /yazilar/otogar-gurbet-ben-aglamak
-    ├ /yazilar/estetik-goze-mi-kalbe-mi
-    └ [+2 more paths]
-+ First Load JS shared by all             87.8 kB
-  ├ chunks/117-3d30ca53b32a0224.js        31.7 kB
-  ├ chunks/fd9d1056-6856237980f9b64d.js   53.7 kB
-  └ other shared chunks (total)           2.43 kB
-
-
-○  (Static)   prerendered as static content
-●  (SSG)      prerendered as static HTML (uses getStaticProps)
-ƒ  (Dynamic)  server-rendered on demand
-
+> Build error occurred
+Error: Static page generation for /offline is still timing out after 3 attempts. See more info here https://nextjs.org/docs/messages/static-page-generation-timeout
+    at onRestart (/Users/hilalahamd/MyRestProjects/Mezhar/mazhar-dergisi-v2-option5/node_modules/next/dist/build/index.js:292:27)
+    at /Users/hilalahamd/MyRestProjects/Mezhar/mazhar-dergisi-v2-option5/node_modules/next/dist/lib/worker.js:104:40
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async /Users/hilalahamd/MyRestProjects/Mezhar/mazhar-dergisi-v2-option5/node_modules/next/dist/export/index.js:450:20
+    at async Span.traceAsyncFn (/Users/hilalahamd/MyRestProjects/Mezhar/mazhar-dergisi-v2-option5/node_modules/next/dist/trace/trace.js:154:20)
+    at async /Users/hilalahamd/MyRestProjects/Mezhar/mazhar-dergisi-v2-option5/node_modules/next/dist/export/index.js:448:24
+    at async Promise.all (index 15)
+    at async exportAppImpl (/Users/hilalahamd/MyRestProjects/Mezhar/mazhar-dergisi-v2-option5/node_modules/next/dist/export/index.js:440:21)
+    at async /Users/hilalahamd/MyRestProjects/Mezhar/mazhar-dergisi-v2-option5/node_modules/next/dist/export/index.js:623:16
+    at async Span.traceAsyncFn (/Users/hilalahamd/MyRestProjects/Mezhar/mazhar-dergisi-v2-option5/node_modules/next/dist/trace/trace.js:154:20)

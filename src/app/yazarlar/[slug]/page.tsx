@@ -28,13 +28,13 @@ export async function generateMetadata({ params }: AuthorPageProps): Promise<Met
   }
 
   return {
-    title: `${author.fullName} | Mazhar Dergisi`,
-    description: author.shortBio || `${author.fullName} - Mazhar Dergisi yazarı`,
+    title: `${author.name} | Mazhar Dergisi`,
+    description: author.shortBio || `${author.name} - Mazhar Dergisi yazarı`,
     openGraph: {
-      title: author.fullName,
-      description: author.shortBio || `${author.fullName} - Mazhar Dergisi yazarı`,
+      title: author.name,
+      description: author.shortBio || `${author.name} - Mazhar Dergisi yazarı`,
       type: 'profile',
-      images: author.profileImage ? [author.profileImage] : undefined,
+      images: author.avatar ? [author.avatar] : undefined,
     },
   }
 }
@@ -59,7 +59,7 @@ export default async function AuthorPage({ params }: AuthorPageProps) {
           <div className="h-px bg-gray-800 mb-16" />
 
           {/* Author's Articles */}
-          <AuthorArticles articles={articles} authorName={author.fullName.split(' ')[0]} />
+          <AuthorArticles articles={articles} authorName={author.name.split(' ')[0]} />
         </div>
       </div>
     </main>

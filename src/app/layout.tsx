@@ -1,22 +1,28 @@
 import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import { Header } from '@/components/layout/Header'
-import { Footer } from '@/components/layout/Footer'
+import { Footer } from '@/components/footer'
 import { Providers } from '@/components/Providers'
-import { SearchWrapper } from '@/components/search/SearchWrapper'
-import { PWARegister, OfflineIndicator } from '@/components/pwa'
+import { ThemeScript } from '@/components/theme'
+import { SearchModal } from '@/components/search/SearchModal'
+import { ReadingListDrawer } from '@/components/reading-list'
+import { PWARegister, InstallPrompt, OfflineIndicator } from '@/components/pwa'
+import { NewsletterModal } from '@/components/newsletter'
+import { getAllArticles } from '@/lib/data/articles'
+import { getAllAuthors } from '@/lib/data/authors'
+import { getAllIssues } from '@/lib/data/issues'
 import '@/styles/globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Mazhar Dergisi - Düşünce ve Edebiyat',
-  description: 'Aylık düşünce ve edebiyat dergisi',
+  title: 'Mazhar Dergisi',
+  description: 'Çağdaş edebiyat, kültür ve sanat dergisi',
   manifest: '/manifest.json',
   appleWebApp: {
     capable: true,
-    statusBarStyle: 'default',
-    title: 'Mazhar Dergisi',
+    statusBarStyle: 'black-translucent',
+    title: 'Mazhar',
   },
 }
 
@@ -24,21 +30,32 @@ export const viewport: Viewport = {
   themeColor: '#000000',
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+  const articles = await getAllArticles()
+  const authors = await getAllAuthors()
+  const issues = await getAllIssues()
+
   return (
-    <html lang="tr" className="dark">
+    <html lang="tr" className="dark" suppressHydrationWarning>
+      <head>
+        <ThemeScript />
+        <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
+      </head>
       <body className={`${inter.className} bg-black text-white antialiased`}>
-        <Providers>
+        <Providers articles={articles} authors={authors} issues={issues}>
           <PWARegister />
-          <OfflineIndicator />
+          <InstallPrompt variant="banner" delay={30000} />
+          <OfflineIndicator variant="toast" />
+          <NewsletterModal delay={60000} />
           <Header />
           {children}
           <Footer />
-          <SearchWrapper />
+          <SearchModal />
+          <ReadingListDrawer />
         </Providers>
       </body>
     </html>

@@ -42,8 +42,8 @@ export default async function IssuesPage() {
                                     <div className="aspect-[3/4] bg-gray-900 relative overflow-hidden">
                                         {issue.coverImage ? (
                                             <img
-                                                src={issue.coverImage.url}
-                                                alt={issue.coverImage.alt}
+                                                src={issue.coverImage}
+                                                alt={issue.title}
                                                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                                             />
                                         ) : (
@@ -65,7 +65,7 @@ export default async function IssuesPage() {
                                                 SAYI {issue.number}
                                             </span>
                                             <time className="text-gray-500 text-xs">
-                                                {getMonthYear(issue.publishDate)}
+                                                {getMonthYear(issue.date)}
                                             </time>
                                         </div>
 
@@ -73,9 +73,9 @@ export default async function IssuesPage() {
                                             {issue.theme}
                                         </h2>
 
-                                        {issue.subtitle && (
+                                        {(issue.theme || issue.description) && (
                                             <p className="text-gray-400 text-sm mb-4 line-clamp-2">
-                                                {issue.subtitle}
+                                                {issue.theme || issue.description}
                                             </p>
                                         )}
 

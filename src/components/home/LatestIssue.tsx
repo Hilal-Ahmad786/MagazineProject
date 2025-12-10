@@ -15,18 +15,18 @@ export function LatestIssue({ issue }: LatestIssueProps) {
           <div className="text-xs text-yellow-400 font-bold tracking-[0.3em] mb-6 uppercase">
             Son Sayımız
           </div>
-          
+
           <h2 className="text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-8">
-            {issue.theme.toUpperCase()}
+            {issue.theme?.toUpperCase() || 'GENEL'}
             <br />
             <span className="text-gray-400">SAYISI</span>
           </h2>
 
           <p className="text-lg text-gray-400 leading-relaxed mb-10">
-            {issue.manifesto}
+            {issue.description}
           </p>
 
-          <Link 
+          <Link
             href={`${ROUTES.ISSUES}/${issue.id}`}
             className="inline-block px-10 py-4 bg-yellow-400 text-black font-bold text-sm uppercase tracking-wider hover:bg-white transition-all duration-300 hover:translate-x-1"
           >
@@ -41,7 +41,7 @@ export function LatestIssue({ issue }: LatestIssueProps) {
           <div className="text-[180px] md:text-[220px] font-black text-black/10 leading-none text-center">
             {issue.number}
             <br />
-            <span className="text-[40px] md:text-[60px]">{issue.theme.toUpperCase()}</span>
+            <span className="text-[40px] md:text-[60px]">{issue.theme?.toUpperCase() || 'GENEL'}</span>
           </div>
         </div>
       </div>

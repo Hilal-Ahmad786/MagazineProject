@@ -37,7 +37,7 @@ export async function GET(request: NextRequest) {
     }
 
     articles.forEach(article => {
-      const date = new Date(article.publishDate)
+      const date = new Date(article.date)
       const key = date.toLocaleDateString('tr-TR', { month: 'short', year: 'numeric' })
       if (monthlyData[key] !== undefined) {
         monthlyData[key]++
@@ -49,7 +49,7 @@ export async function GET(request: NextRequest) {
     articles.forEach(article => {
       if (article.author) {
         if (!authorArticleCounts[article.author.id]) {
-          authorArticleCounts[article.author.id] = { name: article.author.fullName, count: 0 }
+          authorArticleCounts[article.author.id] = { name: article.author.name, count: 0 }
         }
         authorArticleCounts[article.author.id].count++
       }

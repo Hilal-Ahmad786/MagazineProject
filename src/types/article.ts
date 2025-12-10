@@ -1,60 +1,50 @@
-import { Image, SEO, Status, Locale } from './common'
+// src/types/article.ts
+// Article type definition for Mazhar Dergisi v2
+
+export interface ArticleAuthor {
+  id: string
+  name: string
+  slug: string
+  avatar: string
+}
 
 export interface Article {
   id: string
   slug: string
   title: string
-  subtitle?: string
   excerpt: string
-  content: string
-  contentFormat: 'html' | 'markdown'
-  featuredImage: Image
-  authorId: string
-  issueId: string
-  themeIds: string[]
-  publishDate: string
-  updatedDate?: string
-  readingTime: number
-  viewCount: number
+  content: string // HTML or Markdown
+  image: string
+  category: string
+  tags: string[]
+  author: ArticleAuthor
+  date: string // ISO date string
+  readTime: number // minutes
   featured: boolean
-  order: number
-  seo: SEO
-  status: Status
-  locale: Locale
+  issueId?: string
+  page?: number // page number in issue
+  viewCount?: number
+  themeIds?: string[]
 }
 
-export interface ArticleWithRelations extends Article {
-  author?: {
-    id: string
-    fullName: string
-    slug: string
-    profileImage: string
-  }
-  issue?: {
-    id: string
-    number: number
-    theme: string
-    slug: string
-  }
-  themes?: {
-    id: string
-    name: string
-    slug: string
-  }[]
+export interface ArticleStats {
+  articleId: string
+  views: number
+  readTime: number // seconds
+  scrollDepth: number // percentage (0-100)
+  lastViewed: string // ISO date
 }
 
-export interface ArticleCardData {
-  id: string
-  slug: string
-  title: string
-  excerpt: string
-  featuredImage: Image
-  authorName: string
-  authorSlug: string
-  authorImage: string
-  publishDate: string
-  readingTime: number
-  themeNames: string[]
+export interface ArticleFilter {
+  category?: string
+  tag?: string
+  authorId?: string
+  issueId?: string
+  featured?: boolean
+  search?: string
 }
 
-export type ArticleSortField = 'publishDate' | 'viewCount' | 'title' | 'readingTime'
+export interface ArticleSortOption {
+  field: 'date' | 'readTime' | 'title'
+  order: 'asc' | 'desc'
+}

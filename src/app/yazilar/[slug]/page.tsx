@@ -20,7 +20,7 @@ export async function generateStaticParams() {
 // Generate metadata for SEO
 export async function generateMetadata({ params }: ArticlePageProps): Promise<Metadata> {
   const article = await getArticleBySlug(params.slug)
-  
+
   if (!article) {
     return {
       title: 'Yazı Bulunamadı | Mazhar Dergisi',
@@ -34,15 +34,15 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
       title: article.title,
       description: article.excerpt,
       type: 'article',
-      publishedTime: article.publishDate,
-      authors: article.author?.fullName ? [article.author.fullName] : undefined,
-      images: article.featuredImage ? [article.featuredImage] : undefined,
+      publishedTime: article.date,
+      authors: article.author?.name ? [article.author.name] : undefined,
+      images: article.image ? [article.image] : undefined,
     },
     twitter: {
       card: 'summary_large_image',
       title: article.title,
       description: article.excerpt,
-      images: article.featuredImage ? [article.featuredImage] : undefined,
+      images: article.image ? [article.image] : undefined,
     },
   }
 }
@@ -59,12 +59,12 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
   return (
     <>
       <ReadingProgress />
-      
+
       <main className="min-h-screen pt-32 pb-20">
         <div className="px-6 md:px-12">
           <div className="max-w-[1200px] mx-auto">
             <ArticleDetail article={article} />
-            
+
             {relatedArticles.length > 0 && (
               <RelatedArticles articles={relatedArticles} />
             )}

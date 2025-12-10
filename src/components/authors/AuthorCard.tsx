@@ -28,37 +28,32 @@ export function AuthorCard({ author, articleCount = 0 }: AuthorCardProps) {
       <article className="bg-gray-800 hover:bg-gray-700 transition-all duration-300 p-8 text-center relative overflow-hidden">
         {/* Yellow accent on hover */}
         <div className="absolute top-0 left-0 w-full h-1 bg-yellow-400 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500" />
-        
+
         {/* Avatar */}
         <div className="relative w-28 h-28 mx-auto mb-6">
           <div className="w-full h-full rounded-full overflow-hidden bg-gradient-to-br from-yellow-400 to-yellow-500">
-            {author.profileImage ? (
-              <img 
-                src={author.profileImage} 
-                alt={author.fullName}
-                className="w-full h-full object-cover"
+            {author.avatar ? (
+              <img
+                src={author.avatar}
+                alt={author.name}
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
               />
             ) : (
-              <div className="w-full h-full flex items-center justify-center text-4xl font-black text-black">
-                {author.fullName.charAt(0)}
+              <div className="w-full h-full flex items-center justify-center text-black font-bold text-4xl">
+                {author.name.charAt(0)}
               </div>
             )}
           </div>
-          
-          {/* Role badge */}
-          <span className={`absolute -bottom-2 left-1/2 -translate-x-1/2 px-3 py-1 text-xs font-bold uppercase tracking-wider whitespace-nowrap ${roleColors[author.role] || roleColors.guest}`}>
-            {roleLabels[author.role] || author.role}
-          </span>
         </div>
 
         {/* Info */}
         <h3 className="text-xl font-bold mb-2 group-hover:text-yellow-400 transition-colors">
-          {author.fullName}
+          {author.name}
         </h3>
-        
-        {author.title && (
-          <p className="text-sm text-gray-400 mb-4">
-            {author.title}
+
+        {author.role && (
+          <p className="text-yellow-400/80 text-sm mb-4 font-medium uppercase tracking-wider">
+            {author.role}
           </p>
         )}
 
