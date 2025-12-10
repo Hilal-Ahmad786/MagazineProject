@@ -137,7 +137,7 @@ export function InstallPrompt({
             </button>
             <button
               onClick={handleInstall}
-              className="px-4 py-2 text-sm font-medium bg-primary text-black rounded-lg hover:bg-primary/90 transition-colors"
+              className="px-4 py-2 text-sm font-medium bg-yellow-500 text-black rounded-lg hover:bg-yellow-400 transition-colors"
             >
               Yükle
             </button>
@@ -179,7 +179,7 @@ export function InstallPrompt({
             <div className="space-y-3">
               <button
                 onClick={handleInstall}
-                className="w-full py-3 font-medium bg-primary text-black rounded-xl hover:bg-primary/90 transition-colors"
+                className="w-full py-3 font-medium bg-yellow-500 text-black rounded-xl hover:bg-yellow-400 transition-colors"
               >
                 Ana Ekrana Ekle
               </button>
@@ -225,7 +225,7 @@ export function InstallPrompt({
           <p className="text-xs text-zinc-500 mt-0.5">Ana ekrana ekle</p>
           <button
             onClick={handleInstall}
-            className="mt-2 px-3 py-1 text-xs font-medium bg-primary text-black rounded hover:bg-primary/90 transition-colors"
+            className="mt-2 px-3 py-1 text-xs font-medium bg-yellow-500 text-black rounded hover:bg-yellow-400 transition-colors"
           >
             Yükle
           </button>
