@@ -3,14 +3,13 @@ import { ArticleWithAuthor } from '@/lib/data/articles'
 import { Article } from '@/types'
 import { ROUTES } from '@/lib/constants/routes'
 import { formatDate } from '@/lib/utils/date'
-import { ShareButtons } from './ShareButtons'
-import { ReadingListButton } from '@/components/reading-list'
-import { CommentSection } from '@/components/comments'
-import {
-  ReadingProgressBar,
-  ReadingProgressCircle,
-  ReadingStats
-} from '@/components/reading-progress'
+import { ShareButtons } from '@/components/share/ShareButtons'
+import { ShareTrigger } from '@/components/share/ShareTrigger'
+import { ReadingListButton } from '@/components/reading-list/ReadingListButton'
+import { CommentSection } from '@/components/comments/CommentSection'
+import ReadingProgressBar from '@/components/reading-progress/ReadingProgressBar'
+import ReadingProgressCircle from '@/components/reading-progress/ReadingProgressCircle'
+import ReadingStats from '@/components/reading-progress/ReadingStats'
 
 interface ArticleDetailProps {
   article: ArticleWithAuthor
@@ -93,8 +92,16 @@ export function ArticleDetail({ article }: ArticleDetailProps) {
               </div>
             </div>
 
-            {/* Add to List Button */}
-            <ReadingListButton article={article as unknown as Article} />
+            <div className="flex items-center gap-3">
+              <ShareTrigger
+                url={articleUrl}
+                title={article.title}
+                variant="icon"
+                size="md"
+              />
+              {/* Add to List Button */}
+              <ReadingListButton article={article as unknown as Article} />
+            </div>
           </div>
         </header>
 
@@ -141,7 +148,7 @@ export function ArticleDetail({ article }: ArticleDetailProps) {
             )}
 
             {/* Share */}
-            <ShareButtons title={article.title} url={articleUrl} />
+            <ShareButtons title={article.title} url={articleUrl} showCopy={true} />
           </div>
         </footer>
 

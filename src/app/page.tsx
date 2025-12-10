@@ -1,4 +1,4 @@
-import { HeroSection } from '@/components/home/HeroSection'
+import { HeroFeatured } from '@/components/hero/HeroFeatured'
 import { LatestIssue } from '@/components/home/LatestIssue'
 import { FeaturedArticles } from '@/components/home/FeaturedArticles'
 import { AuthorsSection } from '@/components/home/AuthorsSection'
@@ -18,9 +18,9 @@ export default async function Home() {
   return (
     <main className="min-h-screen">
       {latestIssue && quote && (
-        <HeroSection
-          quote={quote}
-          latestIssueNumber={latestIssue.number}
+        <HeroFeatured
+          article={featuredArticles[0] as unknown as import('@/types').Article}
+          variant="fullscreen"
         />
       )}
 

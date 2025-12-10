@@ -7,10 +7,10 @@
     "locale": "tr",
     "timezone": "Europe/Istanbul",
     "logo": {
-      "main": "/images/logo/mazhar-logo.svg",
-      "mobile": "/images/logo/mazhar-logo-mobile.svg",
-      "light": "/images/logo/mazhar-logo-light.svg",
-      "dark": "/images/logo/mazhar-logo-dark.svg"
+      "main": "https://placehold.co/200x50/1a1a1a/eab308?text=MAZHAR",
+      "mobile": "https://placehold.co/50x50/1a1a1a/eab308?text=M",
+      "light": "https://placehold.co/200x50/ffffff/eab308?text=MAZHAR",
+      "dark": "https://placehold.co/200x50/1a1a1a/eab308?text=MAZHAR"
     },
     "favicon": "/favicon.ico",
     "appleTouchIcon": "/apple-touch-icon.png"
@@ -31,7 +31,13 @@
   "seo": {
     "defaultMetaTitle": "Mazhar Dergisi - Aylık Düşünce ve Edebiyat Dergisi",
     "defaultMetaDescription": "Edebi derinlik ve muhafazakar entelektüalizmi bir araya getiren aylık yayın. Her sayı bir tema etrafında örülü düşündürücü yazılar.",
-    "keywords": ["edebiyat dergisi", "düşünce dergisi", "edebi yazılar", "türk edebiyatı", "entelektüel dergi"],
+    "keywords": [
+      "edebiyat dergisi",
+      "düşünce dergisi",
+      "edebi yazılar",
+      "türk edebiyatı",
+      "entelektüel dergi"
+    ],
     "googleAnalyticsId": "",
     "googleSiteVerification": "",
     "facebookAppId": ""

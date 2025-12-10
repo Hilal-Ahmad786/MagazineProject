@@ -6,7 +6,6 @@
 import { useEffect, useCallback } from 'react'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
-import { ThemeToggle } from '@/components/theme'
 import { MobileMenuItem } from './MobileMenuItem'
 
 interface NavigationItem {
@@ -26,7 +25,6 @@ interface MobileMenuProps {
   onClose: () => void
   navigation?: NavigationItem[]
   socialLinks?: SocialLink[]
-  showThemeToggle?: boolean
   showNewsletter?: boolean
   className?: string
 }
@@ -77,7 +75,6 @@ export function MobileMenu({
   onClose,
   navigation = defaultNavigation,
   socialLinks = defaultSocialLinks,
-  showThemeToggle = true,
   showNewsletter = true,
   className,
 }: MobileMenuProps) {
@@ -189,10 +186,8 @@ export function MobileMenu({
           {/* Bottom Section */}
           <div className="p-6 border-t border-zinc-800 space-y-6">
             {/* Theme Toggle */}
-            {showThemeToggle && (
               <div className="flex items-center justify-between">
                 <span className="text-sm text-zinc-500">Tema</span>
-                <ThemeToggle variant="switch" size="sm" />
               </div>
             )}
 

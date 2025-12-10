@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { ArticleDetail } from '@/components/articles/ArticleDetail'
 import { RelatedArticles } from '@/components/articles/RelatedArticles'
-import { ReadingProgress } from '@/components/articles/ReadingProgress'
+
 import { getArticleBySlug, getRelatedArticles, getAllArticles } from '@/lib/data/articles'
 
 interface ArticlePageProps {
@@ -58,7 +58,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 
   return (
     <>
-      <ReadingProgress />
+
 
       <main className="min-h-screen pt-32 pb-20">
         <div className="px-6 md:px-12">

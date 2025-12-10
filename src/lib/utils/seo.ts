@@ -13,7 +13,7 @@ const SITE_NAME = 'Mazhar Dergisi'
 
 export function generateMetadata({ title, description, path = '', image, type = 'website' }: SEOParams): Metadata {
   const url = `${SITE_URL}${path}`
-  const ogImage = image || `${SITE_URL}/images/og-default.jpg`
+  const ogImage = image || `https://placehold.co/1200x630/1a1a1a/eab308?text=Mazhar+Dergisi`
 
   return {
     title,

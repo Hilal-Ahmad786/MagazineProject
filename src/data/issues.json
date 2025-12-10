@@ -7,7 +7,7 @@
       "subtitle": "Ayrılık, Özlem ve Aidiyet Üzerine",
       "slug": "8-gurbet",
       "coverImage": {
-        "url": "/images/covers/issue-8-gurbet.jpg",
+        "url": "https://placehold.co/1200x1600/1a1a1a/eab308?text=Sayi+8",
         "alt": "8. Sayı - Gurbet",
         "width": 1200,
         "height": 1600
@@ -16,7 +16,11 @@
       "publishMonth": "Eylül 2025",
       "manifesto": "**Gurbet**, sadece coğrafi bir mesafe değil, ruhun derinliklerinde yaşanan bir kopuş ve arayıştır. Bu sayıda, gurbetin çok boyutlu anlamını keşfediyoruz.",
       "editorNote": "Bu sayıda gurbet temasını farklı açılardan ele aldık.",
-      "articleIds": ["art_001", "art_002", "art_004"],
+      "articleIds": [
+        "art_001",
+        "art_002",
+        "art_004"
+      ],
       "pdfUrl": "/pdfs/mazhar-sayi-8-gurbet.pdf",
       "pdfSize": "12.5 MB",
       "stats": {
@@ -34,7 +38,7 @@
       "subtitle": "Güzellik, Sanat ve Anlam",
       "slug": "9-estetik",
       "coverImage": {
-        "url": "/images/covers/issue-9-estetik.jpg",
+        "url": "https://placehold.co/1200x1600/1a1a1a/eab308?text=Sayi+9",
         "alt": "9. Sayı - Estetik",
         "width": 1200,
         "height": 1600
@@ -42,7 +46,10 @@
       "publishDate": "2025-11-01",
       "publishMonth": "Kasım 2025",
       "manifesto": "**Estetik**, algının ve duyumun tüm boyutlarını kapsar. Modern dünyada estetik her yere sızmıştır.",
-      "articleIds": ["art_003", "art_005"],
+      "articleIds": [
+        "art_003",
+        "art_005"
+      ],
       "pdfUrl": "/pdfs/mazhar-sayi-9-estetik.pdf",
       "pdfSize": "15.2 MB",
       "stats": {

@@ -1,40 +1,47 @@
-// src/components/theme/ThemeScript.tsx
-// Script to prevent flash of unstyled content (FOUC)
-// Add this to the <head> section of your layout
+'use client'
 
 export function ThemeScript() {
-  // This script runs before React hydrates
-  const script = `
+  const themeScript = `
     (function() {
-      try {
-        var theme = localStorage.getItem('mazhar_theme');
-        var resolved = theme;
-        
-        if (theme === 'system' || !theme) {
-          resolved = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-        }
-        
-        document.documentElement.classList.remove('light', 'dark');
-        document.documentElement.classList.add(resolved || 'dark');
-        
-        // Update meta theme-color
-        var meta = document.querySelector('meta[name="theme-color"]');
-        if (meta) {
-          meta.setAttribute('content', resolved === 'dark' ? '#000000' : '#ffffff');
-        }
-      } catch (e) {
-        document.documentElement.classList.add('dark');
+      const storageKey = 'mazhar_theme';
+      
+      function getTheme() {
+        try {
+          const stored = localStorage.getItem(storageKey);
+          if (stored === 'light' || stored === 'dark') {
+            return stored;
+          }
+          if (stored === 'system') {
+            return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          }
+        } catch (e) {}
+        return 'dark'; // Default to dark
+      }
+      
+      const theme = getTheme();
+      const html = document.documentElement;
+      
+      // Remove any existing theme class
+      html.classList.remove('light', 'dark');
+      
+      // Add the correct theme class
+      html.classList.add(theme);
+      
+      // Set color-scheme for native elements
+      html.style.colorScheme = theme;
+      
+      // Update meta theme-color
+      const meta = document.querySelector('meta[name="theme-color"]');
+      if (meta) {
+        meta.setAttribute('content', theme === 'dark' ? '#000000' : '#ffffff');
       }
     })();
   `
 
   return (
     <script
-      dangerouslySetInnerHTML={{ __html: script }}
-      // This ensures the script runs immediately
+      dangerouslySetInnerHTML={{ __html: themeScript }}
       suppressHydrationWarning
     />
   )
 }
-
-export default ThemeScript

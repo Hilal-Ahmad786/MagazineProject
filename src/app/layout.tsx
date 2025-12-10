@@ -1,13 +1,15 @@
 import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import { Header } from '@/components/layout/Header'
-import { Footer } from '@/components/footer'
+import { Footer } from '@/components/footer/Footer'
 import { Providers } from '@/components/Providers'
-import { ThemeScript } from '@/components/theme'
 import { SearchModal } from '@/components/search/SearchModal'
-import { ReadingListDrawer } from '@/components/reading-list'
-import { PWARegister, InstallPrompt, OfflineIndicator } from '@/components/pwa'
-import { NewsletterModal } from '@/components/newsletter'
+import { ReadingListDrawer } from '@/components/reading-list/ReadingListDrawer'
+import { PWARegister } from '@/components/pwa/PWARegister'
+import { InstallPrompt } from '@/components/pwa/InstallPrompt'
+import { OfflineIndicator } from '@/components/pwa/OfflineIndicator'
+import { NewsletterModal } from '@/components/newsletter/NewsletterModal'
+import { ScrollToTop } from '@/components/common/ScrollToTop'
 import { getAllArticles } from '@/lib/data/articles'
 import { getAllAuthors } from '@/lib/data/authors'
 import { getAllIssues } from '@/lib/data/issues'
@@ -40,9 +42,8 @@ export default async function RootLayout({
   const issues = await getAllIssues()
 
   return (
-    <html lang="tr" className="dark" suppressHydrationWarning>
+    <html lang="tr" className="dark">
       <head>
-        <ThemeScript />
         <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
       </head>
       <body className={`${inter.className} bg-black text-white antialiased`}>
@@ -56,6 +57,7 @@ export default async function RootLayout({
           <Footer />
           <SearchModal />
           <ReadingListDrawer />
+          <ScrollToTop />
         </Providers>
       </body>
     </html>

@@ -51,7 +51,7 @@ export function getRelativeTime(dateString: string): string {
   const date = new Date(dateString)
   const now = new Date()
   const diffInSeconds = Math.floor((now.getTime() - date.getTime()) / 1000)
-  
+
   const intervals = [
     { label: 'yıl', seconds: 31536000 },
     { label: 'ay', seconds: 2592000 },
@@ -60,14 +60,14 @@ export function getRelativeTime(dateString: string): string {
     { label: 'saat', seconds: 3600 },
     { label: 'dakika', seconds: 60 },
   ]
-  
+
   for (const interval of intervals) {
     const count = Math.floor(diffInSeconds / interval.seconds)
     if (count >= 1) {
       return `${count} ${interval.label} önce`
     }
   }
-  
+
   return 'Az önce'
 }
 
@@ -84,7 +84,7 @@ export function formatReadTime(minutes: number): string {
 export function formatDuration(seconds: number): string {
   const hours = Math.floor(seconds / 3600)
   const minutes = Math.floor((seconds % 3600) / 60)
-  
+
   if (hours > 0) {
     return `${hours}sa ${minutes}dk`
   }
@@ -159,7 +159,7 @@ export function debounce<T extends (...args: any[]) => any>(
   wait: number
 ): (...args: Parameters<T>) => void {
   let timeout: NodeJS.Timeout | null = null
-  
+
   return (...args: Parameters<T>) => {
     if (timeout) clearTimeout(timeout)
     timeout = setTimeout(() => func(...args), wait)
@@ -174,7 +174,7 @@ export function throttle<T extends (...args: any[]) => any>(
   limit: number
 ): (...args: Parameters<T>) => void {
   let inThrottle = false
-  
+
   return (...args: Parameters<T>) => {
     if (!inThrottle) {
       func(...args)
@@ -237,7 +237,7 @@ export function shuffleArray<T>(array: T[]): T[] {
   const shuffled = [...array]
   for (let i = shuffled.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1))
-    ;[shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]]
+      ;[shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]]
   }
   return shuffled
 }
@@ -269,4 +269,14 @@ export function uniqueArray<T>(array: T[], key?: keyof T): T[] {
     })
   }
   return [...new Set(array)]
+}
+
+/**
+ * Calculate reading time from content
+ */
+export function getReadingTime(content: string): string {
+  const wordsPerMinute = 200
+  const words = content ? content.trim().split(/\s+/).length : 0
+  const minutes = Math.ceil(words / wordsPerMinute)
+  return `${minutes} dk`
 }

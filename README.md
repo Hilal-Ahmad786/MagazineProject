@@ -1,199 +1,291 @@
-# Mazhar Dergisi v2.0 - Contemporary Bold Design
+# Mazhar Dergisi v2 - Article Share System
 
-🎨 **Option 5: Contemporary Bold** tasarımı uygulanmıştır.
+Sosyal medya paylaşım butonları: Twitter, Facebook, WhatsApp, LinkedIn, Telegram, E-posta ve link kopyalama.
 
-## 🆕 V2.0 YENİLİKLERİ
-
-### Tasarım Değişiklikleri
-- ✅ **Dark Theme**: Tam karanlık tema (siyah arka plan)
-- ✅ **Bold Typography**: Güçlü, cesur tipografi (900 font weight)
-- ✅ **Yellow Accent**: #FFD700 sarı renk vurgusu
-- ✅ **Full-Screen Hero**: Tam ekran hero bölümü
-- ✅ **Split Section**: İkiye bölünmüş layout (Latest Issue)
-- ✅ **Dynamic Grid**: Esnek, modern grid sistemi
-- ✅ **Contemporary Animations**: Hover efektleri ve geçişler
-
-### Güncellenen Componentler
-
-#### Layout
-- `Header.tsx` - Fixed header, sarı logo, gradient background
-- `Navbar.tsx` - Uppercase menü, hover efektleri
-- `Footer.tsx` - 3 kolonlu dark footer, sarı aksenler
-
-#### Home Page
-- `HeroSection.tsx` - Full-screen, büyük tipografi, scroll indicator
-- `LatestIssue.tsx` - Split section tasarımı (YENİ)
-- `FeaturedArticles.tsx` - Dynamic grid, 12-column system
-- `AuthorsSection.tsx` - Yuvarlak avatarlar, hover efektleri
-- `NewsletterSection.tsx` - Sarı gradient background
-
-#### UI Components
-- `Button.tsx` - 3 varyant (primary=sarı, secondary=border, ghost)
-- `Card.tsx` - Dark cards, sarı accent bar
-- `Badge.tsx` - Uppercase, bold, sarı default
-
-### Styling
-- `globals.css` - Black background, white text, yellow primary
-- `theme.css` - Contemporary animations, utilities
-- `typography.css` - Dark mode typography
-- `tailwind.config.ts` - Dark theme colors, custom animations
-
-## 🚀 KURULUM
-
-```bash
-# 1. Bağımlılıkları yükle
-npm install
-
-# 2. Geliştirme sunucusunu başlat
-npm run dev
-
-# 3. Tarayıcıda aç
-http://localhost:3000
-```
-
-## 🎨 TASARIM ÖZELLİKLERİ
-
-### Renk Paleti
-- **Primary**: #FFD700 (Sarı)
-- **Background**: #000000 (Siyah)
-- **Text**: #FFFFFF (Beyaz)
-- **Gray-800**: #1a1a1a (Koyu gri)
-- **Gray-700**: #2a2a2a (Orta gri)
-- **Accent**: #FFA500 (Turuncu)
-
-### Tipografi
-- **Font**: Helvetica Neue, Arial, sans-serif
-- **Heading Weight**: 900 (Black)
-- **Body Weight**: 400 (Regular)
-- **Letter Spacing**: -0.02em (tight)
-
-### Animasyonlar
-- `animate-fade-in-up` - Yukarıdan fade in
-- `animate-bounce-slow` - Yavaş bounce
-- `hover:scale-105` - Hover büyütme
-- `transition-all duration-300` - Smooth geçişler
-
-## 📱 RESPONSIVE
-
-- **Mobile**: 320px+ (Single column)
-- **Tablet**: 768px+ (2 columns)
-- **Desktop**: 1024px+ (Grid layouts)
-- **Wide**: 1440px+ (Max-width 1600px)
-
-## 🔧 DOSYA YAPISI
+## 📦 İçerik
 
 ```
-src/
-├── app/
-│   ├── layout.tsx          # Root layout (dark theme)
-│   ├── page.tsx            # Home page
-│   ├── loading.tsx         # Loading spinner
-│   └── not-found.tsx       # 404 page
-├── components/
-│   ├── layout/
-│   │   ├── Header.tsx      # Fixed header
-│   │   ├── Navbar.tsx      # Navigation
-│   │   └── Footer.tsx      # Dark footer
-│   ├── home/
-│   │   ├── HeroSection.tsx      # Full-screen hero
-│   │   ├── LatestIssue.tsx      # Split section (NEW)
-│   │   ├── FeaturedArticles.tsx # Dynamic grid
-│   │   ├── AuthorsSection.tsx   # Authors grid
-│   │   └── NewsletterSection.tsx # Yellow newsletter
-│   └── ui/
-│       ├── Button.tsx      # Contemporary buttons
-│       ├── Card.tsx        # Dark cards
-│       └── Badge.tsx       # Yellow badges
-├── styles/
-│   ├── globals.css         # Dark theme base
-│   ├── theme.css           # Animations & utilities
-│   └── typography.css      # Dark typography
-└── data/
-    └── *.json              # Same as v1
+src/components/share/
+├── ShareButton.tsx     # Tekil platform butonu (6 platform)
+├── ShareButtons.tsx    # Buton grubu
+├── ShareModal.tsx      # Paylaşım modal'ı
+├── ShareTrigger.tsx    # Modal açma butonu
+├── CopyLinkButton.tsx  # Link kopyalama
+└── index.ts            # Merkezi export
 ```
 
-## 🎯 ÖNEMLİ NOTLAR
+## 🔌 Bağımlılıklar
 
-### 1. Dark Mode Varsayılan
+Bu paket **Foundation Package** gerektirir:
+- `cn` from `@/lib/utils`
+
+## 🚀 Kurulum
+
+### Adım 1: Dosyaları Kopyala
+
+```
+src/components/share/ → Projenize kopyalayın
+```
+
+### Adım 2: Kullanım
+
 ```tsx
-// layout.tsx
-<html lang="tr" className="dark">
+// Makale sayfasında
+import { ShareTrigger, ShareButtons } from '@/components/share'
+
+export default function ArticlePage({ article }) {
+  const articleUrl = `https://mazhar.com/yazilar/${article.slug}`
+
+  return (
+    <article>
+      <header>
+        <h1>{article.title}</h1>
+        
+        {/* Tek buton ile modal */}
+        <ShareTrigger
+          url={articleUrl}
+          title={article.title}
+          description={article.excerpt}
+          image={article.image}
+        />
+        
+        {/* veya inline butonlar */}
+        <ShareButtons
+          url={articleUrl}
+          title={article.title}
+        />
+      </header>
+    </article>
+  )
+}
 ```
 
-### 2. Yellow CTA Buttons
+## 🎨 Component API
+
+### ShareButton
+
+| Prop | Type | Default | Açıklama |
+|------|------|---------|----------|
+| `platform` | `SharePlatform` | required | Platform adı |
+| `url` | `string` | required | Paylaşılacak URL |
+| `title` | `string` | required | Paylaşım başlığı |
+| `description` | `string` | - | Açıklama |
+| `variant` | `'icon' \| 'button' \| 'pill'` | `'icon'` | Görünüm |
+| `size` | `'sm' \| 'md' \| 'lg'` | `'md'` | Boyut |
+
+### ShareButtons
+
+| Prop | Type | Default | Açıklama |
+|------|------|---------|----------|
+| `url` | `string` | required | Paylaşılacak URL |
+| `title` | `string` | required | Paylaşım başlığı |
+| `platforms` | `SharePlatform[]` | `['twitter', 'facebook', 'whatsapp', 'linkedin']` | Platformlar |
+| `showCopy` | `boolean` | `true` | Kopyala butonu göster |
+| `variant` | `'icon' \| 'button' \| 'pill'` | `'icon'` | Görünüm |
+| `layout` | `'horizontal' \| 'vertical' \| 'grid'` | `'horizontal'` | Yerleşim |
+
+### ShareModal
+
+| Prop | Type | Default | Açıklama |
+|------|------|---------|----------|
+| `isOpen` | `boolean` | required | Modal açık mı |
+| `onClose` | `() => void` | required | Kapatma handler |
+| `url` | `string` | required | Paylaşılacak URL |
+| `title` | `string` | required | Başlık |
+| `description` | `string` | - | Açıklama |
+| `image` | `string` | - | Önizleme görseli |
+| `platforms` | `SharePlatform[]` | all | Platformlar |
+
+### ShareTrigger
+
+| Prop | Type | Default | Açıklama |
+|------|------|---------|----------|
+| `url` | `string` | required | Paylaşılacak URL |
+| `title` | `string` | required | Başlık |
+| `variant` | `'icon' \| 'button' \| 'text'` | `'button'` | Görünüm |
+| `label` | `string` | `'Paylaş'` | Buton metni |
+| `useNativeFirst` | `boolean` | `true` | Native share öncelikli |
+
+### CopyLinkButton
+
+| Prop | Type | Default | Açıklama |
+|------|------|---------|----------|
+| `url` | `string` | required | Kopyalanacak URL |
+| `variant` | `'icon' \| 'button' \| 'pill' \| 'input'` | `'button'` | Görünüm |
+| `size` | `'sm' \| 'md' \| 'lg'` | `'md'` | Boyut |
+
+## 🎯 Desteklenen Platformlar
+
+| Platform | Renk | URL Şablonu |
+|----------|------|-------------|
+| `twitter` | #1DA1F2 | `twitter.com/intent/tweet` |
+| `facebook` | #1877F2 | `facebook.com/sharer/sharer.php` |
+| `whatsapp` | #25D366 | `wa.me/?text=` |
+| `linkedin` | #0A66C2 | `linkedin.com/sharing/share-offsite` |
+| `telegram` | #0088cc | `t.me/share/url` |
+| `email` | zinc | `mailto:?subject=&body=` |
+
+## 📐 Kullanım Örnekleri
+
+### ShareTrigger ile Modal
+
 ```tsx
-<Button variant="primary"> // Yellow background
-<Button variant="secondary"> // White border
-<Button variant="ghost"> // Transparent
+// En basit kullanım - tek buton
+<ShareTrigger
+  url="https://mazhar.com/yazi-1"
+  title="Harika Bir Yazı"
+/>
+
+// Tüm özelliklerle
+<ShareTrigger
+  url={articleUrl}
+  title={article.title}
+  description={article.excerpt}
+  image={article.image}
+  variant="button"
+  size="md"
+  label="Paylaş"
+  useNativeFirst={true}
+/>
 ```
 
-### 3. Grid System
+### ShareButtons ile Inline
+
 ```tsx
-// 12-column grid
-className="grid grid-cols-12 gap-5"
+// Default - icon buttons
+<ShareButtons
+  url={articleUrl}
+  title={article.title}
+/>
 
-// Large item: 6 columns
-className="col-span-12 lg:col-span-6"
+// Seçili platformlar
+<ShareButtons
+  url={articleUrl}
+  title={article.title}
+  platforms={['twitter', 'whatsapp']}
+  showCopy={true}
+/>
 
-// Medium item: 4 columns
-className="col-span-12 md:col-span-6 lg:col-span-4"
+// Button varyantı
+<ShareButtons
+  url={articleUrl}
+  title={article.title}
+  variant="button"
+  layout="vertical"
+/>
+
+// Grid layout
+<ShareButtons
+  url={articleUrl}
+  title={article.title}
+  variant="pill"
+  layout="grid"
+/>
 ```
 
-### 4. Animations
+### Tekil ShareButton
+
 ```tsx
-// Fade in up (stagger with delay)
-className="animate-fade-in-up"
-style={{ animationDelay: '0.2s' }}
+// Sadece Twitter
+<ShareButton
+  platform="twitter"
+  url={articleUrl}
+  title={article.title}
+  variant="icon"
+/>
 
-// Bounce indicator
-className="animate-bounce-slow"
+// WhatsApp button
+<ShareButton
+  platform="whatsapp"
+  url={articleUrl}
+  title={article.title}
+  variant="button"
+  size="lg"
+/>
 ```
 
-## 📦 SONRAKİ ADIMLAR
+### CopyLinkButton
 
-### Tamamlanacak Sayfalar
-- [ ] `/yazilar` - Articles list page
-- [ ] `/yazilar/[slug]` - Article detail page
-- [ ] `/yazarlar` - Authors list page
-- [ ] `/yazarlar/[slug]` - Author profile page
-- [ ] `/sayilar` - Issues archive page
-- [ ] `/sayilar/[id]` - Issue detail page
-- [ ] `/hakkimizda` - About page
+```tsx
+// Icon
+<CopyLinkButton url={articleUrl} variant="icon" />
 
-### Eklenecek Özellikler
-- [ ] Search modal (dark theme)
-- [ ] Mobile menu (hamburger)
-- [ ] Reading progress bar
-- [ ] Social share buttons
-- [ ] Comment system
+// Button
+<CopyLinkButton url={articleUrl} variant="button" />
 
-## 🐛 SORUN GİDERME
-
-### Stil Yüklenmiyor
-```bash
-# Tailwind cache'i temizle
-rm -rf .next
-npm run dev
+// Input + button
+<CopyLinkButton url={articleUrl} variant="input" />
 ```
 
-### Renkler Doğru Görünmüyor
-- `tailwind.config.ts` dosyasını kontrol et
-- `dark` class'ı html tag'inde olmalı
+## 📱 Native Share API
 
-### Component Bulunamıyor
-```bash
-# TypeScript type check
-npm run type-check
+Modern tarayıcılarda (özellikle mobil) native paylaşım API'si desteklenir:
+
+```tsx
+// Native share öncelikli (default)
+<ShareTrigger useNativeFirst={true} ... />
+
+// Her zaman modal göster
+<ShareTrigger useNativeFirst={false} ... />
 ```
 
-## 📞 DESTEK
+Native share desteklenen cihazlarda:
+- iOS Safari
+- Android Chrome
+- Bazı desktop tarayıcılar
 
-Sorularınız için: khan@paksoftware.com
+## 🎨 Önerilen Layout
+
+### Makale Header'ında
+
+```tsx
+<header className="flex items-center justify-between">
+  <div>
+    <h1>{article.title}</h1>
+    <p>{article.excerpt}</p>
+  </div>
+  <ShareTrigger
+    url={articleUrl}
+    title={article.title}
+    variant="icon"
+    size="lg"
+  />
+</header>
+```
+
+### Makale Sonunda
+
+```tsx
+<footer className="border-t border-zinc-800 pt-8">
+  <h4 className="font-bold mb-4">Bu yazıyı paylaş</h4>
+  <ShareButtons
+    url={articleUrl}
+    title={article.title}
+    platforms={['twitter', 'facebook', 'whatsapp', 'linkedin', 'telegram']}
+    showCopy={true}
+  />
+</footer>
+```
+
+### Floating Button
+
+```tsx
+<div className="fixed bottom-6 right-6 z-40">
+  <ShareTrigger
+    url={articleUrl}
+    title={article.title}
+    variant="icon"
+    size="lg"
+    className="shadow-lg"
+  />
+</div>
+```
+
+## 🔗 İlgili Dosyalar
+
+- `@/lib/utils.ts` - cn helper
 
 ---
 
-**Versiyon**: 2.0.0  
-**Tasarım**: Contemporary Bold (Option 5)  
-**Tarih**: Aralık 2024  
-**Geliştirici**: PakSoft IT Solutions
-# MagazineProject
+**Version:** 2.9.0-share
+**Date:** December 2024

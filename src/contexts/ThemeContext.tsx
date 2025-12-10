@@ -1,6 +1,3 @@
-// src/contexts/ThemeContext.tsx
-// Theme context for dark/light mode support
-
 'use client'
 
 import {
@@ -11,8 +8,9 @@ import {
   useCallback,
   type ReactNode,
 } from 'react'
-import { STORAGE_KEYS } from '@/lib/constants'
-import type { Theme, ResolvedTheme } from '@/types'
+
+type Theme = 'light' | 'dark' | 'system'
+type ResolvedTheme = 'light' | 'dark'
 
 interface ThemeContextValue {
   theme: Theme
@@ -23,16 +21,16 @@ interface ThemeContextValue {
 
 const ThemeContext = createContext<ThemeContextValue | undefined>(undefined)
 
+const STORAGE_KEY = 'mazhar_theme'
+
 interface ThemeProviderProps {
   children: ReactNode
   defaultTheme?: Theme
-  storageKey?: string
 }
 
 export function ThemeProvider({
   children,
   defaultTheme = 'dark',
-  storageKey = STORAGE_KEYS.theme,
 }: ThemeProviderProps) {
   const [theme, setThemeState] = useState<Theme>(defaultTheme)
   const [resolvedTheme, setResolvedTheme] = useState<ResolvedTheme>('dark')
@@ -41,9 +39,7 @@ export function ThemeProvider({
   // Get system preference
   const getSystemTheme = useCallback((): ResolvedTheme => {
     if (typeof window === 'undefined') return 'dark'
-    return window.matchMedia('(prefers-color-scheme: dark)').matches
-      ? 'dark'
-      : 'light'
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
   }, [])
 
   // Resolve theme based on current setting
@@ -60,25 +56,29 @@ export function ThemeProvider({
   // Apply theme to document
   const applyTheme = useCallback((resolved: ResolvedTheme) => {
     const root = document.documentElement
+    
+    // Remove both classes first
     root.classList.remove('light', 'dark')
+    
+    // Add the new theme class
     root.classList.add(resolved)
+    
+    // Set color-scheme for native elements (scrollbars, form inputs, etc.)
+    root.style.colorScheme = resolved
     
     // Update meta theme-color
     const metaThemeColor = document.querySelector('meta[name="theme-color"]')
     if (metaThemeColor) {
-      metaThemeColor.setAttribute(
-        'content',
-        resolved === 'dark' ? '#000000' : '#ffffff'
-      )
+      metaThemeColor.setAttribute('content', resolved === 'dark' ? '#000000' : '#ffffff')
     }
   }, [])
 
-  // Initialize theme from storage
+  // Initialize theme from storage on mount
   useEffect(() => {
     setMounted(true)
     
     try {
-      const stored = localStorage.getItem(storageKey) as Theme | null
+      const stored = localStorage.getItem(STORAGE_KEY) as Theme | null
       if (stored && ['light', 'dark', 'system'].includes(stored)) {
         setThemeState(stored)
         const resolved = resolveTheme(stored)
@@ -96,9 +96,9 @@ export function ThemeProvider({
       setResolvedTheme(resolved)
       applyTheme(resolved)
     }
-  }, [defaultTheme, storageKey, resolveTheme, applyTheme])
+  }, [defaultTheme, resolveTheme, applyTheme])
 
-  // Listen for system theme changes
+  // Listen for system theme changes when theme is 'system'
   useEffect(() => {
     if (!mounted) return
 
@@ -116,7 +116,7 @@ export function ThemeProvider({
     return () => mediaQuery.removeEventListener('change', handleChange)
   }, [mounted, theme, getSystemTheme, applyTheme])
 
-  // Set theme
+  // Set theme function
   const setTheme = useCallback(
     (newTheme: Theme) => {
       setThemeState(newTheme)
@@ -125,26 +125,27 @@ export function ThemeProvider({
       applyTheme(resolved)
       
       try {
-        localStorage.setItem(storageKey, newTheme)
+        localStorage.setItem(STORAGE_KEY, newTheme)
       } catch (e) {
         // localStorage not available
       }
     },
-    [storageKey, resolveTheme, applyTheme]
+    [resolveTheme, applyTheme]
   )
 
   // Toggle between light and dark
   const toggleTheme = useCallback(() => {
-    setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
+    const newTheme = resolvedTheme === 'dark' ? 'light' : 'dark'
+    setTheme(newTheme)
   }, [resolvedTheme, setTheme])
 
-  // Prevent flash of unstyled content
+  // Prevent hydration mismatch
   if (!mounted) {
     return (
       <ThemeContext.Provider
         value={{
           theme: defaultTheme,
-          resolvedTheme: defaultTheme === 'system' ? 'dark' : defaultTheme,
+          resolvedTheme: 'dark',
           setTheme: () => {},
           toggleTheme: () => {},
         }}

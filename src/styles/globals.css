@@ -1,64 +1,44 @@
-@import './theme-variables.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --background: #000000;
-    --foreground: #FFFFFF;
-    --primary: #FFD700;
-    --secondary: #1a1a1a;
-    --accent: #FFA500;
-  }
-
   * {
-    @apply border-gray-800;
-  }
-
-  body {
-    @apply bg-black text-white;
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-weight: 900;
-    letter-spacing: -0.02em;
+    @apply border-neutral-800;
   }
 
   html {
     scroll-behavior: smooth;
   }
 
+  body {
+    @apply bg-black text-white;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 900;
+    letter-spacing: -0.02em;
+  }
+
   ::selection {
-    background: #FFD700;
+    background: #facc15;
     color: black;
   }
 }
 
 @layer components {
   .gradient-yellow {
-    background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+    background: linear-gradient(135deg, #facc15 0%, #eab308 100%);
   }
 
   .text-gradient {
-    background: linear-gradient(to right, white, #FFD700);
+    background: linear-gradient(to right, white, #facc15);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-  }
-}
-
-/* From theme.css */
-@layer base {
-  :root {
-    --font-heading: 'Helvetica Neue', Arial, sans-serif;
-    --font-body: 'Helvetica Neue', Arial, sans-serif;
   }
 }
 
@@ -70,72 +50,22 @@
   .hover-lift:hover {
     transform: translateY(-5px);
   }
-
-  .clip-corner {
-    clip-path: polygon(0 0, 90% 0, 100% 100%, 0 100%);
-  }
-}
-
-/* Animations */
-@keyframes bounce-slow {
-
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-.animate-bounce-slow {
-  animation: bounce-slow 2s infinite;
 }
 
 @keyframes fade-in-up {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+@keyframes bounce-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
 
 .animate-fade-in-up {
   animation: fade-in-up 0.6s ease-out;
 }
 
-/* From typography.css */
-@layer base {
-  .prose {
-    @apply text-gray-300 leading-relaxed;
-  }
-
-  .prose h2 {
-    @apply text-3xl font-black mt-8 mb-4 text-white;
-  }
-
-  .prose h3 {
-    @apply text-2xl font-bold mt-6 mb-3 text-white;
-  }
-
-  .prose p {
-    @apply mb-4;
-  }
-
-  .prose blockquote {
-    @apply border-l-4 border-yellow-400 pl-4 italic my-6 text-gray-400;
-  }
-
-  .prose strong {
-    @apply text-white font-bold;
-  }
-
-  .prose a {
-    @apply text-yellow-400 hover:text-yellow-300 underline;
-  }
+.animate-bounce-slow {
+  animation: bounce-slow 2s infinite;
 }

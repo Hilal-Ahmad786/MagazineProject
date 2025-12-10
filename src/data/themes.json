@@ -5,9 +5,12 @@
       "slug": "gurbet",
       "name": "Gurbet",
       "description": "Ayrılık, özlem ve aidiyet duygusunun edebi yansımaları",
-      "image": "/images/themes/gurbet.jpg",
+      "image": "https://placehold.co/1200x800/1a1a1a/eab308?text=Gurbet",
       "color": "#8B7355",
-      "relatedThemes": ["theme_aidiyet", "theme_yolculuk"],
+      "relatedThemes": [
+        "theme_aidiyet",
+        "theme_yolculuk"
+      ],
       "active": true,
       "locale": "tr"
     },
@@ -16,9 +19,12 @@
       "slug": "estetik",
       "name": "Estetik",
       "description": "Güzellik, sanat ve algı üzerine düşünceler",
-      "image": "/images/themes/estetik.jpg",
+      "image": "https://placehold.co/1200x800/1a1a1a/eab308?text=Estetik",
       "color": "#C9A66B",
-      "relatedThemes": ["theme_sanat", "theme_felsefe"],
+      "relatedThemes": [
+        "theme_sanat",
+        "theme_felsefe"
+      ],
       "active": true,
       "locale": "tr"
     },
@@ -28,7 +34,10 @@
       "name": "Şehir",
       "description": "Modern kent yaşamı ve toplumsal dönüşüm",
       "color": "#4A4A4A",
-      "relatedThemes": ["theme_modern", "theme_yalnizlik"],
+      "relatedThemes": [
+        "theme_modern",
+        "theme_yalnizlik"
+      ],
       "active": true,
       "locale": "tr"
     },
@@ -38,7 +47,10 @@
       "name": "Zaman",
       "description": "Zamanın doğası, geçicilik ve kalıcılık",
       "color": "#1A1A1A",
-      "relatedThemes": ["theme_felsefe", "theme_anlam"],
+      "relatedThemes": [
+        "theme_felsefe",
+        "theme_anlam"
+      ],
       "active": true,
       "locale": "tr"
     },
