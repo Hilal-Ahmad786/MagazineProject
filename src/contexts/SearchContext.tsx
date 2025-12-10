@@ -8,6 +8,7 @@ import {
   useContext,
   useState,
   useCallback,
+  useMemo,
   useEffect,
   type ReactNode,
 } from 'react'
@@ -170,19 +171,20 @@ export function SearchProvider({
   )
 
   // Debounced search
-  const debouncedSearch = useCallback(
-    debounce(async (searchQuery: string) => {
-      setIsLoading(true)
-      try {
-        const searchResults = await performSearch(searchQuery)
-        setResults(searchResults)
-      } catch (error) {
-        console.error('Search error:', error)
-        setResults([])
-      } finally {
-        setIsLoading(false)
-      }
-    }, DEBOUNCE_DELAY),
+  const debouncedSearch = useMemo(
+    () =>
+      debounce(async (searchQuery: string) => {
+        setIsLoading(true)
+        try {
+          const searchResults = await performSearch(searchQuery)
+          setResults(searchResults)
+        } catch (error) {
+          console.error('Search error:', error)
+          setResults([])
+        } finally {
+          setIsLoading(false)
+        }
+      }, DEBOUNCE_DELAY),
     [performSearch]
   )
 

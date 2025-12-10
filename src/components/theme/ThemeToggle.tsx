@@ -16,7 +16,7 @@ export function ThemeToggle({
   className,
 }: ThemeToggleProps) {
   const { resolvedTheme, toggleTheme } = useTheme()
-  
+
   const isDark = resolvedTheme === 'dark'
 
   const sizeClasses = {
@@ -67,8 +67,8 @@ export function ThemeToggle({
         className={cn(
           'rounded-full transition-all duration-300',
           sizeClasses[size],
-          isDark 
-            ? 'text-neutral-400 hover:text-yellow-500 hover:bg-neutral-800' 
+          isDark
+            ? 'text-neutral-400 hover:text-yellow-500 hover:bg-neutral-800'
             : 'text-neutral-600 hover:text-yellow-600 hover:bg-neutral-200',
           className
         )}
@@ -90,8 +90,8 @@ export function ThemeToggle({
       className={cn(
         'rounded-full transition-all duration-300 border',
         sizeClasses[size],
-        isDark 
-          ? 'bg-neutral-800 border-neutral-700 text-neutral-300 hover:text-yellow-500 hover:border-yellow-500/50' 
+        isDark
+          ? 'bg-neutral-800 border-neutral-700 text-neutral-300 hover:text-yellow-500 hover:border-yellow-500/50'
           : 'bg-white border-neutral-300 text-neutral-600 hover:text-yellow-600 hover:border-yellow-500',
         className
       )}
@@ -105,3 +105,5 @@ export function ThemeToggle({
     </button>
   )
 }
+
+export default ThemeToggle

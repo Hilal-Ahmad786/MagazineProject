@@ -12,7 +12,8 @@ interface MobileMenuItemProps {
   label: string
   icon?: React.ReactNode
   onClick?: () => void
-  index?: number
+  delay?: number
+  isVisible?: boolean
   className?: string
 }
 
@@ -21,7 +22,8 @@ export function MobileMenuItem({
   label,
   icon,
   onClick,
-  index = 0,
+  delay = 0,
+  isVisible = true,
   className,
 }: MobileMenuItemProps) {
   const pathname = usePathname()
@@ -39,7 +41,9 @@ export function MobileMenuItem({
         className
       )}
       style={{
-        animationDelay: `${index * 50}ms`,
+        animationDelay: `${delay}ms`,
+        opacity: isVisible ? 1 : 0,
+        transform: isVisible ? 'translateX(0)' : 'translateX(20px)',
       }}
     >
       {icon && (

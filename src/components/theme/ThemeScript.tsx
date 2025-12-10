@@ -45,3 +45,5 @@ export function ThemeScript() {
     />
   )
 }
+
+export default ThemeScript
