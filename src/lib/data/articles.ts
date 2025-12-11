@@ -1,133 +1,121 @@
-import { Article } from '@/types/article'
-import { Author } from '@/types/author'
-import articlesData from '@/data/articles.json'
-import authorsData from '@/data/authors.json'
+import type { Article } from '@/types';
+import fs from 'fs';
+import path from 'path';
 
-// Extended Article type with populated author
-export interface ArticleWithAuthor extends Omit<Article, 'author'> {
-  author?: {
-    id: string
-    name: string
-    slug: string
-    avatar: string
-    role?: string
-    shortBio?: string
-  }
-}
+const issuesDirectory = path.join(process.cwd(), 'src/data/issues');
 
-// Helper function to populate author data
-function populateAuthor(article: any): ArticleWithAuthor {
-  const author = authorsData.authors.find((a: any) => a.id === article.authorId)
-  return {
-    ...article,
-    image: article.featuredImage?.url || article.image || '',
-    date: article.publishDate,
-    readTime: article.readingTime,
-    category: 'Makale',
-    tags: article.themeIds || [],
-    author: author ? {
-      id: author.id,
-      name: author.fullName,
-      slug: author.slug,
-      avatar: author.profileImage,
-      role: author.title, // Map title to role
-      shortBio: author.shortBio
-    } : undefined
-  }
-}
-
-export async function getAllArticles(): Promise<ArticleWithAuthor[]> {
-  return articlesData.articles.map(populateAuthor)
-}
-
-export async function getPublishedArticles(): Promise<ArticleWithAuthor[]> {
-  return articlesData.articles
-    .filter((article: any) => article.status === 'published')
-    .map(populateAuthor)
-}
-
-export async function getArticleBySlug(slug: string): Promise<ArticleWithAuthor | null> {
-  const article = articlesData.articles.find((article: any) => article.slug === slug)
-  return article ? populateAuthor(article) : null
-}
-
-export async function getFeaturedArticles(limit: number = 3): Promise<ArticleWithAuthor[]> {
-  return articlesData.articles
-    .filter((article: any) => article.featured && article.status === 'published')
-    .sort((a: any, b: any) => a.order - b.order)
-    .slice(0, limit)
-    .map(populateAuthor)
-}
-
-export async function getLatestArticles(limit: number = 6): Promise<ArticleWithAuthor[]> {
-  return articlesData.articles
-    .filter((article: any) => article.status === 'published')
-    .sort((a: any, b: any) => new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime())
-    .slice(0, limit)
-    .map(populateAuthor)
-}
-
-export async function getArticlesByAuthor(authorId: string): Promise<ArticleWithAuthor[]> {
-  return articlesData.articles
-    .filter((article: any) => article.authorId === authorId)
-    .map(populateAuthor)
-}
-
-export async function getArticlesByIssue(issueId: string): Promise<ArticleWithAuthor[]> {
-  return articlesData.articles
-    .filter((article: any) => article.issueId === issueId)
-    .map(populateAuthor)
-}
-
-export async function getArticlesByTheme(themeId: string): Promise<ArticleWithAuthor[]> {
-  return articlesData.articles
-    .filter((article: any) => article.themeIds?.includes(themeId))
-    .map(populateAuthor)
-}
-
-export async function getRelatedArticles(articleId: string, limit: number = 3): Promise<ArticleWithAuthor[]> {
-  // Find the current article to get its themes
-  const currentArticle = articlesData.articles.find((a: any) => a.id === articleId)
-  const themeIds = currentArticle?.themeIds || []
-
-  // If article has themes, find related by theme
-  if (themeIds.length > 0) {
-    const related = articlesData.articles
-      .filter((a: any) => a.id !== articleId && a.status === 'published')
-      .filter((a: any) => a.themeIds?.some((theme: string) => themeIds.includes(theme)))
-      .slice(0, limit)
-      .map(populateAuthor)
-
-    // If we found enough related articles, return them
-    if (related.length >= limit) return related
-
-    // Otherwise, fill with recent articles
-    const additionalCount = limit - related.length
-    const relatedIds = related.map(a => a.id)
-    const additional = articlesData.articles
-      .filter((a: any) => a.id !== articleId && !relatedIds.includes(a.id) && a.status === 'published')
-      .sort((a: any, b: any) => new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime())
-      .slice(0, additionalCount)
-      .map(populateAuthor)
-
-    return [...related, ...additional]
+function getArticles(): Article[] {
+  if (!fs.existsSync(issuesDirectory)) {
+    return [];
   }
 
-  // No themes, return recent articles
-  return articlesData.articles
-    .filter((a: any) => a.id !== articleId && a.status === 'published')
-    .sort((a: any, b: any) => new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime())
-    .slice(0, limit)
-    .map(populateAuthor)
+  const issueFolders = fs.readdirSync(issuesDirectory);
+  const allArticles: Article[] = [];
+
+  for (const folder of issueFolders) {
+    const articlesPath = path.join(issuesDirectory, folder, 'articles.json');
+    if (fs.existsSync(articlesPath)) {
+      try {
+        const fileContents = fs.readFileSync(articlesPath, 'utf8');
+        const articles = JSON.parse(fileContents) as Article[];
+        // Ensure status is present or default to 'published' for backward compatibility if logic requires
+        // But better to return raw data
+        allArticles.push(...articles);
+      } catch (error) {
+        console.error(`Error parsing articles.json in ${folder}:`, error);
+      }
+    }
+  }
+
+  return allArticles;
 }
 
-export async function searchArticles(query: string): Promise<ArticleWithAuthor[]> {
-  const lowerQuery = query.toLowerCase()
-  return articlesData.articles
-    .filter((article: any) =>
-      article.title.toLowerCase().includes(lowerQuery) ||
-      article.excerpt.toLowerCase().includes(lowerQuery) ||
-      article.content.toLowerCase().includes(lowerQuery)
+export async function getAllArticles(): Promise<Article[]> {
+  const articles = getArticles();
+  return Promise.resolve(articles);
+}
+
+export async function getArticleBySlug(slug: string): Promise<Article | undefined> {
+  const articles = getArticles();
+  const article = articles.find((a) => a.slug === slug);
+  return Promise.resolve(article);
+}
+
+export async function getArticleById(id: string): Promise<Article | undefined> {
+  const articles = getArticles();
+  const article = articles.find((a) => a.id === id);
+  return Promise.resolve(article);
+}
+
+export async function getFeaturedArticles(limit?: number): Promise<Article[]> {
+  const articles = getArticles();
+  const featured = articles.filter((a) => a.featured);
+  return Promise.resolve(limit ? featured.slice(0, limit) : featured);
+}
+
+export async function getArticlesByIssue(issueId: string): Promise<Article[]> {
+  const articles = getArticles();
+  const issueArticles = articles.filter((a) => a.issueId === issueId);
+  return Promise.resolve(issueArticles);
+}
+
+export async function getArticlesByAuthor(authorId: string): Promise<Article[]> {
+  const articles = getArticles();
+  const authorArticles = articles.filter((a) => a.author.id === authorId);
+  return Promise.resolve(authorArticles);
+}
+
+export async function getArticlesByCategory(category: string): Promise<Article[]> {
+  const articles = getArticles();
+  const categoryArticles = articles.filter((a) => a.category === category);
+  return Promise.resolve(categoryArticles);
+}
+
+export async function getRelatedArticles(article: Article, limit: number = 3): Promise<Article[]> {
+  const articles = getArticles();
+  const related = articles
+    .filter((a) =>
+      a.id !== article.id &&
+      (a.category === article.category || a.issueId === article.issueId)
     )
-    .map(populateAuthor)
+    .slice(0, limit);
+  return Promise.resolve(related);
+}
+
+export async function searchArticles(query: string): Promise<Article[]> {
+  const articles = getArticles();
+  const lowercaseQuery = query.toLowerCase();
+  const results = articles.filter((a) =>
+    a.title.toLowerCase().includes(lowercaseQuery) ||
+    a.excerpt.toLowerCase().includes(lowercaseQuery) ||
+    a.author.name.toLowerCase().includes(lowercaseQuery) ||
+    a.tags?.some((tag) => tag.toLowerCase().includes(lowercaseQuery))
+  );
+  return Promise.resolve(results);
+}
+
+export async function getLatestArticles(limit: number = 5): Promise<Article[]> {
+  const articles = getArticles();
+  const sorted = [...articles].sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  );
+  return Promise.resolve(sorted.slice(0, limit));
+}
+
+export function getAllCategories(): string[] {
+  const articles = getArticles();
+  const categories = new Set(articles.map((a) => a.category));
+  return Array.from(categories);
+}
+
+export function getAllTags(): string[] {
+  const articles = getArticles();
+  const tags = new Set(articles.flatMap((a) => a.tags || []));
+  return Array.from(tags);
+}
+
+export async function getPublishedArticles(): Promise<Article[]> {
+  const articles = getArticles();
+  const published = articles.filter((a) => a.status === 'published');
+  return Promise.resolve(published);
 }

@@ -35,17 +35,26 @@ export default async function AboutPage() {
               Hakkımızda
             </span>
 
-            <h1 className="text-5xl md:text-6xl lg:text-8xl font-black mb-8 leading-tight">
-              DÜŞÜNCE VE<br />
-              <span className="text-yellow-400">EDEBİYATIN</span><br />
-              BULUŞMA NOKTASI
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-8 leading-tight">
+              VAROLUŞUN İZİNDE<br />
+              <span className="text-yellow-400">TAZELENİŞ</span> VE<br />
+              ANLAM ARAYIŞI
             </h1>
 
-            <p className="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-              Mazhar Dergisi, modern dünyanın karmaşıklığında bir durak noktası.
-              Düşüncenin derinliğini, edebiyatın zarafetini ve çağdaş tartışmaların
-              canlılığını bir araya getiriyoruz.
-            </p>
+            <div className="text-lg md:text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed space-y-6 text-left md:text-center">
+              <p>
+                Mazhar, insanın kendini keşfetme yolculuğunda bir yol arkadaşıdır. Zamanın akışında yitirilen anlamları yeniden bulmak, hayata dair derin bir bakış kazanmak için açılmış bir kapıdır. Her yeni yıl, her yeni başlangıç, yalnızca bir değişim değil; daha anlamlı bir hayat arayışında içsel bir yenilenme fırsatıdır.
+              </p>
+              <p>
+                Mazhar, bu yenilenmenin ve anlam arayışının sembolüdür. Mazhar, insan olmanın getirdiği sorumluluğu, yaşamın hikmetini ve kendi içsel bütünlüğümüzü bulma çabasını hatırlatır. Bu yolculuk, sadece dışsal bir arayış değil, zihinsel ve ruhsal bir derinleşmeyi hedefler.
+              </p>
+              <p>
+                Hayata dair farklı bakış açıları, sorgulamalar, felsefi düşünceler ve manevi yönelimler, Mazhar’da kendine yer bulur. Her sayfasında hayatın farklı yönlerini ele alan Mazhar, okurlarıyla birlikte anlamlı bir yolculuğa çıkar. Kendini yenilemek, yeni bakış açıları kazanmak, dünya ve insanlık için daha derin bir anlayış geliştirmek isteyenler için bir rehberdir.
+              </p>
+              <p>
+                Her anı bilinçle yaşamaya ve her fırsatı yeni bir başlangıç olarak değerlendirmeye davet eder. Mazhar, sadece bir dergi değil; çağımızın değişen yüzünde kalıcı bir anlam arayışının simgesidir. Her sayfasında okuyucusuna taze bir bakış açısı, ilham ve içsel keşiflerin kapılarını açar.
+              </p>
+            </div>
           </div>
         </div>
 

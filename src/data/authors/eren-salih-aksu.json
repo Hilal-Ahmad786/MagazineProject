@@ -1,0 +1,15 @@
+{
+    "id": "author_007",
+    "slug": "eren-salih-aksu",
+    "name": "Eren Salih Aksu",
+    "role": "guest",
+    "title": "Konuk Yazar",
+    "avatar": "/images/authors/eren-salih-aksu.jpg",
+    "bio": "Konuk yazar.",
+    "longBio": "Eren Salih Aksu, Mazhar Dergisi konuk yazarıdır. Toplum, insani haller ve psikoloji üzerine denemeler kaleme almaktadır.",
+    "email": "eren@mazhardergisi.com",
+    "social": {},
+    "joinedAt": "2024-01-01",
+    "articleCount": 1,
+    "featured": false
+}

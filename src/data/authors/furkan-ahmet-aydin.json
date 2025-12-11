@@ -1,0 +1,15 @@
+{
+    "id": "author_011",
+    "slug": "furkan-ahmet-aydin",
+    "name": "Furkan Ahmet Aydın",
+    "role": "guest",
+    "title": "Konuk Yazar",
+    "avatar": "/images/authors/furkan-ahmet-aydin.jpg",
+    "bio": "Konuk yazar.",
+    "longBio": "Furkan Ahmet Aydın, Mazhar Dergisi konuk yazarıdır. Coğrafya, toplum ve maneviyat üzerine denemeler kaleme almaktadır.",
+    "email": "furkan@mazhardergisi.com",
+    "social": {},
+    "joinedAt": "2024-02-01",
+    "articleCount": 1,
+    "featured": false
+}

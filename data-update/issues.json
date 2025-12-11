@@ -1,0 +1,36 @@
+[
+  {
+    "id": "issue_008",
+    "number": 8,
+    "title": "Gurbet",
+    "theme": "GURBET",
+    "subtitle": "Ayrılık, Özlem ve Aidiyet Üzerine",
+    "slug": "8-gurbet",
+    "coverImage": "/images/covers/sayi-8-gurbet.jpg",
+    "date": "2025-09-01",
+    "publishMonth": "Eylül 2025",
+    "editorsNote": "Bu sayıda gurbet temasını farklı açılardan ele aldık.",
+    "manifesto": "**Gurbet**, sadece coğrafi bir mesafe değil, ruhun derinliklerinde yaşanan bir kopuş ve arayıştır. Bu sayıda, gurbetin çok boyutlu anlamını keşfediyoruz.",
+    "pdfUrl": "/pdfs/mazhar-sayi-8-gurbet.pdf",
+    "pdfSize": "12.5 MB",
+    "articles": ["art_001", "art_002", "art_004"],
+    "featured": false
+  },
+  {
+    "id": "issue_009",
+    "number": 9,
+    "title": "Estetik",
+    "theme": "ESTETİK",
+    "subtitle": "Güzellik, Sanat ve Anlam",
+    "slug": "9-estetik",
+    "coverImage": "/images/covers/sayi-9-estetik.jpg",
+    "date": "2025-11-01",
+    "publishMonth": "Kasım 2025",
+    "editorsNote": "Bu sayıda estetiğin farklı boyutlarını keşfediyoruz.",
+    "manifesto": "Estetik, yalnızca aynaya bakan gözün değil, etrafına dikkatle bakan insanın meselesidir.\n\nBir yüz kadar bir şehir de estetik olabilir; bir caddenin sessizliği, bir binanın oranı ya da bir parkın düzeni kadar... Ancak estetik, yalnız süs değildir; uyumdur, denge ve ölçüdür.\n\nBiz biliyoruz ki estetik, varlıkların doğasında zaten vardır.\n\nAllah, kainatı en ölçülü, en dengeli biçimde yaratmıştır. Bu yüzden estetik, yalnızca zenginliğin, gösterişin veya modernliğin bir parçası olamaz.\n\nBir şehirde estetik varsa, o şehirde düşünce, emek ve nezaket de vardır.\n\nBir yüzün güzelliği makyajla değil, ifadesindeki samimiyetle anlam kazanır; bir meydanın estetiği mermerinde değil, orada yürüyen insanların huzurundadır.\n\nBugün \"güzel\" dediğimiz şeyin, kimi zaman yapay bir biçime, bir standarda hapsedilmesine itiraz ediyoruz.\n\nÇünkü estetik, yalnız bakılan şeyde değil, bakışta saklıdır.\n\nHer bina göze hoş gelmeyebilir, her vitrin ışığı güzellik değildir.\n\nBazen sade bir kapı tokmağı, bazen rüzgarla dalgalanan bir perde, en büyük sanat eserinden daha derin bir estetik taşır.\n\nEstetik; biçimden önce anlamın, gösterişten önce zarafetin, gürültüden önce uyumun adıdır.\n\nVe biz, gerçek estetiği yeniden hatırlamak istiyoruz.",
+    "pdfUrl": "/pdfs/mazhar-sayi-9-estetik.pdf",
+    "pdfSize": "15.2 MB",
+    "articles": ["art_003", "art_005", "art_006", "art_007"],
+    "featured": true
+  }
+]

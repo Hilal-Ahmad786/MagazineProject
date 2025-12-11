@@ -25,6 +25,7 @@ export interface Article {
   page?: number // page number in issue
   viewCount?: number
   themeIds?: string[]
+  status?: string
 }
 
 export interface ArticleStats {

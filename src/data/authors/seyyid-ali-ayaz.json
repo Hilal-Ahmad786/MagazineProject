@@ -1,0 +1,15 @@
+{
+    "id": "author_009",
+    "slug": "seyyid-ali-ayaz",
+    "name": "Seyyid Ali Ayaz",
+    "role": "guest",
+    "title": "Konuk Yazar",
+    "avatar": "/images/authors/seyyid-ali-ayaz.jpg",
+    "bio": "Konuk yazar.",
+    "longBio": "Seyyid Ali Ayaz, Mazhar Dergisi konuk yazarıdır. Siyaset ve toplum üzerine analizler kaleme almaktadır.",
+    "email": "seyyid@mazhardergisi.com",
+    "social": {},
+    "joinedAt": "2024-01-01",
+    "articleCount": 1,
+    "featured": false
+}

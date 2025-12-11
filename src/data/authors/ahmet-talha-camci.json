@@ -1,0 +1,15 @@
+{
+    "id": "author_012",
+    "slug": "ahmet-talha-camci",
+    "name": "Ahmet Talha Çamcı",
+    "role": "guest",
+    "title": "Konuk Yazar",
+    "avatar": "/images/authors/ahmet-talha-camci.jpg",
+    "bio": "Konuk yazar.",
+    "longBio": "Ahmet Talha Çamcı, Mazhar Dergisi konuk yazarıdır.",
+    "email": "ahmet@mazhardergisi.com",
+    "social": {},
+    "joinedAt": "2024-03-01",
+    "articleCount": 1,
+    "featured": false
+}

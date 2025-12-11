@@ -1,0 +1,18 @@
+{
+    "id": "author_001",
+    "slug": "mehmet-oktay-yetis",
+    "name": "Mehmet Oktay Yetiş",
+    "role": "founder",
+    "title": "İmtiyaz Sahibi / Genel Yayın Yönetmeni",
+    "avatar": "/images/authors/mehmet-oktay-yetis.jpg",
+    "bio": "Mazhar Dergisi İmtiyaz Sahibi ve Genel Yayın Yönetmeni.",
+    "longBio": "Mehmet Oktay Yetiş, Mazhar Dergisi'nin kurucusu ve genel yayın yönetmenidir. Kültür, sanat ve düşünce dünyasına katkı sunmayı amaçlayan çalışmalarıyla tanınır.",
+    "email": "oktay@mazhardergisi.com",
+    "social": {
+        "twitter": "https://twitter.com/moktayyetis",
+        "instagram": "https://instagram.com/moktayyetis"
+    },
+    "joinedAt": "2023-01-01",
+    "articleCount": 1,
+    "featured": true
+}

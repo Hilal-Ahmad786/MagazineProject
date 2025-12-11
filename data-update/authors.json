@@ -1,0 +1,105 @@
+[
+  {
+    "id": "author_001",
+    "slug": "mehmet-oktay-yetis",
+    "name": "Mehmet Oktay Yetiş",
+    "role": "founder",
+    "title": "Editör & Kurucu Yazar",
+    "avatar": "/images/authors/mehmet-oktay-yetis.jpg",
+    "bio": "Editör ve kurucu yazar. Edebi düşünce ve modern hayatın kesişim noktalarını keşfeden yazılar kaleme alıyor.",
+    "longBio": "Mehmet Oktay Yetiş, Mazhar Dergisi'nin kurucu yazarlarından ve editörlerinden biridir. Uzun yıllardır edebi düşünce ile modern hayatın kesişim noktalarını araştırıyor. Özellikle gurbet, aidiyet ve estetik kavramları üzerine derinlemesine çalışmalar yapıyor. Yazıları, okuyucuyu düşündürmeyi ve sorgulatmayı amaçlıyor.",
+    "email": "mehmet@mazhardergisi.com",
+    "social": {
+      "twitter": "mehmetoktayyetis",
+      "linkedin": "mehmetoktayyetis",
+      "website": "https://mehmetoktayyetis.com"
+    },
+    "joinedAt": "2024-01-15",
+    "articleCount": 12,
+    "featured": true
+  },
+  {
+    "id": "author_002",
+    "slug": "furkan-ahmet-aydin",
+    "name": "Furkan Ahmet Aydın",
+    "role": "founder",
+    "title": "Kurucu Yazar",
+    "avatar": "/images/authors/furkan-ahmet-aydin.jpg",
+    "bio": "Kurucu yazar. Şiir ve düzyazı arasında gidip gelen, duygusal derinliği kelimelere döken bir kalem.",
+    "longBio": "Furkan Ahmet Aydın, Mazhar Dergisi'nin kurucu yazarlarındandır. Şiir ve düzyazı arasında köprü kuran yazıları ile tanınır. Gurbet, ayrılık ve özlem temalarını ustalıkla işler. Her yazısında okuyucuya yeni bir pencere açmayı hedefler.",
+    "email": "furkan@mazhardergisi.com",
+    "social": {
+      "twitter": "furkanaaydin",
+      "instagram": "furkanaaydin"
+    },
+    "joinedAt": "2024-01-15",
+    "articleCount": 8,
+    "featured": true
+  },
+  {
+    "id": "author_003",
+    "slug": "ahmet-talha-camci",
+    "name": "Ahmet Talha Çamcı",
+    "role": "editor",
+    "title": "Editör",
+    "avatar": "/images/authors/ahmet-talha-camci.jpg",
+    "bio": "Editör. Estetik ve sanat felsefesi üzerine yazan, görsel ve yazınsal sanatın kesişimini inceleyen bir araştırmacı.",
+    "longBio": "Ahmet Talha Çamcı, Mazhar Dergisi editörüdür. Estetik felsefesi ve modern sanat üzerine çalışmalar yapar. Görsel sanatlar ve edebiyatın kesişim noktalarını araştırır. Yazılarında sanatın toplumsal ve bireysel etkileri üzerine derin analizler sunar.",
+    "email": "ahmet@mazhardergisi.com",
+    "social": {
+      "linkedin": "ahmetcamci",
+      "website": "https://ahmetcamci.com"
+    },
+    "joinedAt": "2024-03-01",
+    "articleCount": 6,
+    "featured": true
+  },
+  {
+    "id": "author_004",
+    "slug": "ayse-nur-kaya",
+    "name": "Ayşe Nur Kaya",
+    "role": "guest",
+    "title": "Konuk Yazar",
+    "avatar": "/images/authors/ayse-nur-kaya.jpg",
+    "bio": "Konuk yazar. Sosyoloji ve edebiyatı harmanlayarak toplumsal meseleleri kaleme alan genç bir araştırmacı.",
+    "longBio": "Ayşe Nur Kaya, sosyoloji alanında çalışan genç bir araştırmacı ve yazardır. Toplumsal meseleleri edebi bir dille anlatma konusunda yeteneklidir. Modern kent yaşamı ve kimlik arayışları üzerine derinlemesine yazılar kaleme alır.",
+    "email": "aysenur@example.com",
+    "social": {
+      "twitter": "aysenur_kaya",
+      "instagram": "aysenur_kaya"
+    },
+    "joinedAt": "2025-09-01",
+    "articleCount": 2,
+    "featured": false
+  },
+  {
+    "id": "author_005",
+    "slug": "seyyid-ali-ayaz",
+    "name": "Seyyid Ali Ayaz",
+    "role": "guest",
+    "title": "Konuk Yazar",
+    "avatar": "/images/authors/seyyid-ali-ayaz.jpg",
+    "bio": "Konuk yazar. Toplumsal değişim ve estetik algısı üzerine eleştirel yazılar kaleme alıyor.",
+    "longBio": "Seyyid Ali Ayaz, modern toplumun estetik algısını ve tüketim kültürünün insan ruhu üzerindeki etkilerini irdeleyen bir yazardır. Sosyolojik gözlemlerini edebi bir dille sunar.",
+    "email": "seyyidaliayaz@mazhardergisi.com",
+    "social": {},
+    "joinedAt": "2025-11-01",
+    "articleCount": 1,
+    "featured": false
+  },
+  {
+    "id": "author_006",
+    "slug": "muhammet-kursat-colak",
+    "name": "Muhammet Kürşat Çolak",
+    "role": "guest",
+    "title": "Konuk Yazar",
+    "avatar": "/images/authors/muhammet-kursat-colak.jpg",
+    "bio": "Konuk yazar. Şehrin görünmeyen yüzünü ve sessiz estetiğini anlatan denemeler yazıyor.",
+    "longBio": "Muhammet Kürşat Çolak, şehir hayatının detaylarında gizli olan estetiği ve anlamı keşfeden bir yazardır. Gözlem gücü yüksek, anlatımı dingindir.",
+    "email": "muhammetkursat@mazhardergisi.com",
+    "social": {},
+    "joinedAt": "2025-11-01",
+    "articleCount": 1,
+    "featured": false
+  }
+]

@@ -1,0 +1,15 @@
+{
+    "id": "author_008",
+    "slug": "mucahit-pehlivan",
+    "name": "Mücahit Pehlivan",
+    "role": "guest",
+    "title": "Konuk Yazar",
+    "avatar": "/images/authors/mucahit-pehlivan.jpg",
+    "bio": "Konuk yazar.",
+    "longBio": "Mücahit Pehlivan, Mazhar Dergisi konuk yazarıdır. Maneviyat ve varoluş üzerine yazılar kaleme almaktadır.",
+    "email": "mucahit@mazhardergisi.com",
+    "social": {},
+    "joinedAt": "2024-01-01",
+    "articleCount": 1,
+    "featured": false
+}

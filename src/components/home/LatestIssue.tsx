@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import NextImage from 'next/image'
 import { Issue } from '@/types/issue'
 import { ROUTES } from '@/lib/constants/routes'
 
@@ -36,14 +37,30 @@ export function LatestIssue({ issue }: LatestIssueProps) {
       </div>
 
       {/* Image Side */}
-      <div className="relative bg-gradient-to-br from-yellow-400 to-yellow-500 flex items-center justify-center min-h-[500px] lg:min-h-screen">
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-[180px] md:text-[220px] font-black text-black/10 leading-none text-center">
-            {issue.number}
-            <br />
-            <span className="text-[40px] md:text-[60px]">{issue.theme?.toUpperCase() || 'GENEL'}</span>
+      <div className="relative flex items-center justify-center min-h-[500px] lg:min-h-screen bg-gray-100">
+        {issue.coverImage ? (
+          <div className="relative w-full h-full min-h-[500px] lg:min-h-screen">
+            <NextImage
+              src={issue.coverImage}
+              alt={`Sayı ${issue.number} - ${issue.title || 'Kapak'}`}
+              fill
+              className="object-cover"
+              priority
+            />
+            {/* Gradient Overlay for text readability if needed, or purely aesthetic */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
           </div>
-        </div>
+        ) : (
+          <div className="relative bg-gradient-to-br from-yellow-400 to-yellow-500 w-full h-full flex items-center justify-center">
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="text-[180px] md:text-[220px] font-black text-black/10 leading-none text-center">
+                {issue.number}
+                <br />
+                <span className="text-[40px] md:text-[60px]">{issue.theme?.toUpperCase() || 'GENEL'}</span>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   )
