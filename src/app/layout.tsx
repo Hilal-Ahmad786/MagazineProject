@@ -48,9 +48,29 @@ export default async function RootLayout({
       </head>
       <body className={`${inter.className} bg-black text-white antialiased`}>
         <Providers articles={articles} authors={authors} issues={issues}>
-          <PWARegister />
-          <InstallPrompt variant="banner" delay={30000} />
-          <OfflineIndicator variant="toast" />
+          {/* PWA disabled for development stability */}
+          {/* <PWARegister /> */}
+          {/* <InstallPrompt variant="banner" delay={30000} /> */}
+          {/* <OfflineIndicator variant="toast" /> */}
+
+          {/* Aggressively unregister any existing Service Workers to fix loading issues */}
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                if (typeof window !== 'undefined' && 'serviceWorker' in navigator) {
+                  window.addEventListener('load', function() {
+                    navigator.serviceWorker.getRegistrations().then(function(registrations) {
+                      for(let registration of registrations) {
+                        registration.unregister();
+                        console.log('Service Worker unregistered via emergency script');
+                      }
+                    });
+                  });
+                }
+              `
+            }}
+          />
+
           <NewsletterModal delay={60000} />
           <Header />
           {children}
