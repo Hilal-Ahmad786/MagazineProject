@@ -52,7 +52,7 @@ export function Header() {
               href="/"
               className="flex items-center gap-3 text-2xl font-bold text-primary hover:opacity-80 transition-opacity"
             >
-              <div className="relative h-24 w-72">
+              <div className="relative h-24 w-40 md:w-56 lg:w-72">
                 <Image
                   src="/images/logo.png"
                   alt="Mazhar Dergisi"

@@ -31,17 +31,25 @@ export function AuthorCard({ author, articleCount = 0 }: AuthorCardProps) {
 
         {/* Avatar */}
         <div className="relative w-28 h-28 mx-auto mb-6">
-          <div className="w-full h-full rounded-full overflow-hidden bg-gradient-to-br from-yellow-400 to-yellow-500">
+          <div className="w-full h-full rounded-full overflow-hidden bg-gradient-to-br from-yellow-400 to-yellow-500 flex items-center justify-center">
             {author.avatar ? (
               <img
                 src={author.avatar}
                 alt={author.name}
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
               />
+            ) : author.gender === 'male' ? (
+              <svg className="w-20 h-20 text-black/80" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+              </svg>
+            ) : author.gender === 'female' ? (
+              <svg className="w-20 h-20 text-black/80" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+              </svg>
             ) : (
-              <div className="w-full h-full flex items-center justify-center text-black font-bold text-4xl">
+              <span className="text-black font-bold text-4xl">
                 {author.name.charAt(0)}
-              </div>
+              </span>
             )}
           </div>
         </div>

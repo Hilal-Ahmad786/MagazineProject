@@ -67,17 +67,25 @@ export function AuthorProfile({ author, articleCount }: AuthorProfileProps) {
       <div className="flex flex-col lg:flex-row gap-12 items-start">
         {/* Avatar */}
         <div className="flex-shrink-0">
-          <div className="w-40 h-40 lg:w-48 lg:h-48 rounded-full overflow-hidden bg-gradient-to-br from-yellow-400 to-yellow-500 relative">
+          <div className="w-40 h-40 lg:w-48 lg:h-48 rounded-full overflow-hidden bg-gradient-to-br from-yellow-400 to-yellow-500 relative flex items-center justify-center">
             {author.avatar ? (
               <img
                 src={author.avatar}
                 alt={author.name}
                 className="w-full h-full object-cover"
               />
+            ) : author.gender === 'male' ? (
+              <svg className="w-24 h-24 md:w-32 md:h-32 text-black/80" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+              </svg>
+            ) : author.gender === 'female' ? (
+              <svg className="w-24 h-24 md:w-32 md:h-32 text-black/80" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+              </svg>
             ) : (
-              <div className="w-full h-full flex items-center justify-center text-black font-bold text-5xl">
+              <span className="text-black font-bold text-5xl">
                 {author.name.charAt(0)}
-              </div>
+              </span>
             )}
           </div>
         </div>

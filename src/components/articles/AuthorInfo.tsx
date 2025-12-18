@@ -12,17 +12,25 @@ export function AuthorInfo({ author, publishDate, readingTime }: AuthorInfoProps
   return (
     <div className="flex items-center gap-4">
       <Link href={`${ROUTES.AUTHORS}/${author.slug}`}>
-        <div className="w-14 h-14 rounded-full overflow-hidden bg-yellow-400 flex-shrink-0">
+        <div className="w-14 h-14 rounded-full overflow-hidden bg-yellow-400 flex-shrink-0 flex items-center justify-center">
           {author.avatar ? (
             <img
               src={author.avatar}
               alt={author.name}
               className="w-full h-full object-cover"
             />
+          ) : author.gender === 'male' ? (
+            <svg className="w-10 h-10 text-black/80" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+            </svg>
+          ) : author.gender === 'female' ? (
+            <svg className="w-10 h-10 text-black/80" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+            </svg>
           ) : (
-            <div className="w-full h-full flex items-center justify-center text-xl font-black text-black">
+            <span className="text-black font-black text-xl">
               {author.name.charAt(0)}
-            </div>
+            </span>
           )}
         </div>
       </Link>

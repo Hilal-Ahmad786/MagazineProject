@@ -23,6 +23,7 @@ export interface Author {
   shortBio?: string
   email?: string
   social?: AuthorSocial
+  gender?: 'male' | 'female'
   joinedAt: string // ISO date
   featured?: boolean
   active?: boolean

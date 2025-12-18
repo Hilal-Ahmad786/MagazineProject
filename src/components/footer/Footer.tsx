@@ -28,7 +28,7 @@ export function Footer({
       <footer className={cn('border-t border-zinc-800 bg-black', className)}>
         <div className="container mx-auto px-4 py-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <Link href="/" className="relative h-20 w-56">
+            <Link href="/" className="relative h-20 w-32 md:w-40">
               <Image
                 src="/images/logo.png"
                 alt="Mazhar Dergisi"
@@ -53,7 +53,7 @@ export function Footer({
         <div className="container mx-auto px-4 py-16">
           <div className="max-w-2xl mx-auto text-center">
             {/* Logo */}
-            <Link href="/" className="inline-block relative h-40 w-96 mb-6">
+            <Link href="/" className="inline-block relative h-40 w-64 md:w-80 lg:w-96 mb-6">
               <Image
                 src="/images/logo.png"
                 alt="Mazhar Dergisi"
@@ -114,7 +114,7 @@ export function Footer({
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8">
           {/* Brand Column */}
           <div className="lg:col-span-4">
-            <Link href="/" className="inline-block relative h-28 w-80 mb-4">
+            <Link href="/" className="inline-block relative h-28 w-48 md:w-64 lg:w-80 mb-4">
               <Image
                 src="/images/logo.png"
                 alt="Mazhar Dergisi"
