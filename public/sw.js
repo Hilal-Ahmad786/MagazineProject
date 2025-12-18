@@ -1,10 +1,10 @@
 // public/sw.js
 // Service Worker for Mazhar Dergisi PWA
 
-const CACHE_NAME = 'mazhar-v1';
-const STATIC_CACHE = 'mazhar-static-v1';
-const DYNAMIC_CACHE = 'mazhar-dynamic-v1';
-const IMAGE_CACHE = 'mazhar-images-v1';
+const CACHE_NAME = 'mazhar-v2';
+const STATIC_CACHE = 'mazhar-static-v2';
+const DYNAMIC_CACHE = 'mazhar-dynamic-v2';
+const IMAGE_CACHE = 'mazhar-images-v2';
 
 // Static assets to cache on install
 const STATIC_ASSETS = [
@@ -26,7 +26,7 @@ const CACHE_LIMITS = {
 // Install event - cache static assets
 self.addEventListener('install', (event) => {
   console.log('[SW] Installing service worker...');
-  
+
   event.waitUntil(
     caches.open(STATIC_CACHE)
       .then((cache) => {
@@ -46,17 +46,17 @@ self.addEventListener('install', (event) => {
 // Activate event - clean up old caches
 self.addEventListener('activate', (event) => {
   console.log('[SW] Activating service worker...');
-  
+
   event.waitUntil(
     caches.keys()
       .then((cacheNames) => {
         return Promise.all(
           cacheNames
             .filter((name) => {
-              return name.startsWith('mazhar-') && 
-                     name !== STATIC_CACHE && 
-                     name !== DYNAMIC_CACHE &&
-                     name !== IMAGE_CACHE;
+              return name.startsWith('mazhar-') &&
+                name !== STATIC_CACHE &&
+                name !== DYNAMIC_CACHE &&
+                name !== IMAGE_CACHE;
             })
             .map((name) => {
               console.log('[SW] Deleting old cache:', name);
@@ -75,16 +75,16 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
   const { request } = event;
   const url = new URL(request.url);
-  
+
   // Skip non-GET requests
   if (request.method !== 'GET') return;
-  
+
   // Skip cross-origin requests
   if (url.origin !== location.origin) return;
-  
+
   // Skip API requests
   if (url.pathname.startsWith('/api/')) return;
-  
+
   // Handle different request types
   if (isImageRequest(request)) {
     event.respondWith(cacheFirstWithRefresh(request, IMAGE_CACHE));
@@ -119,7 +119,7 @@ async function cacheFirst(request, cacheName) {
   if (cached) {
     return cached;
   }
-  
+
   try {
     const response = await fetch(request);
     if (response.ok) {
@@ -136,7 +136,7 @@ async function cacheFirst(request, cacheName) {
 // Cache-first with background refresh
 async function cacheFirstWithRefresh(request, cacheName) {
   const cached = await caches.match(request);
-  
+
   // Fetch in background
   const fetchPromise = fetch(request)
     .then((response) => {
@@ -149,7 +149,7 @@ async function cacheFirstWithRefresh(request, cacheName) {
       return response;
     })
     .catch(() => cached);
-  
+
   return cached || fetchPromise;
 }
 
@@ -157,27 +157,27 @@ async function cacheFirstWithRefresh(request, cacheName) {
 async function networkFirstWithCache(request, cacheName) {
   try {
     const response = await fetch(request);
-    
+
     if (response.ok) {
       const cache = await caches.open(cacheName);
       cache.put(request, response.clone());
       trimCache(cacheName, CACHE_LIMITS.dynamic);
     }
-    
+
     return response;
   } catch (error) {
     console.log('[SW] Network failed, trying cache:', request.url);
-    
+
     const cached = await caches.match(request);
     if (cached) {
       return cached;
     }
-    
+
     // Return offline page for navigation requests
     if (request.mode === 'navigate') {
       return caches.match('/offline');
     }
-    
+
     throw error;
   }
 }
@@ -186,7 +186,7 @@ async function networkFirstWithCache(request, cacheName) {
 async function trimCache(cacheName, maxItems) {
   const cache = await caches.open(cacheName);
   const keys = await cache.keys();
-  
+
   if (keys.length > maxItems) {
     const deleteCount = keys.length - maxItems;
     for (let i = 0; i < deleteCount; i++) {
@@ -200,7 +200,7 @@ self.addEventListener('message', (event) => {
   if (event.data && event.data.type === 'SKIP_WAITING') {
     self.skipWaiting();
   }
-  
+
   if (event.data && event.data.type === 'CLEAR_CACHE') {
     event.waitUntil(
       caches.keys().then((names) => {
@@ -213,11 +213,11 @@ self.addEventListener('message', (event) => {
 // Background sync for offline actions
 self.addEventListener('sync', (event) => {
   console.log('[SW] Background sync:', event.tag);
-  
+
   if (event.tag === 'sync-comments') {
     event.waitUntil(syncComments());
   }
-  
+
   if (event.tag === 'sync-reading-list') {
     event.waitUntil(syncReadingList());
   }
@@ -238,9 +238,9 @@ async function syncReadingList() {
 // Push notifications
 self.addEventListener('push', (event) => {
   if (!event.data) return;
-  
+
   const data = event.data.json();
-  
+
   const options = {
     body: data.body || 'Yeni içerik mevcut!',
     icon: '/icons/icon-192x192.png',
@@ -254,7 +254,7 @@ self.addEventListener('push', (event) => {
       { action: 'close', title: 'Kapat' },
     ],
   };
-  
+
   event.waitUntil(
     self.registration.showNotification(data.title || 'Mazhar Dergisi', options)
   );
@@ -263,11 +263,11 @@ self.addEventListener('push', (event) => {
 // Notification click handler
 self.addEventListener('notificationclick', (event) => {
   event.notification.close();
-  
+
   if (event.action === 'close') return;
-  
+
   const url = event.notification.data?.url || '/';
-  
+
   event.waitUntil(
     clients.matchAll({ type: 'window', includeUncontrolled: true })
       .then((clientList) => {
