@@ -1,9 +1,9 @@
 import Link from 'next/link'
-import { ArticleWithAuthor } from '@/lib/data/articles'
+import { Article } from '@/types'
 import { ROUTES } from '@/lib/constants/routes'
 
 interface RelatedArticlesProps {
-  articles: ArticleWithAuthor[]
+  articles: Article[]
 }
 
 export function RelatedArticles({ articles }: RelatedArticlesProps) {

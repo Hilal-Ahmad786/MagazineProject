@@ -54,7 +54,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
     notFound()
   }
 
-  const relatedArticles = await getRelatedArticles(article.id, 3)
+  const relatedArticles = await getRelatedArticles(article, 3)
 
   return (
     <>

@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import { ArticleWithAuthor } from '@/lib/data/articles'
 import { Article } from '@/types'
 import { ROUTES } from '@/lib/constants/routes'
 import { formatDate } from '@/lib/utils/date'
@@ -12,7 +11,7 @@ import ReadingProgressCircle from '@/components/reading-progress/ReadingProgress
 import ReadingStats from '@/components/reading-progress/ReadingStats'
 
 interface ArticleDetailProps {
-  article: ArticleWithAuthor
+  article: Article
 }
 
 export function ArticleDetail({ article }: ArticleDetailProps) {

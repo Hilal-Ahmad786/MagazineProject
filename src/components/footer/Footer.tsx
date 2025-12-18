@@ -4,6 +4,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { cn } from '@/lib/utils'
 import { FooterLinks } from './FooterLinks'
 import { FooterNewsletter } from './FooterNewsletter'
@@ -27,8 +28,13 @@ export function Footer({
       <footer className={cn('border-t border-zinc-800 bg-black', className)}>
         <div className="container mx-auto px-4 py-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <Link href="/" className="text-xl font-bold text-primary">
-              MAZHAR
+            <Link href="/" className="relative h-20 w-56">
+              <Image
+                src="/images/logo.png"
+                alt="Mazhar Dergisi"
+                fill
+                className="object-contain"
+              />
             </Link>
             <FooterSocial variant="inline" />
             <p className="text-sm text-zinc-500">
@@ -47,8 +53,13 @@ export function Footer({
         <div className="container mx-auto px-4 py-16">
           <div className="max-w-2xl mx-auto text-center">
             {/* Logo */}
-            <Link href="/" className="inline-block text-3xl font-bold text-primary mb-6">
-              MAZHAR
+            <Link href="/" className="inline-block relative h-40 w-96 mb-6">
+              <Image
+                src="/images/logo.png"
+                alt="Mazhar Dergisi"
+                fill
+                className="object-contain"
+              />
             </Link>
 
             {/* Tagline */}
@@ -103,8 +114,13 @@ export function Footer({
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8">
           {/* Brand Column */}
           <div className="lg:col-span-4">
-            <Link href="/" className="inline-block text-2xl font-bold text-primary mb-4">
-              MAZHAR
+            <Link href="/" className="inline-block relative h-28 w-80 mb-4">
+              <Image
+                src="/images/logo.png"
+                alt="Mazhar Dergisi"
+                fill
+                className="object-contain object-left"
+              />
             </Link>
             <p className="text-zinc-400 mb-6 max-w-sm">
               Çağdaş edebiyat, kültür ve sanat dergisi. 2020&apos;den beri özgün içerikler,

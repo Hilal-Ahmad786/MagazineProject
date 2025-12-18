@@ -6,6 +6,7 @@ export interface ArticleAuthor {
   name: string
   slug: string
   avatar: string
+  role?: string
 }
 
 export interface Article {

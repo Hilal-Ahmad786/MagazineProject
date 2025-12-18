@@ -78,8 +78,7 @@ export async function searchAuthors(query: string): Promise<Author[]> {
   const lowercaseQuery = query.toLowerCase();
   const results = authors.filter((a) =>
     a.name.toLowerCase().includes(lowercaseQuery) ||
-    a.bio.toLowerCase().includes(lowercaseQuery) ||
-    a.title.toLowerCase().includes(lowercaseQuery)
+    a.bio.toLowerCase().includes(lowercaseQuery)
   );
   return Promise.resolve(results);
 }

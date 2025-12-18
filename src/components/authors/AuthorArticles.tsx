@@ -1,10 +1,10 @@
 import Link from 'next/link'
-import { ArticleWithAuthor } from '@/lib/data/articles'
+import { Article } from '@/types'
 import { ROUTES } from '@/lib/constants/routes'
 import { formatDate } from '@/lib/utils/date'
 
 interface AuthorArticlesProps {
-  articles: ArticleWithAuthor[]
+  articles: Article[]
   authorName: string
 }
 

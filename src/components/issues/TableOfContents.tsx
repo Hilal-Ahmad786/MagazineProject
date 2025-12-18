@@ -5,10 +5,10 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ChevronRight, Clock, User, BookOpen, Grid, List } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import type { ArticleWithAuthor } from '@/lib/data/articles';
+import type { Article } from '@/types';
 
 interface TableOfContentsProps {
-  articles: ArticleWithAuthor[];
+  articles: Article[];
   issueNumber: number;
   showPageNumbers?: boolean;
   className?: string;
@@ -30,7 +30,7 @@ export function TableOfContents({
     }
     acc[category].push(article);
     return acc;
-  }, {} as Record<string, ArticleWithAuthor[]>);
+  }, {} as Record<string, Article[]>);
 
   const categories = Object.keys(groupedArticles);
 
@@ -115,7 +115,7 @@ export function TableOfContents({
 
 // Single item in list view
 interface TableOfContentsItemProps {
-  article: ArticleWithAuthor;
+  article: Article;
   index: number;
   showPageNumber?: boolean;
 }
@@ -169,7 +169,7 @@ function TableOfContentsItem({
 
 // Card item in grid view
 interface TableOfContentsCardProps {
-  article: ArticleWithAuthor;
+  article: Article;
 }
 
 function TableOfContentsCard({ article }: TableOfContentsCardProps) {
@@ -210,7 +210,7 @@ function TableOfContentsCard({ article }: TableOfContentsCardProps) {
 
 // Compact Table of Contents for sidebar
 interface TableOfContentsCompactProps {
-  articles: ArticleWithAuthor[];
+  articles: Article[];
   maxItems?: number;
   className?: string;
 }

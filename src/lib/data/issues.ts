@@ -106,7 +106,7 @@ export async function searchIssues(query: string): Promise<Issue[]> {
   const lowercaseQuery = query.toLowerCase();
   const results = issues.filter((i) =>
     i.title.toLowerCase().includes(lowercaseQuery) ||
-    i.theme.toLowerCase().includes(lowercaseQuery) ||
+    i.theme?.toLowerCase().includes(lowercaseQuery) ||
     i.subtitle?.toLowerCase().includes(lowercaseQuery) ||
     i.manifesto?.toLowerCase().includes(lowercaseQuery)
   );

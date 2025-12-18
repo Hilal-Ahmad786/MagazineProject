@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { cn } from '@/lib/utils'
 import { SearchButton } from '@/components/search/SearchButton'
 import { SearchModal } from '@/components/search/SearchModal'
@@ -51,7 +52,15 @@ export function Header() {
               href="/"
               className="flex items-center gap-3 text-2xl font-bold text-primary hover:opacity-80 transition-opacity"
             >
-              <span>MAZHAR</span>
+              <div className="relative h-24 w-72">
+                <Image
+                  src="/images/logo.png"
+                  alt="Mazhar Dergisi"
+                  fill
+                  className="object-contain object-left"
+                  priority
+                />
+              </div>
             </Link>
 
             <div className="hidden lg:flex items-center gap-8">

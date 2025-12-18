@@ -7,14 +7,21 @@ export interface Issue {
   id: string
   number: number
   title: string
+  slug: string
+  subtitle?: string
   theme?: string
   date: string // ISO date
   coverImage: string
   pdfUrl: string
+  pdfSize?: string
   editorsNote?: string
+  manifesto?: string
   featured: boolean
   pageCount?: number
   description?: string
+  publishMonth?: string
+  status?: string
+  articles?: Article[]
 }
 
 export interface IssueWithArticles extends Issue {

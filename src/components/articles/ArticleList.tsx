@@ -1,13 +1,13 @@
 'use client'
 
 import { useState, useMemo } from 'react'
-import { ArticleWithAuthor } from '@/lib/data/articles'
+import { Article } from '@/types'
 import { Theme } from '@/types/theme'
 import { ArticleCard } from './ArticleCard'
 import { ArticleFilters } from './ArticleFilters'
 
 interface ArticleListProps {
-  articles: ArticleWithAuthor[]
+  articles: Article[]
   themes: Theme[]
 }
 

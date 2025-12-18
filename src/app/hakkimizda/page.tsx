@@ -270,6 +270,63 @@ export default async function AboutPage() {
         </div>
       </section>
 
+      {/* Künye / Masthead */}
+      <section className="py-20 px-6 md:px-12 bg-gray-900">
+        <div className="max-w-[1000px] mx-auto text-center">
+          <span className="text-yellow-400 text-sm font-bold uppercase tracking-widest mb-4 block">
+            Künye
+          </span>
+          <h2 className="text-4xl md:text-5xl font-black mb-16">
+            DERGİMİZ KÜNYE
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
+            {/* Left Column */}
+            <div className="space-y-12">
+              <div>
+                <h3 className="text-xl font-bold text-white mb-2 uppercase tracking-wide">SEKRETERYA</h3>
+                <p className="text-gray-400 text-lg">Furkan Ahmet Aydın</p>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-bold text-white mb-2 uppercase tracking-wide">OPERASYON</h3>
+                <p className="text-gray-400 text-lg">Mehmet Oktay Yetiş</p>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-bold text-white mb-2 uppercase tracking-wide">TASARIM</h3>
+                <p className="text-gray-400 text-lg">Eren Salih Aksu</p>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-bold text-white mb-2 uppercase tracking-wide">SOSYAL MEDYA</h3>
+                <p className="text-gray-400 text-lg">Eren Salih Aksu</p>
+                <p className="text-gray-400 text-lg">Furkan Ahmet Aydın</p>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-bold text-white mb-2 uppercase tracking-wide">TASHİH</h3>
+                <p className="text-gray-400 text-lg">Mehmet Oktay Yetiş</p>
+              </div>
+            </div>
+
+            {/* Right Column - Writers */}
+            <div>
+              <h3 className="text-xl font-bold text-white mb-6 uppercase tracking-wide">YAZARLARIMIZ</h3>
+              <div className="space-y-3">
+                <p className="text-gray-400 text-lg">Ahmet Talha Çamcı</p>
+                <p className="text-gray-400 text-lg">Eren Salih Aksu</p>
+                <p className="text-gray-400 text-lg">Furkan Ahmet Aydın</p>
+                <p className="text-gray-400 text-lg">Muhammet Kürşat Çolak</p>
+                <p className="text-gray-400 text-lg">Mücahit Pehlivan</p>
+                <p className="text-gray-400 text-lg">Mehmet Oktay Yetiş</p>
+                <p className="text-gray-400 text-lg">Seyyid Ali Ayaz</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Quote Section */}
       <section className="py-32 px-6 md:px-12 bg-yellow-400">
         <div className="max-w-[1000px] mx-auto text-center">
