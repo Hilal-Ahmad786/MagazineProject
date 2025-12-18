@@ -16,6 +16,19 @@ export function PWARegister({ onUpdate, onSuccess, onError }: PWARegisterProps) 
   const [updateAvailable, setUpdateAvailable] = useState(false)
 
   useEffect(() => {
+    // Disable Service Worker in development to prevent caching issues
+    if (process.env.NODE_ENV !== 'production') {
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistrations().then((registrations) => {
+          for (const registration of registrations) {
+            registration.unregister()
+            console.log('[PWA] Service Worker unregistered in development mode')
+          }
+        })
+      }
+      return
+    }
+
     if (typeof window === 'undefined' || !('serviceWorker' in navigator)) {
       return
     }
