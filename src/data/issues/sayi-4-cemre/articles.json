@@ -1,0 +1,31 @@
+[
+    {
+        "id": "art_401",
+        "slug": "dil-ve-kavramlar-uzerine-cemrenin-anlam-derinlgi",
+        "title": "Dil ve Kavramlar Üzerine: Cemrenin Anlam Derinlği",
+        "subtitle": "Kültür ve Dil",
+        "excerpt": "İnsanın hem düşünebilmesi hem de hissettiğini anlatabilmesi için kavramlara ihtiyacı vardır. Dil aslında bunu temin eder.",
+        "content": "<p>İnsanın hem düşünebilmesi hem de hissettiğini anlatabilmesi için kavramlara ihtiyacı vardır. Dil aslında bunu temin eder. Dil vasıtasıyla anlarız ve yine dil vasıtasıyla kavramaya yönelik bir çaba sarf ederiz. Kavramak, kelimenin anlamını motamot ezberlemek yerine, kelimenin anlamından yola çıkarak kapsadığı ve çağrıştırdığı şeyleri anlayabilmektir. Aslında zahmetli bir iştir ve yoğun bir düşünme eylemini beraberinde getirir. Bu noktada belirtmek gerekir ki kavramların, o insanda ve o toplumda çağrıştırdıkları da önemlidir elbette. Cemre de gerek dilimizde gerekse kültürümüzde çağrıştırdığı anlamlar ve simgelerle üzerine uzun uzun düşünülmesi gereken bir kavramdır.</p><p>Cemre, Türkçede kış mevsiminin sona erip baharın geldiğini müjdeleyen bir dönemdir. Bu dönemde üç ayrı cemre, sırasıyla havaya, suya ve toprağa düşer. Bu cemreler doğadaki uyanışı simgeler; soğuk havaların yavaşça yerini ılıman günlere bırakması, doğanın uyanmaya başlaması, ağaçların çiçek açması ve nihayetinde baharın gelmesi... Bu döngü, doğanın uyanışını, karanlık kış günlerinin yerini ılıman bahar günlerine bırakmasını, doğadaki tüm canlıların yeniden hayata dönüşünü sembolize eder. Cemre, mevsimsel bir değişimi ifade ettiği gibi aslında yenilenmeyi, dirilişi de çağrıştırır. Cenab-ı Allah her yıl baharın gelişiyle doğayı tekrardan diriltir. Bu sayededir ki kış ayında canlılığını kaybeden doğadan hiçbir eser kalmaz ve doğa tüm canlılığıyla yeniden dirilir. Esasen bu husus bile başlı başına mucizevi bir durumdur ve insanı esaslı bir düşünceye sevk eder.</p><p><strong>Cemrenin insana da düşmesi...</strong></p><p>İnsan da hayatının belli dönemlerini kış olarak geçirir. Bazen bunun farkına varır, bazen ise varmaz. Nasıl ki kış ayında doğa ölüm uykusuna yatmış, hiçbir canlılık emaresi göstermezse insanın ruhu da aynen öyle olur. İnsan o dönemde yaptığı şeylerden tat almaz, manevi bir boşluk içinde olur. Tıpkı cemre ile birlikte dirilen doğa gibi insanın da bu hâlden kendini toparlayarak dirilmesi, yenilenmesi gerekir. Nasıl ki cemrenin toprağa düşmesiyle bahar hatırlanmaya başlarsa insan da içine düşen cemre ile üzerindeki ölü toprağını atarak uyanmalı ve bu hayatta var olduğunu, bir amacının olduğunu hatırlamalıdır.</p><p>Bu uyanış anı bazen bir anda gerçekleşir, bazen ise bir süreç alır. Her insanın cemresi farklı bir zaman ve şekilde düşer. Ancak önemli olan, o an geldiğinde insanın her şeye yeniden azim ve kararlılıkla başlayabilmesidir. İşte o zaman cemrenin anlamı ve etkisi, bir mevsim değişiminin çok ötesinde bir derinliğe ulaşır. Bahar, sadece doğada değil, insanın iç dünyasında da gelir ve her şey yeniden başlar.</p>",
+        "category": "Deneme",
+        "image": "/images/article-placeholder.jpg",
+        "author": {
+            "id": "author_005",
+            "name": "Ahmet Talha Çamcı",
+            "slug": "ahmet-talha-camci",
+            "avatar": "/images/authors/ahmet-talha-camci.jpg",
+            "role": "Yazar"
+        },
+        "issueId": "issue_004",
+        "date": "2024-04-01",
+        "readTime": 4,
+        "featured": false,
+        "tags": [
+            "dil",
+            "kavram",
+            "cemre",
+            "bahar",
+            "uyanış"
+        ],
+        "status": "published"
+    }
+]
