@@ -38,7 +38,7 @@ export default function KVKKPage() {
             <section>
               <h2 className="text-2xl font-bold text-white mb-4">1. Veri Sorumlusu</h2>
               <p className="text-neutral-300 leading-relaxed">
-                6698 sayılı Kişisel Verilerin Korunması Kanunu ("KVKK") uyarınca, kişisel verileriniz 
+                6698 sayılı Kişisel Verilerin Korunması Kanunu (&quot;KVKK&quot;) uyarınca, kişisel verileriniz
                 veri sorumlusu sıfatıyla Mazhar Dergisi tarafından aşağıda açıklanan kapsamda işlenebilecektir.
               </p>
             </section>
@@ -74,7 +74,7 @@ export default function KVKKPage() {
             <section>
               <h2 className="text-2xl font-bold text-white mb-4">4. Kişisel Verilerin Aktarılması</h2>
               <p className="text-neutral-300 leading-relaxed">
-                Kişisel verileriniz, yasal zorunluluklar ve hizmet gereksinimleri çerçevesinde, 
+                Kişisel verileriniz, yasal zorunluluklar ve hizmet gereksinimleri çerçevesinde,
                 yetkili kamu kurum ve kuruluşlarına, hizmet sağlayıcılarına aktarılabilir.
               </p>
             </section>
@@ -82,8 +82,8 @@ export default function KVKKPage() {
             <section>
               <h2 className="text-2xl font-bold text-white mb-4">5. Kişisel Veri Toplamanın Yöntemi ve Hukuki Sebebi</h2>
               <p className="text-neutral-300 leading-relaxed">
-                Kişisel verileriniz, web sitesi formları, e-posta ve çerezler aracılığıyla 
-                elektronik ortamda toplanmaktadır. Verileriniz, açık rızanız veya KVKK'nın 5. ve 6. 
+                Kişisel verileriniz, web sitesi formları, e-posta ve çerezler aracılığıyla
+                elektronik ortamda toplanmaktadır. Verileriniz, açık rızanız veya KVKK&apos;nın 5. ve 6.
                 maddelerinde belirtilen hukuki sebeplere dayanılarak işlenmektedir.
               </p>
             </section>
@@ -91,7 +91,7 @@ export default function KVKKPage() {
             <section>
               <h2 className="text-2xl font-bold text-white mb-4">6. İlgili Kişinin Hakları</h2>
               <p className="text-neutral-300 leading-relaxed mb-4">
-                KVKK'nın 11. maddesi uyarınca aşağıdaki haklara sahipsiniz:
+                KVKK&apos;nın 11. maddesi uyarınca aşağıdaki haklara sahipsiniz:
               </p>
               <ul className="list-disc list-inside text-neutral-300 space-y-2">
                 <li>Kişisel verilerinizin işlenip işlenmediğini öğrenme</li>

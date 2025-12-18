@@ -38,7 +38,7 @@ export default function KullanimSartlariPage() {
             <section>
               <h2 className="text-2xl font-bold text-white mb-4">1. Kabul</h2>
               <p className="text-neutral-300 leading-relaxed">
-                Mazhar Dergisi web sitesini kullanarak, bu kullanım şartlarını kabul etmiş sayılırsınız. 
+                Mazhar Dergisi web sitesini kullanarak, bu kullanım şartlarını kabul etmiş sayılırsınız.
                 Bu şartları kabul etmiyorsanız, lütfen sitemizi kullanmayınız.
               </p>
             </section>
@@ -46,7 +46,7 @@ export default function KullanimSartlariPage() {
             <section>
               <h2 className="text-2xl font-bold text-white mb-4">2. Fikri Mülkiyet</h2>
               <p className="text-neutral-300 leading-relaxed">
-                Web sitemizdeki tüm içerikler (yazılar, görseller, tasarım, logo vb.) Mazhar Dergisi'nin 
+                Web sitemizdeki tüm içerikler (yazılar, görseller, tasarım, logo vb.) Mazhar Dergisi&apos;nin
                 veya ilgili yazarların fikri mülkiyetindedir. İzinsiz kopyalama, çoğaltma veya dağıtım yasaktır.
               </p>
             </section>
@@ -68,8 +68,8 @@ export default function KullanimSartlariPage() {
             <section>
               <h2 className="text-2xl font-bold text-white mb-4">4. İçerik Paylaşımı</h2>
               <p className="text-neutral-300 leading-relaxed">
-                Yorum veya başvuru yoluyla paylaştığınız içerikler, Mazhar Dergisi tarafından 
-                yayınlanabilir, düzenlenebilir veya kaldırılabilir. Paylaştığınız içeriklerin 
+                Yorum veya başvuru yoluyla paylaştığınız içerikler, Mazhar Dergisi tarafından
+                yayınlanabilir, düzenlenebilir veya kaldırılabilir. Paylaştığınız içeriklerin
                 sorumluluğu size aittir.
               </p>
             </section>
@@ -77,8 +77,8 @@ export default function KullanimSartlariPage() {
             <section>
               <h2 className="text-2xl font-bold text-white mb-4">5. Sorumluluk Reddi</h2>
               <p className="text-neutral-300 leading-relaxed">
-                Web sitemizdeki içerikler bilgilendirme amaçlıdır. İçeriklerin doğruluğu, güncelliği 
-                veya eksiksizliği konusunda garanti verilmemektedir. Sitemizin kullanımından 
+                Web sitemizdeki içerikler bilgilendirme amaçlıdır. İçeriklerin doğruluğu, güncelliği
+                veya eksiksizliği konusunda garanti verilmemektedir. Sitemizin kullanımından
                 doğabilecek zararlardan Mazhar Dergisi sorumlu tutulamaz.
               </p>
             </section>
@@ -86,7 +86,7 @@ export default function KullanimSartlariPage() {
             <section>
               <h2 className="text-2xl font-bold text-white mb-4">6. Bağlantılar</h2>
               <p className="text-neutral-300 leading-relaxed">
-                Web sitemiz üçüncü taraf web sitelerine bağlantılar içerebilir. Bu sitelerin 
+                Web sitemiz üçüncü taraf web sitelerine bağlantılar içerebilir. Bu sitelerin
                 içeriklerinden veya gizlilik uygulamalarından sorumlu değiliz.
               </p>
             </section>
@@ -94,7 +94,7 @@ export default function KullanimSartlariPage() {
             <section>
               <h2 className="text-2xl font-bold text-white mb-4">7. Değişiklikler</h2>
               <p className="text-neutral-300 leading-relaxed">
-                Bu kullanım şartları önceden haber vermeksizin değiştirilebilir. Değişiklikler 
+                Bu kullanım şartları önceden haber vermeksizin değiştirilebilir. Değişiklikler
                 yayınlandığı anda yürürlüğe girer.
               </p>
             </section>

@@ -18,22 +18,22 @@ export default function ReklamPage() {
     {
       title: 'Banner Reklam',
       description: 'Ana sayfa ve yazı sayfalarında banner reklam alanları',
-      price: 'Aylık ₺2.500\'den başlayan fiyatlar',
+      price: 'Aylık ₺2.500&apos;den başlayan fiyatlar',
     },
     {
       title: 'Sponsorlu İçerik',
       description: 'Markanız için özel hazırlanmış editoryal içerik',
-      price: 'İçerik başına ₺5.000\'den başlayan fiyatlar',
+      price: 'İçerik başına ₺5.000&apos;den başlayan fiyatlar',
     },
     {
       title: 'Bülten Sponsorluğu',
       description: 'E-posta bültenimizde sponsorlu alan',
-      price: 'Bülten başına ₺1.500\'den başlayan fiyatlar',
+      price: 'Bülten başına ₺1.500&apos;den başlayan fiyatlar',
     },
     {
       title: 'Sayı Sponsorluğu',
       description: 'Dergi sayısının ana sponsoru olun',
-      price: 'Sayı başına ₺10.000\'den başlayan fiyatlar',
+      price: 'Sayı başına ₺10.000&apos;den başlayan fiyatlar',
     },
   ];
 
@@ -59,7 +59,7 @@ export default function ReklamPage() {
               Reklam & Sponsorluk
             </h1>
             <p className="text-xl text-neutral-400 max-w-2xl mx-auto">
-              Türkiye'nin önde gelen edebiyat ve kültür platformunda markanızı tanıtın
+              Türkiye&apos;nin önde gelen edebiyat ve kültür platformunda markanızı tanıtın
             </p>
           </div>
 
@@ -82,7 +82,7 @@ export default function ReklamPage() {
             <h2 className="text-2xl font-bold text-white mb-6">Hedef Kitlemiz</h2>
             <div className="p-6 bg-neutral-900 rounded-2xl border border-neutral-800">
               <p className="text-neutral-300 leading-relaxed mb-4">
-                Mazhar Dergisi okuyucuları, edebiyat, sanat ve kültüre ilgi duyan, eğitimli ve 
+                Mazhar Dergisi okuyucuları, edebiyat, sanat ve kültüre ilgi duyan, eğitimli ve
                 bilinçli tüketicilerden oluşmaktadır. Okuyucularımızın büyük çoğunluğu:
               </p>
               <ul className="grid md:grid-cols-2 gap-3 text-neutral-300">
@@ -137,7 +137,7 @@ export default function ReklamPage() {
               Reklam Vermek İster misiniz?
             </h2>
             <p className="text-neutral-300 mb-6 max-w-xl mx-auto">
-              Detaylı bilgi ve fiyat teklifi almak için bizimle iletişime geçin. 
+              Detaylı bilgi ve fiyat teklifi almak için bizimle iletişime geçin.
               Size özel çözümler sunalım.
             </p>
             <Link
