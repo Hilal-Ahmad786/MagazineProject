@@ -1,0 +1,472 @@
+[
+    {
+        "id": "article_10_01",
+        "slug": "bir-sehrin-insan-uzerine-etkisi",
+        "title": "Bir Şehrin İnsan Üzerine Etkisi",
+        "excerpt": "Her şehir bir hikayedir insan için.. Bazı şehirler gurbet, bazı şehirler yarım kalmış hikayeler...",
+        "authorId": "author_012",
+        "issueId": "issue_010",
+        "order": 1,
+        "categoryId": "category_001",
+        "readTime": 5,
+        "image": "/images/articles/bir-sehrin-insan-uzerine-etkisi-main.png",
+        "content": [
+            {
+                "type": "paragraph",
+                "content": "Her şehir bir hikayedir insan için.."
+            },
+            {
+                "type": "paragraph",
+                "content": "Bazı şehirler gurbet, bazı şehirler yarım kalmış hikayeler, bazı şehirler adını koyamadığımız tarifi mümkün olmayan hisler.. Her şehir esasen bir izlenim bırakır insanda. İnsanın bir şehre dair izlenimleri o şehrin dokusuna, güzelliğiyle büyülemesine, doğal ve tarihi güzelliklerine ve belki yemeklerine ilişkin olduğu kadar o şehirde bulunduğu sürece geçirdiği vakit, hissettiği duygular ve yaşadığı anlarla da şekillenir."
+            },
+            {
+                "type": "paragraph",
+                "content": "Kimi şehirlere ilk defa gitmemize rağmen içimiz açılır, sokaklarında yürürken yabancılık hissetmediğimiz bir tanıdıklık çöker üzerimize. Kimi şehirler ise yıllarca yaşamamıza rağmen ağır bir yük gibi gelir üzerimize. Bu noktada hayatımda bir dönüm noktası olan şehirden bahsetmek isterim biraz da.. Üniversite okumak için gittiğim Sakarya’dan söz ediyorum."
+            },
+            {
+                "type": "paragraph",
+                "content": "Bir şehre, insanın en kırılgan olduğu yaşlarda gitmesi tuhaf ve güzel bir tecrübedir. Ne tamamen yetişkinsindir ne de çocukluğundan taşıdığın izlerden vazgeçmişsindir. Liseden yeni mezun olduğun, hayata karışmaya çalıştığın, gençliğinin en güzel en deli dolu ve en masum yılları… İşte Sakarya ile tam da böyle bir zamanda yollarımız kesişti."
+            },
+            {
+                "type": "image",
+                "src": "/images/articles/bir-sehrin-insan-uzerine-etkisi-1.png",
+                "alt": "Sakarya Çark Caddesi",
+                "caption": "Sakarya Çark Caddesi."
+            },
+            {
+                "type": "paragraph",
+                "content": "Şehre ilk gittiğim gün halen aklımda.. Yanımda birkaç valizin yanında belirsizliklerim, hayallerim ve aynı zamanda korku vardı. Farklı bir şehirde yaşamak düşüncesi insana hep daha özgür yaşama hissi verir ama aynı zamanda derin de bir yalnızlığı da beraberinde getirir bu durum. Yeni bir başlangıcın heyecanı ile daha önce gitmediğin, görmediğin yabancı bir şehrin sessizliği arasına sıkışır kalırsın. Ben de aynı duyguları yaşamıştım. Sakarya böyle bir eşikte karşıladı beni."
+            },
+            {
+                "type": "paragraph",
+                "content": "Başta her şey yabancıydı tabi, sokaklar, insanlar, simit aldığın fırın, çay içtiğin çay ocağı, aklınıza gelebilecek her şey. Ama o yabancılığa kısa bir süre sonra alışıyor insan. Hem şehir tarafından kabul ediliyorsun hem de sen şehri kabul ediyorsun. Ve sonra fark ediyorsun ki eskiden yabancısı olduğun sokaklarda arkadaşlarınla yaşadığın anılar geliyor aklına. Yaşadığın her şey bir iz oluyormuş meğer."
+            },
+            {
+                "type": "paragraph",
+                "content": "4 yılım geçti Sakarya’da. Geçen 4 senenin bana birçok şeyi kattığını söyleyebilirim ve fakat birçok şeyi de aldı götürdü benden. Gerçekten büyüdüğümü hissettiğim bir dönemdi benim için. En önemlisi bir şehrin bir insanı nasıl dönüştürdüğünü, fark etmeden nasıl şekillendirdiğini Sakarya’da anladım. Geriye dönüp baktığımda anlıyorum ki hayatımdaki en sessiz ama en derin dönüşümü Sakarya’da yaşadım."
+            },
+            {
+                "type": "image",
+                "src": "/images/articles/bir-sehrin-insan-uzerine-etkisi-main.png",
+                "alt": "Sakarya'da Yaşam",
+                "caption": "Bir şehrin insana kattıkları."
+            },
+            {
+                "type": "paragraph",
+                "content": "Belki de şehirler, insanı özüne döndüren, kendisiyle karşılaşmasına sebebiyet veren aynalardır. Her şehir biraz değiştirir bizi, biraz büyütür ve biraz da kendimize yaklaştırır."
+            }
+        ],
+        "tags": [
+            "Şehir",
+            "Sakarya",
+            "Üniversite",
+            "Hatıra"
+        ],
+        "isPublished": true
+    },
+    {
+        "id": "article_10_02",
+        "slug": "welcome-to-the-jungle",
+        "title": "Welcome to the Jungle!",
+        "excerpt": "Gözünü açıp gördüğü ilk şey tavanının beyazlığıydı. Yatağında soluna doğru dönüp saate baktı 9.17...",
+        "authorId": "author_007",
+        "issueId": "issue_010",
+        "order": 2,
+        "categoryId": "category_001",
+        "readTime": 6,
+        "image": "/images/articles/welcome-to-the-jungle-1.png",
+        "content": [
+            {
+                "type": "paragraph",
+                "content": "Gözünü açıp gördüğü ilk şey tavanının beyazlığıydı. Yatağında soluna doğru dönüp saate baktı 9.17. Güneş doğmuştu ancak içerisi her gün alıştığı aydınlıkta değildi. Hiç çıkmak istemedi, bir süre yatağında vakit geçirdi. Fazlasıyla reels kaydırdıktan sonra nihayet kalkabilecek zihinsel kuvveti kendisinde buldu. Önce yatağın kenarına oturdu, ayaklarını yere indirdi. Gözünü indirmeden, hafızasının ve alışkanlığının yardımıyla terliklerini buldu. Banyoya yöneldi; soğuk su yüzüne çarpınca bir anlığına kendine geldi. Ardından salona geçip koltuğa bıraktı kendini. Gözleri, duvardaki boşluğa; pencereye; yıllar önce astığı, artık hafifçe solmuş tabloya takıldı."
+            },
+            {
+                "type": "image",
+                "src": "/images/articles/welcome-to-the-jungle-2.png",
+                "alt": "Şehir karmaşası",
+                "caption": "Şehir hayatının karmaşası."
+            },
+            {
+                "type": "paragraph",
+                "content": "Açlığını ancak o zaman fark etti. Tam o sırada yağmurun sesi de belirginleşti; damlalar hızlanıyordu."
+            },
+            {
+                "type": "paragraph",
+                "content": "“Birazdan sağanak bastıracak… Hemen bir şeyler alıp dönmeliyim,” diye düşündü."
+            },
+            {
+                "type": "paragraph",
+                "content": "Montunu giyip dışarı çıktı."
+            },
+            {
+                "type": "paragraph",
+                "content": "Market yalnızca üç yüz metre ötedeydi ama birkaç adım yürüdükten sonra karşısına çıkan manzara onu duraksattı: Sonsuza uzanıyormuş gibi görünen bir trafik kuyruğu. Korna sesleri, sabırsızlık, yağmurun ıslak kokusu… Birkaç saniye içinde sinir, kaygı ve tevekkül duyguları ruhunda birbirine çarpıp dağıldı."
+            },
+            {
+                "type": "image",
+                "src": "/images/articles/welcome-to-the-jungle-1.png",
+                "alt": "Toplu taşıma",
+                "caption": "Toplu taşıma ve şehir."
+            },
+            {
+                "type": "paragraph",
+                "content": "Ve o sihirli, kaçınılmaz soru zihninde yeniden filizlendi: “Bu şehirde, her yağmur yağdığında neden trafik oluyor?”"
+            },
+            {
+                "type": "paragraph",
+                "content": "Evet, günümüz şehirlerinin düzinelerce problemi olduğu hepimizin malumu… Deprem tehlikesi, bitmek bilmeyen yol yenileme ve altyapı çalışmaları, adeta şantiyeye dönen şehirler, devamlı genişleyen şehirler, yeni altyapılar, yeni yol yenilemeler, yeni deprem tehlikeleri, artan trafik, yetersiz kalan toplu taşıma hatları, şehrin genişlemesinin aksine daralan sosyal faaliyetler yahut birbirini tekrarlayan kafeler, kültürel aktiviteler, yoğun trafik nedeniyle azalan dinlenme zamanlarımız, nüfus artışıyla giderek yoğunlaşan şehir merkezleri, hatta neredeyse her şehrin birkaç merkezinin olması, hiç durulmayan sokak hayatı yüzünden adeta evimizin salonuna bile konulmak istenen ışıklı tabelalar, 2 nesildir kentte yaşamasına rağmen henüz kent hayatına adapte olamamış son ses müzik dinleyenler, trafik magandaları, kornalar, uğultular… Hangisinden başlasam bilemiyorum."
+            },
+            {
+                "type": "paragraph",
+                "content": "Welcome to the jungle!"
+            },
+            {
+                "type": "image",
+                "src": "/images/articles/welcome-to-the-jungle-3.png",
+                "alt": "Şehir insanı",
+                "caption": "Şehir insanının yalnızlığı."
+            },
+            {
+                "type": "paragraph",
+                "content": "İnsan sosyal bir varlıktır, bu sosyalliğin şehir ile ilişkisi gibi klişe bir yerden konuyu ele almak için çok az vaktimiz var. Çünkü artık büyükşehirlerimiz neredeyse yaşanamaz konuma gelmiş vaziyettedir. Aşık olduğumuz, huzur bulduğumuz İstanbul gidip yerine “Eyvah İstanbul’da duruşma var, o trafik çekilmez!” düşüncelerine gark olduğumuz İstanbul geleli yıllar oldu. En uç örnek, en büyük şehrimiz olsa da bundan nasibini alan yalnızca o değil. Farkında mısınız? Trafiksiz hiç gününüz geçiyor mu? Yalnızca araba olarak da düşünmeyin, toplu taşıma, sıra bekleme, insan trafiği hepsini içine katın. Bu yoğunluk yüzünden/sayesinde hepimiz o kadar yoğunuz ki; 1960’ların en yoğun insanının ABD Başkanı olduğunu varsayalım. 1960’ların ABD Başkanı gelip bizim bir günlük rutinimizi yapmaya kalksa işlerin en az yarısına elini dahi süremezdi. 8 buçuktaki işe yetişmek için 7’de evden çıkıyoruz. Fazla çalışıp ve trafikle yüzleşip 7’de ancak evimizde olabiliyoruz. Fiziksel olarak belki çok yorgun değiliz ancak üzerimizden atamadığımız o zihinsel yorgunluk eve girer girmez bizi bir kanepeye fırlatıyor. Saatlerimizi toparlanabilmek adına telefonda geçiriyor daha da yoruluyoruz. Bu döngüden yakın zamanda çıkmanın yolları da gözükmüyor."
+            },
+            {
+                "type": "paragraph",
+                "content": "Burada bir parantez açmak istiyorum: Ben bir hukukçuyum şehir plancısı yahut belediye başkanı değil. Bu nedenle yazımda herhangi bir çözüm önerisine değinmeyecek yalnızca sizin de çok iyi bildiğiniz sorunlara temas edeceğim. Şehirlerdeki onlarca sorunlardan yalnızca birkaçına dair çözüm önerilerimin bir kısmını görmek isteyenler Söz Sakarya Gazetesi’nde yazdığım Şehir Estetiği… ve Kentin Ruhunu Korumak yazılarıma göz atabilir. Parantez kapandı."
+            },
+            {
+                "type": "paragraph",
+                "content": "Trafik meselesi bir yana, zannımca psikolojimizi en fazla yıpratan meselelerden biri de şantiyeye dönen şehirlerimiz. Neredeyse her sokakta yeni yapılan binalar, iş merkezleri, altyapı ve yol çalışmaları… Bitmek bilmeyen bir kazı, ertesi gün yeniden açılan bir asfalt, bir türlü tamamlanmayan bir kaldırım…"
+            },
+            {
+                "type": "paragraph",
+                "content": "Her şey sürekli bir “daha iyi olacak” vaadiyle başlıyor ama biz, her gün aynı çukurun etrafından dolanırken, iyileşen tam olarak neyi gördük? Bu belirsizlik, bu yarım kalmışlık hali, şehir sakinlerinin omuzlarına görünmez bir ağırlık bırakıyor. Şehrin ruhunu kenara çekip, yerine yalnızca gürültüyü ve telaşı koyuyor. Üstelik bu kadar yoğunluğun arasında, şehirle bağ kurmak da giderek zorlaşıyor. Eskiden sokak dediğimiz yer, insanların birbirini tanıdığı, selam verdiği, bir kahve içiminin bile muhabbet yerine geçtiği bir alanken; bugün sokak, sadece “geçilen” bir yer."
+            },
+            {
+                "type": "paragraph",
+                "content": "Bir yerde yaşamakla bir yerden geçmek arasındaki fark, işte tam burada beliriyor. Biz geçiyoruz. Koşuyoruz. Yetişmeye çalışıyoruz. Ama yaşayamıyoruz."
+            },
+            {
+                "type": "paragraph",
+                "content": "Tüm bu hengâmenin içinde insan, kendine şu soruyu sormadan edemiyor: “Burası gerçekten yaşanacak bir şehir mi, yoksa sadece mecburen var olduğumuz bir alan mı?”"
+            },
+            {
+                "type": "paragraph",
+                "content": "Belki de bu nedenle modern insanın en büyük hayali, bir gün bir sahil kasabasına yerleşmek değil; bir şehirde nefes alabilmek, bir şehirde insanca yaşayabilmek oldu. Huzuru kaçmanın değil, bulunduğu yerde bulmanın hayalini kurar olduk. Şehirler elbette değişecek, büyüyecek, dönüşecek. Buna itirazımız yok. İtirazımız, bu dönüşümün bizi erozyona uğratmasına; sabrımızı, zamanımızı, hatta ruh sağlığımızı tüketmesine. Bir şehrin estetiği yalnızca binaların cepheleriyle, kaldırımların düzeniyle ilgili değildir. Bir şehrin gerçek estetiği, orada yaşayan insanların hayatına gösterdiği saygıyla ölçülür."
+            },
+            {
+                "type": "paragraph",
+                "content": "Ve günün sonunda, o ilk soruya geri dönüyoruz: “Her yağmur yağdığında neden trafik oluyor?” Belki de cevap çoktan gözümüzün önünde: Çünkü şehirlerimiz artık nefes almıyor. Ve nefes almayan bir şehir, içindeki kimseye nefes aldırmıyor."
+            },
+            {
+                "type": "paragraph",
+                "content": "İşte bu yüzden, sabah 09.17’de gözünü açtığında gördüğün tek şey beyaz bir tavansa, bil ki mesele yalnızca uyanmak değil; nasıl bir şehre uyandığın."
+            },
+            {
+                "type": "paragraph",
+                "content": "Welcome to the jungle — fakat bu kez, içinden çıkmanın yollarını düşünme vakti."
+            }
+        ],
+        "tags": [
+            "Şehir",
+            "Yaşam",
+            "Trafik",
+            "Modernizm"
+        ],
+        "isPublished": true
+    },
+    {
+        "id": "article_10_03",
+        "slug": "sehrin-icinden-gecerken-kendime-carptim",
+        "title": "Şehrin İçinden Geçerken Kendime Çarptım",
+        "excerpt": "Bir şehirde yürürken fark edersin aslında: Koca binalar, geniş yollar, uzun kaldırımlar… bütün o beton görünüşünün altında bir ritim atar.",
+        "authorId": "author_011",
+        "issueId": "issue_010",
+        "order": 3,
+        "categoryId": "category_001",
+        "readTime": 4,
+        "image": "/images/articles/sehrin-icinden-gecerken-main.jpg",
+        "content": [
+            {
+                "type": "paragraph",
+                "content": "Bir şehirde yürürken fark edersin aslında: Koca binalar, geniş yollar, uzun kaldırımlar… bütün o beton görünüşünün altında bir ritim atar. İnsanların hızlı adımları, esnafın sabah telaşı, otobüsten inen bir kalabalığın dağılma sesi… Şehir dışarıdan karmaşık görünür ama içinde dolaşmaya başladığında her şey yerine oturur."
+            },
+            {
+                "type": "paragraph",
+                "content": "Bir mühendis olarak bazen düşünürüm; şehir dediğin sadece planlanmış sokaklardan ibaret değil. Kâğıt üzerinde bir çizgi ile planlanan sokak, gerçekte birinin eve yetişme telaşını belirliyor. Bir meydanın genişliği insanların buluşma alışkanlığını değiştiriyor. Yeni açılan bir otobüs durağına verilen ad, o bölgeye yepyeni bir anlam katıyor. Ama bunu hesap kitap gibi anlatmaya gerek yok. Çünkü şehir, en çok da hissedilerek anlaşılır."
+            },
+            {
+                "type": "paragraph",
+                "content": "Yaşadığımız şehirler kendi karakterimize de etkileri olduğuna inanıyorum. Örneğin uzun yıllar İstanbul’da yaşayan insanların çoğu hayatında seri olmaya yatkındır. Her işlerini alel acele yapmaya çalışırlar. Çünkü şehir çok hızlı ve sürekli koşturmacalı."
+            },
+            {
+                "type": "paragraph",
+                "content": "Hatırlıyorum bir keresinde memleketten İstanbul’a gezmeye gelen bir kuzenim, yürüyerek İstanbul’u gezdiğimiz bir günün akşamında eve döndüğümüzde bize ‘’Bu şehirde insanlar neden sürekli koşuyor, neden sürekli bir yere yetişmeye çalışıyorlar?’’ diye sormuştu. Çok haklı bir soru tabiki. Geldiği yerde kimse saniyelerle marmarayı kaçırıp işe yarım saat geç kalmamış ki."
+            },
+            {
+                "type": "image",
+                "src": "/images/articles/sehrin-icinden-gecerken-1.png",
+                "alt": "Şehir kalabalığı",
+                "caption": "Şehrin ritmi ve kalabalık."
+            },
+            {
+                "type": "paragraph",
+                "content": "Peki sizce şehir dediğimiz şey nedir? Yüksek binalar mı, kalabalık sokaklar mı, trafikte birbirine sabır dileyen kornalar mı? Yoksa asıl şehir, yürüdüğümüz kaldırımlara bıraktığımız düşünceler midir? Ya da bir şehre duyulan hasret onun sokaklarında bıraktığımız anılara mı? Yoksa içinde bıraktığımız sevdiklerimize mi?"
+            },
+            {
+                "type": "paragraph",
+                "content": "Yine birçok soru karmaşası var kafamda cevap bekleyen. Kısaca değinmek gerekirse bence şehir, o şehrin ara sokaklarıdır. Ve bir şehre duyulan hasret aslında onun içinde yaşayan sevdiklerimizedir. Bunlar elbette benim tecrübelerim. Herkes kendi içinde verebilir bu cevapları."
+            },
+            {
+                "type": "paragraph",
+                "content": "Şehir dediğimiz şeyin içinde yaşanılanı olduğu gibi bir de memleketi olanı vardır. Aynı olanlar birbirinin toprağıdır hani. Bizim insanımız için önemli bir şey bu. Yeni muhabbet kurduğun biriyle ikinci üçüncü cümle bu soru olur genelde. ‘’Abi senin memleket neresi?’’ Aynı çıkmasa bile kesin bir tanıdığı orada askerlik yapmıştır. Ya da yeğeni üniversiteyi orada okumuştur. Bir bağlantı bulmayı sever bizim insanımız. Trafik çevirmesinde evraklarda noksanlık varsa polise karşı hemen kullanır bu jokerini. Ya da eve gelen ustaya sorar, bir sıcaklık kurmaya çalışır arada."
+            },
+            {
+                "type": "paragraph",
+                "content": "Bir de bu şehir dediğimizin hayali kurulanı vardır. Benim çocukluğumda bu Rio de Janeiro idi. Ne alaka diye sormayın. Bizim çocukluğumuzda her yer Brezilyalı topçu kaynıyordu. Tabi bir de Hızlı ve Öfkeli hayranı iseniz kaçarı yok hayatınızın bir yerinde Rio hayali kurmamış olmanızın."
+            },
+            {
+                "type": "image",
+                "src": "/images/articles/sehrin-icinden-gecerken-main.jpg",
+                "alt": "İstanbul",
+                "caption": "Şehir ve deniz."
+            },
+            {
+                "type": "paragraph",
+                "content": "Velhasıl kelam, insanın kendi olma serüveninde şehirlerin etkisi epey fazla. İnsan bazen bir şehirde değil, kendi yazgısının sokaklarında dolaşır. Yıllar geçer, yürüdüğün sokaklar aynıdır ama adımların değişir, duyguların değişir ve fark etmeden kaderin sana yön çizer. Nihayetinde sen olursun."
+            }
+        ],
+        "tags": [
+            "Şehir",
+            "Yaşam",
+            "İstanbul",
+            "Memleket"
+        ],
+        "isPublished": true
+    },
+    {
+        "id": "article_10_04",
+        "slug": "sehirlerin-kalbi-ve-icimize-dogru-acilan-sokaklar",
+        "title": "Şehirlerin Kalbi ve İçimize Doğru Açılan Sokaklar",
+        "excerpt": "Şehirlerin kalbi bazen gürültüyle değil, içten içe süzülen bir sessizlikle atar. İnsan kalabalığının arasında kendi içine doğru çekilen yüzler...",
+        "authorId": "author_001",
+        "issueId": "issue_010",
+        "order": 4,
+        "categoryId": "category_001",
+        "readTime": 5,
+        "image": "/images/articles/sehirlerin-kalbi-main.png",
+        "content": [
+            {
+                "type": "paragraph",
+                "content": "Şehirlerin kalbi bazen gürültüyle değil, içten içe süzülen bir sessizlikle atar. İnsan kalabalığının arasında kendi içine doğru çekilen yüzler, sokak lambalarının altında birbirine karışan gölgeler ve geceyi ağırlaştıran düşünceler… Dışarıdan bakıldığında gürül gürül akan bir nehir gibi görünen şehir, aslında içinde kendi yatağını arayan suskun kollar taşır. Her sokak, insanın içindeki bir kıvrımı; her meydan, hafızasının bir izdüşümünü taşır. Kimi zaman kalabalık içinde daha da derinleşen yalnızlık hissi, bir köşede oturup dışarıyı seyreden bir çift gözde toplanır; kimi zaman da bir yürüyüşte, kaldırım taşlarına bıraktığımız hızlı adımlarda. Her şehir bir aynadır aslında; insan, onda kendisinin eksik taraflarını görür."
+            },
+            {
+                "type": "paragraph",
+                "content": "Kalabalığın içinde yalnızlaşan yüzler, günün sonunda bir pencereye yaslanıp kendi iç sesini dinler. \"Kim olduğumu bu şehrin hangi duvarında bıraktım?\" diye sorar bazen insan. Belki bir çarşının kapısında, belki hiç fark etmediği bir ağacın altında, belki de sabahın ilk ışıklarıyla açılan bir dükkânın önünde… Yalnızlık da tıpkı sokaklar gibi katman katmandır; kimi zaman sığ, kimi zaman derin. Kimi zaman bir tebessümle hafifler, kimi zaman bir kelimenin yanlış yerinden ağırlaşır. Ama her zaman, bizi kendimize döndürmek gibi bir derdi vardır."
+            },
+            {
+                "type": "image",
+                "src": "/images/articles/sehirlerin-kalbi-1.jpg",
+                "alt": "Eski İstanbul",
+                "caption": "Eski İstanbul ve şehrin hafızası."
+            },
+            {
+                "type": "paragraph",
+                "content": "Osmanlı döneminin şehirleri de böylesine birer hafıza taşırdı. Bursa’nın yeşiline sinmiş vakur sükûnet, Edirne’nin taşında dolaşan ince bir ihtişam, İstanbul’un surlarına vurmuş asırların kokusu… Hepsi, bir medeniyet defteri gibi her sayfasında başka bir ses taşırdı. Bursa’nın çınarlarının altında hissedilen o derin nefes, sadece bir ağacın değil; bizzat tarihin nefesiydi. Edirne’de taş köprülerden geçen rüzgâr, Mimar Sinan’ın dokunuşlarını bugüne taşıyan bir fısıltı gibiydi. İstanbul ise her zaman iki dünyanın arasında duran o eşiğin kendisiydi; bir yanıyla dünün hikâyesi, diğer yanıyla yarının gölgesi. Bugün o sesler hâlâ duyulur; cami avlularındaki kuşlar, çarşıların kemerleri, zamanın yıpratamadığı çeşmeler… Modern insanın koşturmasına yabancı bir hikâyeyi fısıldar hepsi. Kimi zaman bir selamın eksikliğiyle, kimi zaman bir çocuğun koşarken bıraktığı neşeli ayak sesiyle tamamlanan bir hikâye… Ve insan, bu hikâyenin tam neresinde durduğunu düşünürken kendini hem şehirle bütünleşmiş hem de ondan ayrışmış hisseder."
+            },
+            {
+                "type": "paragraph",
+                "content": "Şehir dediğimiz şey aslında dev bir organizma değil; insanın kendi hikayesini bıraktığı geniş bir defterdir. Adımlarımızla yazılır, suskunluklarımızla tamamlanır. Bir çayın dumanında, bir sokak gürültüsünde, akşam ezanının göğü boyayan sesinde insan kendi iç yolculuğunu duyar."
+            },
+            {
+                "type": "image",
+                "src": "/images/articles/sehirlerin-kalbi-main.png",
+                "alt": "Şehir ve Organizma",
+                "caption": "Şehir, insanın kendi hikayesidir."
+            },
+            {
+                "type": "paragraph",
+                "content": "Her adım, her bakış, her duraklama bu arayışın parçasıdır. İnsan bazen bir köşede oturup hayatın akışını izlerken bile kendi içinden geçen yolları keşfeder. Şehir bizi büyüten, yoğuran, bazen yoran ama her defasında yeniden kuran bir aynadır. Ve biz, o aynanın içinde hem kaybolur hem de bulunuruz. Belki de asıl mesele, şehrin bizi nasıl gördüğünden çok, bizim şehre nasıl baktığımızdır. Çünkü bakışımız değiştiğinde şehir de değişir; yalnızlık başka bir anlama bürünür, kalabalık daha yumuşak bir tını kazanır."
+            },
+            {
+                "type": "paragraph",
+                "content": "Sonunda anlarız ki şehir, insanın dışarıdaki yüzüyle içindeki dünyayı birbirine bağlayan ince bir köprüdür. Ve o köprüden geçerken herkes kendi hikâyesini taşır; kimi ağır, kimi hafif ama hepsi gerçek."
+            }
+        ],
+        "tags": [
+            "Şehir",
+            "Sessizlik",
+            "Tarih",
+            "Hafıza"
+        ],
+        "isPublished": true
+    },
+    {
+        "id": "article_10_05",
+        "slug": "sehirler-arasinda-buyumek",
+        "title": "Şehirler Arasında Büyümek",
+        "excerpt": "Bazı insanlar için şehir, bir kez kök salınan ve ömür boyu aynı pencereden izlenen sabit bir manzaradır. Benim içinse şehirler, bir bavula sığdırılmaya çalışan hayatın sürekli değişen arka planı oldu.",
+        "authorId": "author_015",
+        "issueId": "issue_010",
+        "order": 5,
+        "categoryId": "category_001",
+        "readTime": 5,
+        "image": "/images/articles/sehirler-arasinda-main.png",
+        "content": [
+            {
+                "type": "paragraph",
+                "content": "“Benim bütün hayatım yolculukta geçti.” -Evliya Çelebi"
+            },
+            {
+                "type": "paragraph",
+                "content": "Bazı insanlar için şehir, bir kez kök salınan ve ömür boyu aynı pencereden izlenen sabit bir manzaradır. Benim içinse şehirler, bir bavula sığdırılmaya çalışan hayatın sürekli değişen arka planı oldu. Polis çocuğu olmanın belki en tanıdık, en sessiz gerçeği… Henüz bir mahallenin seslerine alışmışken, başka bir şehrin adı duyulur evin içinde. Önce fısıltıyla, sonra kesinleşen bir cümleyle: “Tayin çıktı.”"
+            },
+            {
+                "type": "image",
+                "src": "/images/articles/sehirler-arasinda-main.png",
+                "alt": "Yolculuk ve Şehir",
+                "caption": "Şehirler arasında geçen bir ömür."
+            },
+            {
+                "type": "paragraph",
+                "content": "Marmara’da başlayan çocukluğum, kalabalığın ortasında kendine yer açmaya çalışan bir merakla geçti. İnsanların akışı hızlıydı; sokaklar, dükkânlar, vapur sesleri… Sanki herkes bir yere yetişiyor ama kimse tam olarak varamıyordu. Bu koşuşturmanın içinde büyürken, bir yandan da değişime hazırlayan bir tempo vardı yaşamın ritminde. Bir şehrin gürültüsüne alışmak, bazen insanın kendi iç sesini bastırsa da bana dayanıklılık öğretti. Derken Karadeniz’e uzandı yolumuz. İlk hissettiğim şey rüzgâr oldu, sonra yağmurun hiç bitmeyen sesi. Yokuşların dikliğine, denizin sertliğine ve insanların içtenliğine şaşırmıştım. Marmara’nın hızlı akan hayatından sonra Karadeniz, daha doğrudan ve daha kişilikli bir yer gibiydi. Bir bakkalın “Nerden geldin?” sorusu yabancılığımı azaltır; sahilde çay içen insanların sohbeti neredeyse hiç bitmezdi. Okulda ise bir kelimenin farklı telaffuzu bile beni hem gülümsetir hem de yeni olduğumu hatırlatırdı. Ama her sabah başka kokular, başka manzaralar görmek içimde yeni bir merak uyandırıyordu."
+            },
+            {
+                "type": "paragraph",
+                "content": "Bir de babamın mesleğinin görünmez ağırlığı vardı tabii. Siren sesleri bir süre sonra alışılmış bir fon gürültüsüne dönse de, nöbetlerin, geç saatlere kadar süren görevlerin, bazen haberlerde duyduğumuz olayların gölgesi hep hissedilirdi. Tayin demek yalnızca şehir değiştirmek değil; hayatın düzenini yeniden kurmak demekti. Biz çocuklar için macera gibi görünse de, yetişkinlerin taşıdığı endişeyi sonradan daha iyi anladım. Yıllar içinde fark ettim ki şehirler, insanı sandığından fazla biçimlendiriyor. Marmara’nın hareketli yaşamı bana hızla adapte olmayı; Karadeniz’in dalgalı doğası dayanıklılığı; Doğu’nun geniş toprakları ise sabrı öğretti. Her yerde farklı bir yanım gelişti sanki. Bir şehir bana merakı, diğeri cesareti, bir başkası sakinliği kattı. Belki de bu yüzden hiçbir yere tam anlamıyla ait değilim; ama her yere biraz aitim."
+            },
+            {
+                "type": "image",
+                "src": "/images/articles/sehirler-arasinda-1.png",
+                "alt": "Şehir ve Çocuk",
+                "caption": "Farklı şehirlerde büyümek."
+            },
+            {
+                "type": "paragraph",
+                "content": "Bazen geçmişi düşünürken, zihnimde bir şehir haritası oluşuyor. Marmara’nın kalabalık sokaklarında çocukluğumun telaşı; Karadeniz’in sahil boyunca uzanan dalga seslerinde gençliğimin ilk umutları; Doğu’nun akşamüstü ışığında içime yerleşen dinginlik… Hepsi birbirine ekleniyor ve beni ben yapan uzun bir yolculuğa dönüşüyor. Şimdi anlıyorum ki şehirler arasında büyümek, insanı hem zorlayan hem de zenginleştiren bir deneyim. Bir yanını eksiltirken bir yanını çoğaltan bir süreç. Ama sonunda ortaya çıkan dünya, tek bir yerde kalsaydım asla göremeyeceğim kadar geniş. Belki de asıl köklerim, gittiğim şehirlerin toplamındadır. Ve ben, her yeni yolculukta o kökleri biraz daha büyüttüm."
+            }
+        ],
+        "tags": [
+            "Şehir",
+            "Yolculuk",
+            "Tayin",
+            "Büyümek"
+        ],
+        "isPublished": true
+    },
+    {
+        "id": "article_10_06",
+        "slug": "paris-banliyoleri-ve-muslumanlari-uzerine",
+        "title": "Paris, Banliyöleri ve Müslümanları Üzerine",
+        "excerpt": "Dünyanın turizminin kalbinin attığı yer; çok farklı ırkların, medeniyetlerin bir arada yaşadığı yerin adıdır Paris.",
+        "authorId": "author_009",
+        "issueId": "issue_010",
+        "order": 6,
+        "categoryId": "category_001",
+        "readTime": 6,
+        "image": "/images/articles/paris-banliyoleri-main.png",
+        "content": [
+            {
+                "type": "paragraph",
+                "content": "Dünyanın turizminin kalbinin attığı yer; çok farklı ırkların, medeniyetlerin bir arada yaşadığı yerin adıdır Paris. Bu yazıda kimisi için romantizmin başkenti, kimisi için kaosun orta yeri olan, kimisi için de daha iyi yaşam standartlarına kavuşma rüyası için geldiği bu şehrin farklı bir özelliğini, Paris’in barındırdığı İslami sosyolojik yapıyı konuşacağız."
+            },
+            {
+                "type": "image",
+                "src": "/images/articles/paris-banliyoleri-main.png",
+                "alt": "Paris Camii ve Avlusu",
+                "caption": "Paris'in farklı yüzü."
+            },
+            {
+                "type": "paragraph",
+                "content": "Paris, Avrupa’nın en büyük göçmen nüfuslarından birine ev sahipliği yapmasıyla öne çıkan bir şehirdir. Bunun başlıca sebebi Fransa’nın başta Mağrib ülkeleri (Cezayir, Fas, Tunus) olmak üzere Afrika ülkelerine uyguladığı sömürge politikalarının sonucu ülkeye yoğun bir göçün yaşanmasıdır. Fransa’daki göçmen topluluğun başını ülkeye sömürge sonucu göç eden Cezayir, Tunus ve Fas halkları çekmektedir. Bunu da 20. Yüzyıl itibariyle Fransa’nın iş gücü açığını kapatmak için bu ülkelerden aldığı göç tetiklemiştir. Paris’in ekonomik ve kültürel olarak bir çekim noktasına dönüşmesi, Afrika ülkelerinde yaşayan insanlar için hayata tutunmak adına bir fırsat haline dönüşmüştür."
+            },
+            {
+                "type": "paragraph",
+                "content": "Özellikle Paris’in turistik merkezi kısmı hariç şehri çevreleyen “banliyö” olarak adlandırılan kısımlarda bu göçmen halklar yaşamaktadır. Bu banliyöler özellikle İkinci Dünya savaşı sonrası doğan iş gücü açığı ile, 1950’li yıllardan itibaren hızlı büyüme göstermiştir. İlk başta Mağrib ülkelerinden gelen işçilerin yerleşmesiyle başlayan hikâye, günümüzde bir kültür haline gelmiştir. İş gücü olarak gelen bu göçmenler, daha ucuz yollu olması ve merkeze de yakın olması amacıyla Paris çevresindeki banliyölere yerleştirilmiştir. Devletin başta “sosyal konut” olarak nitelendirdiği bu banliyöler zamanla: ekonomik olarak zayıf toplulukları tek bir bölgede toplaması, etnik ve sosyoekonomik ayrışmayı artırması, devlet hizmetlerinin yetersizliği gibi nedenlerle bu bölgelerin “dezavantajlı alan” haline gelmesine yol açtı."
+            },
+            {
+                "type": "image",
+                "src": "/images/articles/paris-banliyoleri-map.png",
+                "alt": "Paris Banliyö Haritası",
+                "caption": "Paris ve sosyo-ekonomik banliyö haritası."
+            },
+            {
+                "type": "paragraph",
+                "content": "Paris merkezinin giderek artan yaşam maliyetleri, düşük gelirli göçmenlerin giderek bu banliyölerde yoğunlaşmasına yol açmış, hem fiziki hem de kültürel bir ayrışmayı elbette beraberinde getirmiştir. Fransa’da yaşayan yoğun Müslüman nüfus bu banliyölerdeki doğal yaşamın da bir gerçeği olmuştur. Banliyölerde yıllar içinde artan Müslüman nüfus doğrultusunda daha büyük camiiler, İslami kültür merkezleri ve dernekler gibi sosyal alanlar kurulmaya başlamıştır."
+            },
+            {
+                "type": "paragraph",
+                "content": "Bir mekânda, yaşadığınız bir şehirde veya mahallede eğer inandığınız inanç veya yaşayış biçiminiz azınlıkta ise bu inançlarınıza ve ata kültürünüze olan bağınız daha da güçlendiği bir gerçektir. Nitekim bir göçmen için Paris’teki azınlık olma duygusu beraberinde kültürüne olan aidiyet ve topluluğuna olan sadakat daha kenetlenmiş bir biçimiyle karşımıza çıkmaktadır. Özellikle Batı Avrupa’da göçmenlere karşı artan kültürel dışlanma, öz kimliğe karşı daha güçlü bir sarılışı ve direnişi beraberinde getirmiştir. Fransız ve uluslararası medya Paris banliyölerini genelde suç, şiddet, radikallik gibi unsurlar ile ön plana çıkarmaktadır. Bu da genel olarak Fransızların göçmenlere karşı olan önyargılarının arttığı gibi lanse edilmektedir."
+            },
+            {
+                "type": "paragraph",
+                "content": "Banliyönün geneline yayılmış olan eğitimsizlik ve okulların yeterli düzeyde eğitimi tahsis edememesi günümüzde Paris’teki göçmenlerin en büyük sorunu olarak karşımıza çıkmaktadır. Bir topluluğun şekillenmesindeki en önemli araçlardan biri olan eğitimin yetersiz olması istenmeyen sonuçları beraberinde getirmektedir. Bu doğrultuda Paris banliyölerinin suç ve güvensizlikle anılması nispeten yetersiz eğitimle alakalıdır."
+            },
+            {
+                "type": "paragraph",
+                "content": "Eğitimden uzak büyüyen genç nesil topluma karışmak konusunda zorlanmakta, göçmenler arasında dış dünyaya karşı cepheleşme artmaktadır. Bunun bir sonucu olarak kabul edilecek şekilde banliyölerde görev yapan Fransız polisi ile banliyö gençleri arasında yıllardır süren bir gerginlik hüküm sürmekte, bu da bu gençlerin birbirine olan bağların daha sıkılaşmasına neden olmaktadır."
+            },
+            {
+                "type": "paragraph",
+                "content": "Tam da bu noktada “banliyö gençleri” demişken, bir döneme damgasını vurmuş olan La Haine filmini önermeden geçemeyeceğim. Banliyö yaşamını, bu gençlerin amansız cesaretini, birbiriyle “dış dünyaya” karşı nasıl müthiş bir şekilde kenetlendiğini olağan şeffaflığıyla bu filmde izliyoruz. Banliyö yaşamını ve dinamiklerini, bu dışlanmış toplumun sosyolojik yapısını daha yakından tanımak isteyenler bu filmden başlayabilir."
+            },
+            {
+                "type": "image",
+                "src": "/images/articles/paris-banliyoleri-poster.png",
+                "alt": "La Haine Filmi",
+                "caption": "La Haine (Protesto), 1995."
+            },
+            {
+                "type": "paragraph",
+                "content": "Paris Müslümanları; Merkez kısmı ve banliyölerini hesaba kattığımızda yaklaşık 2 milyon Müslüman nüfusu barındıran bu şehri elbette İslamiyet’ten bağımsız değerlendirmemiz mümkün değildir. Ağırlık olarak Mağrib ülkelerinin (Fas, Cezayir, Tunus) oluşturduğu bu komünite Fransa’nın İslamiyet mozaiğini güçlü bir şekilde temsil etmektedir. Zaman zaman İslamofobik sesler ülkede yükselmiş olsa da Fransız halkı bu gerçekle yaşamayı öğrenmiştir."
+            },
+            {
+                "type": "paragraph",
+                "content": "Her ne kadar yoğun bir Müslüman nüfusu ülkede barınsa da, siyasi temsil konusunda net bir adalet söz konusu değildir. Fransa’nın \"Laïcité\" (Laiklik) ilkesinin zaman zaman katı ve dışlayıcı bir yorumla uygulanması, Müslüman komünitesi ile devlet arasında gerginlik oluşturmaktadır. Özellikle 2004 yılı itibariyle yürürlükte olan kamu okullarındaki başörtüsü yasağı, Müslüman kadınların giyim tercihlerinin birer siyasi sembole dönüştürülmesine ve kamusal alandaki görünürluklerinin sorgulanmasına neden olmaktadır. Bu durum, Müslüman nüfusun kendini \"cumhuriyetin eşit vatandaşları\" olarak değil, sürekli bir \"öteki\" olarak hissetmesine yol açan bir sorun oluşturmaktadır."
+            },
+            {
+                "type": "paragraph",
+                "content": "Bununla birlikte, banliyölerin siyaseten ele alınış biçimi de genellikle sosyal kalkınmadan ziyade \"güvenlik\" eksenli bir söyleme hapsedildiğini görmekteyiz. Seçim dönemlerinde aşırı sağ siyasetçilerin güvenlikçi söylevleri, bu mahalleleri potansiyel bir tehdit alanı olarak kodlarken; banliyö gençliği, yaşadıkları sistemik ayrımcılığa ve polis şiddetine karşı tepkilerini zaman zaman sokak hareketleriyle dile getirmektedir. Yerel yönetimlerde (Belediye meclislerinde) Müslüman kökenli siyasetçilerin sayısı artış gösterse de, Ulusal Meclis'teki temsil oranının nüfusla orantısız kalması, bu kitlelerin taleplerinin karar verici mekanizmalara ulaşmasını zorlaştıran bir bariyer olarak varlığını korumaktadır."
+            },
+            {
+                "type": "paragraph",
+                "content": "Paris’teki Müslüman varlığının günlük hayata yansıması, şehrin sadece kültürel dokusunda değil, sosyo-ekonomik yapısında da belirgin biçimde hissedilir. Örneğin Saint-Denis, La Courneuve ve Aubervilliers gibi banliyölerde Ramazan ayında sokakların ışıklandırılması, mahalle fırınlarında gecenin ilerleyen saatlerine kadar sıcak ekmek ve çörek satılması, bu kültürün şehirle nasıl bütünleştiğine dair somut göstergelerdir. Dahası, Paris’in gastronomi sahnesi de bu etkiden nasibini almış; Kuzey Afrika mutfağının en seçkin örneklerini sunan restoranlar, sadece Müslüman topluluğun değil, farklı kimliklerden Parislilerin de vazgeçilmez adresleri hâline gelmiştir. Bu durum, Müslüman kültürünün şehrin yaşam ritmini zenginleştiren bir unsur olduğunu açıkça ortaya koymaktadır."
+            },
+            {
+                "type": "paragraph",
+                "content": "Paris Büyük Camii; Paris’te vahanın ortasında yetişen bir çiçek gibi yükselen İslam kültürünün en güzel örneği devlet tarafından 1926 yılında yapılan Paris Büyük Camii’dir. I. Dünya Savaşı'nda Fransa saflarında mücadele eden 70.000’lere kadar ulaşan Müslüman askerlere duyulan minnetin somut bir nişanesi olarak yükselen bu yapı, aynı zamanda Endülüs-Fas mimarisinin zarafetini taşımaktadır. Minaresindeki turkuaz renkli çinileri, ince işçilikli sedir ağacı oymaları ve geometrik desenlerle bezeli avlusu, ziyaretçilerine Mağrib rüzgârlarını hissettirirken; içerisindeki huzur dolu bahçesiyle şehrin gri karmaşasından uzak, dingin bir sığınak sunar. Paris Camii sadece bir ibadethane olmanın da ötesinde şehirde yaşayan Müslümanlar için şehrin kalbi niteliğinde bir kavşak noktası olma vazifesini görmektedir."
+            },
+            {
+                "type": "image",
+                "src": "/images/articles/paris-banliyoleri-main.png",
+                "alt": "Paris Büyük Camii",
+                "caption": "Paris Büyük Camii ve Avlusu."
+            },
+            {
+                "type": "paragraph",
+                "content": "Les Ottomans à Paris! (Osmanlılar Paris’te!); Osmanlı’nın Paris ile ilk ve en önemli irtibatı ise Osmanlı’nın yurtdışına gönderdiği ilk devamlı büyükelçi olan Yirmisekiz Mehmet Çelebi’nin elçilik vazifesi için Paris’e gitmesiyle başlamıştır. Kendisinin Paris vazifesi esnasında kaleme aldığı Fransa Sefaretnamesi Osmanlı Dönemi’nin diplomasi alanında en önemli kaynaklarından biri olarak gösterilmektedir. Yaklaşık 2 ay kadar süren bu vazife esnasında Fransız halkıyla Osmanlı arasında karşılıklı bir kültür etkileşimi olmuş, iki tarafta birbirinden kültürel çok etkilenmiştir. Nitekim vazifenin Ramazan ayına tekabül etmesinden ötürü oruç, iftar, teravih gibi Ramazan ayı ibadetlerinden çok etkilenen Paris halkı, heyetten bu ritüelleri gerçekleştirdikleri esnada seyretmek için özel izin istemişlerdir. Ayrıca Osmanlı giyim tarzı şehri çok etkilemiş, sonraki yıllarda Turquerie diye adlandırılan moda akımı başta Paris olmak üzere Batı Avrupa’da ün kazanmıştır."
+            },
+            {
+                "type": "image",
+                "src": "/images/articles/paris-banliyoleri-ottoman.jpg",
+                "alt": "Osmanlı Elçisi Paris'te",
+                "caption": "(Elçinin Ayrılması) Yirmisekiz Mehmed Çelebi Tuileries Saray Bahçesi önünde Fransa Kralı XV. Louis huzurundan ayrılmakta iken, 1721."
+            },
+            {
+                "type": "paragraph",
+                "content": "Karşılıklı etkileşimin Osmanlı tarafında ise Yirmisekiz Mehmet Çelebi gezisi esnasında Paris’in saraylarının, bahçe düzenlerinin ihtişamı karşısında hayranlığını gizleyememiş, heyetindekilere dönerek “Dünya müminin zindanı, kafirin ise cennetidir” hadis-i şerifini yad etmiştir. Bu hayranlığın bir sonucu olarak döndükten sonra gözlemleri sonucu günümüzde İstanbul Kağıthane’de bulunan Sadabad Sarayı’nın bahçe düzeni, su kanalları, köşk yapıları ve eğlence alanlarının tasarımında etkili olmuştur."
+            },
+            {
+                "type": "paragraph",
+                "content": "Son olarak; Paris, barındırdığı kültür mozaiği, tarihi ve farklı renkleriyle başlı başına sosyolojik bir inceleme örneğidir. Bu denli farklı kültürlerin bir arada yaşama alışkanlığı elbette beraberinde uyuşmazlığı da getirmektedir. Ancak her türlü uyuşmazlığa ve kaosa rağmen bu kozmopolit ve kaotik şehir bu özellikleriyle kendine özgü bir kimlik kazanmıştır. Eyfel’in, kruvasanın, romantizmin ötesinde; alışık olmadığımız sosyolojik çeşitliliğiyle popüler kültürden bağımsız incelenmesi gereken bir hazine barındırmaktadır."
+            }
+        ],
+        "tags": [
+            "Paris",
+            "Sosyoloji",
+            "Müslümanlar",
+            "Banliyö"
+        ],
+        "isPublished": true
+    }
+]

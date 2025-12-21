@@ -106,28 +106,72 @@ export function ArticleDetail({ article }: ArticleDetailProps) {
 
         {/* Featured Image */}
         {article.image && (
-          <div className="mb-12 -mx-6 md:-mx-12">
+          <div className="mb-12 -mx-6 md:-mx-12 flex justify-center bg-black/20 rounded-xl overflow-hidden">
             <img
               src={article.image}
               alt={article.title}
-              className="w-full h-auto"
+              className="w-full max-h-[500px] object-cover object-center"
             />
           </div>
         )}
 
         {/* Content */}
-        <div
-          className="prose prose-invert prose-lg max-w-none
-            prose-headings:font-black prose-headings:text-white
-            prose-p:text-gray-300 prose-p:leading-relaxed
-            prose-a:text-yellow-400 prose-a:no-underline hover:prose-a:underline
-            prose-strong:text-white
-            prose-blockquote:border-l-yellow-400 prose-blockquote:text-gray-400 prose-blockquote:italic
-            prose-code:text-yellow-400 prose-code:bg-gray-800 prose-code:px-1 prose-code:rounded
-            prose-hr:border-gray-800
-            mb-12"
-          dangerouslySetInnerHTML={{ __html: article.content }}
-        />
+        {Array.isArray(article.content) ? (
+          <div className="space-y-6">
+            {article.content.map((block, index) => {
+              if (block.type === 'paragraph') {
+                return (
+                  <p key={index} className="text-gray-300 leading-relaxed text-lg">
+                    {block.content}
+                  </p>
+                )
+              }
+              if (block.type === 'image') {
+                // Determine layout based on aspect ratio clues or explicitly
+                // For now, heuristic: vertical images (often sketches) get smaller width
+                // We'll trust the user's intent about "vertical ones" being too big
+                const isVertical = block.caption?.toLowerCase().includes('şehir hayatının karmaşası') ||
+                  block.caption?.toLowerCase().includes('şehir insanı')
+
+                return (
+                  <figure
+                    key={index}
+                    className={`
+                        my-6 relative
+                        ${isVertical ? 'md:float-right md:ml-6 md:w-1/4' : 'md:float-left md:mr-6 md:w-2/5'}
+                        w-full max-w-[80%] mx-auto md:max-w-none
+                      `}
+                  >
+                    <img
+                      src={block.src}
+                      alt={block.alt || ''}
+                      className="w-full h-auto rounded-xl shadow-lg border border-gray-800/50"
+                    />
+                    {block.caption && (
+                      <figcaption className="mt-2 text-center text-sm text-gray-500 italic">
+                        {block.caption}
+                      </figcaption>
+                    )}
+                  </figure>
+                )
+              }
+              return null
+            })}
+          </div>
+        ) : (
+          <div
+            className="prose prose-invert prose-lg max-w-none
+                prose-headings:font-black prose-headings:text-white
+                prose-p:text-gray-300 prose-p:leading-relaxed
+                prose-a:text-yellow-400 prose-a:no-underline hover:prose-a:underline
+                prose-strong:text-white
+                prose-blockquote:border-l-yellow-400 prose-blockquote:text-gray-400 prose-blockquote:italic
+                prose-code:text-yellow-400 prose-code:bg-gray-800 prose-code:px-1 prose-code:rounded
+                prose-hr:border-gray-800
+                mb-12"
+            dangerouslySetInnerHTML={{ __html: article.content }}
+          />
+        )}
 
         {/* Footer */}
         <footer className="pt-8 border-t border-gray-800 mb-16">
@@ -153,7 +197,7 @@ export function ArticleDetail({ article }: ArticleDetailProps) {
 
         {/* Comments Section */}
         <CommentSection articleId={article.id} />
-      </article>
+      </article >
     </>
   )
 }

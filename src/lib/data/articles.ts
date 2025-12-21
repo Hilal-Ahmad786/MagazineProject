@@ -4,11 +4,43 @@ import path from 'path';
 
 const issuesDirectory = path.join(process.cwd(), 'src/data/issues');
 
+const authorsDirectory = path.join(process.cwd(), 'src/data/authors');
+
+function getAuthorsMap(): Map<string, Article['author']> {
+  const authorMap = new Map<string, Article['author']>();
+
+  if (fs.existsSync(authorsDirectory)) {
+    const fileNames = fs.readdirSync(authorsDirectory);
+    for (const fileName of fileNames) {
+      if (fileName.endsWith('.json')) {
+        try {
+          const filePath = path.join(authorsDirectory, fileName);
+          const fileContents = fs.readFileSync(filePath, 'utf8');
+          const author = JSON.parse(fileContents);
+          if (author.id) {
+            authorMap.set(author.id, {
+              id: author.id,
+              name: author.name,
+              slug: author.slug,
+              avatar: author.avatar,
+              role: author.role
+            });
+          }
+        } catch (error) {
+          console.error(`Error parsing author file ${fileName}:`, error);
+        }
+      }
+    }
+  }
+  return authorMap;
+}
+
 function getArticles(): Article[] {
   if (!fs.existsSync(issuesDirectory)) {
     return [];
   }
 
+  const authorMap = getAuthorsMap();
   const issueFolders = fs.readdirSync(issuesDirectory);
   const allArticles: Article[] = [];
 
@@ -17,10 +49,33 @@ function getArticles(): Article[] {
     if (fs.existsSync(articlesPath)) {
       try {
         const fileContents = fs.readFileSync(articlesPath, 'utf8');
-        const articles = JSON.parse(fileContents) as Article[];
-        // Ensure status is present or default to 'published' for backward compatibility if logic requires
-        // But better to return raw data
-        allArticles.push(...articles);
+        const articles = JSON.parse(fileContents);
+
+        // Hydrate articles with author data
+        const hydratedArticles = articles.map((article: any) => {
+          const author = authorMap.get(article.authorId);
+          if (!author) {
+            console.warn(`Author not found for article ${article.id} (authorId: ${article.authorId})`);
+            // Provide a fallback or keep it undefined (though this might cause issues if not handled)
+            // Ideally we should have a default author or ensure all authors exist
+            return {
+              ...article,
+              author: {
+                id: 'unknown',
+                name: 'Unknown Author',
+                slug: 'unknown',
+                avatar: '/images/avatars/default.png',
+                role: 'guest'
+              }
+            };
+          }
+          return {
+            ...article,
+            author
+          };
+        });
+
+        allArticles.push(...hydratedArticles);
       } catch (error) {
         console.error(`Error parsing articles.json in ${folder}:`, error);
       }

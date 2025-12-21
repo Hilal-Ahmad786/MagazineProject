@@ -9,12 +9,20 @@ export interface ArticleAuthor {
   role?: string
 }
 
+export interface ArticleContentBlock {
+  type: 'paragraph' | 'image' | 'heading'
+  content?: string
+  src?: string
+  alt?: string
+  caption?: string
+}
+
 export interface Article {
   id: string
   slug: string
   title: string
   excerpt: string
-  content: string // HTML or Markdown
+  content: string | ArticleContentBlock[] // HTML or Markdown or Structured Blocks
   image: string
   category: string
   tags: string[]
