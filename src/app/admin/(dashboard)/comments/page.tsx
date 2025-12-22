@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { cn } from '@/lib/utils'
+import { Skeleton } from "@/components/ui/Skeleton";
 
 import { useToast } from "@/context/ToastContext";
 
@@ -107,7 +108,18 @@ export default function CommentsPage() {
     }
 
     if (loading) {
-        return <div className="p-8 text-center text-zinc-400">Yükleniyor...</div>
+        return (
+            <div className="space-y-6 animate-in fade-in">
+                <div className="flex justify-between pb-6">
+                    <Skeleton className="h-8 w-32 bg-zinc-800" />
+                </div>
+                <div className="space-y-4">
+                    {[...Array(5)].map((_, i) => (
+                        <Skeleton key={i} className="h-24 w-full rounded-xl bg-zinc-900" />
+                    ))}
+                </div>
+            </div>
+        )
     }
 
     return (

@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback } from 'react'
 import { Check, X, Clock, Eye, Trash } from 'lucide-react'
 import { useToast } from '@/context/ToastContext'
 import { ConfirmModal } from '@/components/admin/ConfirmModal'
+import { Skeleton } from "@/components/ui/Skeleton";
 
 interface Application {
     id: string
@@ -88,7 +89,25 @@ export default function ApplicationsPage() {
         }
     }
 
-    if (loading) return <div className="p-8 text-center text-gray-400">Yükleniyor...</div>
+    if (loading) {
+        return (
+            <div className="p-8 space-y-8 animate-in fade-in">
+                <div className="flex justify-between mb-8">
+                    <Skeleton className="h-10 w-64 bg-neutral-800" />
+                </div>
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <div className="lg:col-span-1 space-y-4">
+                        {[...Array(4)].map((_, i) => (
+                            <Skeleton key={i} className="h-24 w-full rounded-xl bg-neutral-900" />
+                        ))}
+                    </div>
+                    <div className="lg:col-span-2">
+                        <Skeleton className="h-96 w-full rounded-2xl bg-neutral-900" />
+                    </div>
+                </div>
+            </div>
+        )
+    }
 
     return (
         <div className="p-8">

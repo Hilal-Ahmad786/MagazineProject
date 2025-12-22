@@ -30,13 +30,13 @@ export function NewsletterSection() {
   }
 
   return (
-    <section className="bg-gradient-to-br from-yellow-400 to-yellow-500 py-20 md:py-32 px-6 md:px-12">
-      <div className="max-w-3xl mx-auto text-center">
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-black mb-6">
-          ABONE OLUN
+    <section className="bg-yellow-400 py-12 md:py-16 px-6 md:px-12">
+      <div className="max-w-xl mx-auto text-center">
+        <h2 className="text-3xl md:text-5xl font-black bg-gradient-to-r from-black to-neutral-700 bg-clip-text text-transparent mb-4 uppercase tracking-tight">
+          Abone Olun
         </h2>
 
-        <p className="text-lg md:text-xl text-black/80 mb-10 max-w-2xl mx-auto">
+        <p className="text-lg text-black/80 mb-8 font-medium">
           Her yeni sayımızdan ve özel içeriklerimizden haberdar olmak için e-posta bültenimize katılın.
         </p>
 

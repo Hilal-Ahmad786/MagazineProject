@@ -7,6 +7,7 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import { Skeleton } from "@/components/ui/Skeleton";
 
 interface Author {
     id: string;
@@ -134,7 +135,30 @@ export default function EditAuthorPage({ params }: { params: { id: string } }) {
         }
     };
 
-    if (isLoading) return <div className="p-8">Yükleniyor...</div>;
+    if (isLoading) {
+        return (
+            <div className="max-w-3xl mx-auto space-y-6 animate-in fade-in">
+                <div className="flex items-center gap-4 border-b border-white/5 pb-4">
+                    <Skeleton className="h-8 w-8 rounded-full bg-neutral-800" />
+                    <Skeleton className="h-8 w-48 bg-neutral-800" />
+                </div>
+                <div className="bg-neutral-900/50 backdrop-blur-xl rounded-xl border border-white/5 p-8 shadow-2xl space-y-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        {[...Array(4)].map((_, i) => (
+                            <div key={i} className="space-y-2">
+                                <Skeleton className="h-4 w-24 bg-neutral-800" />
+                                <Skeleton className="h-10 w-full rounded-lg bg-neutral-800" />
+                            </div>
+                        ))}
+                    </div>
+                    <div className="space-y-2">
+                        <Skeleton className="h-4 w-24 bg-neutral-800" />
+                        <Skeleton className="h-32 w-full rounded-lg bg-neutral-800" />
+                    </div>
+                </div>
+            </div>
+        )
+    }
 
     return (
         <div className="max-w-3xl mx-auto space-y-6">

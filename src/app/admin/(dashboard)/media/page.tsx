@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Copy, Upload, Image as ImageIcon, Search, FileText } from "lucide-react";
 import { useToast } from "@/context/ToastContext";
+import { Skeleton } from "@/components/ui/Skeleton";
 
 interface MediaFile {
     name: string;
@@ -87,7 +88,26 @@ export default function MediaPage() {
         return matchesSearch;
     });
 
-    if (isLoading) return <div className="p-8 text-white">Yükleniyor...</div>;
+    if (isLoading) {
+        return (
+            <div className="space-y-8 animate-in fade-in">
+                <div className="flex justify-between border-b border-white/5 pb-6">
+                    <Skeleton className="h-10 w-48 bg-neutral-800" />
+                    <Skeleton className="h-10 w-32 bg-neutral-800" />
+                </div>
+                <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
+                    <div className="lg:col-span-1"><Skeleton className="h-64 w-full rounded-xl bg-neutral-900" /></div>
+                    <div className="lg:col-span-3">
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                            {[...Array(8)].map((_, i) => (
+                                <Skeleton key={i} className="aspect-square w-full rounded-lg bg-neutral-900" />
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        )
+    }
 
     return (
         <div className="space-y-8">

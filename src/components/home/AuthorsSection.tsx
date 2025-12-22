@@ -9,13 +9,12 @@ interface AuthorsSectionProps {
 
 export function AuthorsSection({ authors }: AuthorsSectionProps) {
   return (
-    <section className="bg-black py-20 md:py-32 px-6 md:px-12">
+    <section className="bg-black py-20 px-6 md:px-12 border-b border-white/5">
       <div className="max-w-[1600px] mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-black mb-4">
-            YAZARLARIMIZ
+          <h2 className="text-4xl md:text-5xl font-black bg-gradient-to-r from-white to-neutral-400 bg-clip-text text-transparent uppercase tracking-tight">
+            Yazarlarımız
           </h2>
-          <div className="w-16 h-1 bg-yellow-400 mx-auto" />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

@@ -4,6 +4,7 @@ import { useEffect, useState, useCallback } from "react";
 import Link from "next/link";
 import { ArrowLeft, Plus, Edit2, Trash2, FileText, User, CheckCircle, Circle, Star } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { Skeleton } from "@/components/ui/Skeleton";
 
 interface Article {
     id: string;
@@ -87,7 +88,26 @@ export default function ArticlesListPage({ params }: { params: { id: string } })
         }
     };
 
-    if (isLoading) return <div className="p-8 text-white">Yükleniyor...</div>;
+    if (isLoading) {
+        return (
+            <div className="space-y-8 animate-in fade-in">
+                <div className="flex items-center justify-between border-b border-white/5 pb-6">
+                    <div className="flex items-center gap-4">
+                        <Skeleton className="h-10 w-10 rounded-full bg-neutral-800" />
+                        <div>
+                            <Skeleton className="h-10 w-48 bg-neutral-800" />
+                            <Skeleton className="h-4 w-32 mt-2 bg-neutral-900" />
+                        </div>
+                    </div>
+                </div>
+                <div className="space-y-4">
+                    {[...Array(5)].map((_, i) => (
+                        <Skeleton key={i} className="h-16 w-full rounded-xl bg-neutral-900" />
+                    ))}
+                </div>
+            </div>
+        )
+    }
 
     return (
         <div className="space-y-8">

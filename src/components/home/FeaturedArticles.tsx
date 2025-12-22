@@ -44,13 +44,11 @@ export function FeaturedArticles({ articles }: FeaturedArticlesProps) {
   }
 
   return (
-    <section className="bg-gray-800 py-20 px-6 md:px-12 overflow-hidden">
+    <section className="bg-neutral-950 py-20 px-6 md:px-12 overflow-hidden border-y border-white/5">
       <div className="max-w-[1600px] mx-auto relative">
         <div className="flex items-end justify-between mb-12">
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-black">
-            <span className="bg-gradient-to-r from-white to-yellow-400 bg-clip-text text-transparent">
-              KEŞFET
-            </span>
+          <h2 className="text-4xl md:text-5xl font-black bg-gradient-to-r from-white to-neutral-400 bg-clip-text text-transparent uppercase tracking-tight">
+            Keşfet
           </h2>
 
           {/* Controls */}
@@ -58,16 +56,16 @@ export function FeaturedArticles({ articles }: FeaturedArticlesProps) {
             <button
               onClick={prevSlide}
               disabled={currentSlide === 0}
-              className="p-4 rounded-full border border-white/10 hover:bg-white/10 disabled:opacity-30 disabled:cursor-not-allowed transition-all text-white"
+              className="p-3 rounded-full border border-white/10 hover:bg-white text-white hover:text-black disabled:opacity-30 disabled:cursor-not-allowed transition-all"
             >
-              <ChevronLeft size={24} />
+              <ChevronLeft size={20} />
             </button>
             <button
               onClick={nextSlide}
               disabled={currentSlide >= maxIndex}
-              className="p-4 rounded-full border border-white/10 hover:bg-white/10 disabled:opacity-30 disabled:cursor-not-allowed transition-all text-white"
+              className="p-3 rounded-full border border-white/10 hover:bg-white text-white hover:text-black disabled:opacity-30 disabled:cursor-not-allowed transition-all"
             >
-              <ChevronRight size={24} />
+              <ChevronRight size={20} />
             </button>
           </div>
         </div>
@@ -86,19 +84,19 @@ export function FeaturedArticles({ articles }: FeaturedArticlesProps) {
                   href={`${ROUTES.ARTICLES}/${article.slug}`}
                   className="group block h-full"
                 >
-                  <div className="bg-gray-700 h-full rounded-2xl overflow-hidden relative transition-transform duration-300 group-hover:-translate-y-2">
+                  <div className="bg-neutral-900 h-full rounded-none border border-white/5 overflow-hidden relative transition-colors duration-300 hover:border-white/20">
                     {/* Image */}
                     <div className="relative aspect-[4/3] overflow-hidden">
                       {article.image ? (
                         <img
                           src={article.image}
                           alt={article.title}
-                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         />
                       ) : (
-                        <div className="w-full h-full bg-gray-600" />
+                        <div className="w-full h-full bg-neutral-800" />
                       )}
-                      <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-60" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-neutral-900 via-transparent to-transparent opacity-80" />
                     </div>
 
                     {/* Content */}
@@ -106,18 +104,18 @@ export function FeaturedArticles({ articles }: FeaturedArticlesProps) {
                       <div className="text-yellow-400 text-xs font-bold tracking-widest uppercase mb-4">
                         {article.category}
                       </div>
-                      <h3 className="text-2xl font-bold text-white mb-4 line-clamp-2 group-hover:text-yellow-400 transition-colors">
+                      <h3 className="text-2xl font-bold text-white mb-4 line-clamp-2 leading-tight group-hover:text-yellow-400 transition-colors">
                         {article.title}
                       </h3>
                       {article.excerpt && (
-                        <p className="text-gray-400 text-sm mb-6 line-clamp-3 leading-relaxed">
+                        <p className="text-neutral-400 text-sm mb-6 line-clamp-3 leading-relaxed">
                           {article.excerpt}
                         </p>
                       )}
 
-                      <div className="flex items-center gap-2 text-xs text-gray-500 font-medium uppercase tracking-wider">
+                      <div className="flex items-center gap-2 text-xs text-neutral-500 font-bold uppercase tracking-wider">
                         <span>{article.author?.name || 'Yazar'}</span>
-                        <span className="w-1 h-1 bg-gray-500 rounded-full" />
+                        <span className="w-1 h-1 bg-neutral-500 rounded-full" />
                         <span>{article.readTime} DK</span>
                       </div>
                     </div>
@@ -129,12 +127,13 @@ export function FeaturedArticles({ articles }: FeaturedArticlesProps) {
         </div>
 
         {/* View All Button */}
-        <div className="text-center mt-16">
+        <div className="text-center mt-12">
           <Link
             href={ROUTES.ARTICLES}
-            className="inline-block px-10 py-4 border border-white/20 text-white font-bold text-sm uppercase tracking-wider hover:bg-white hover:text-black transition-all duration-300"
+            className="inline-flex items-center gap-2 text-yellow-400 font-bold text-sm uppercase tracking-wider hover:text-white transition-colors group"
           >
-            Tüm Yazıları Gör
+            <span>Tüm Yazıları Gör</span>
+            <span className="group-hover:translate-x-1 transition-transform">→</span>
           </Link>
         </div>
       </div>

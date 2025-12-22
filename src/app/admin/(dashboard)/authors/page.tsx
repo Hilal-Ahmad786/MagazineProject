@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Plus, Edit2, Trash2, Users, Search } from "lucide-react";
 import { getRoleLabel } from "@/lib/constants/roles";
+import { Skeleton } from "@/components/ui/Skeleton";
 
 interface Author {
     id: string;
@@ -60,7 +61,21 @@ export default function AuthorsPage() {
         author.role.toLowerCase().includes(searchQuery.toLowerCase())
     );
 
-    if (isLoading) return <div className="p-8 text-white">Yükleniyor...</div>;
+    if (isLoading) {
+        return (
+            <div className="space-y-8 animate-in fade-in">
+                <div className="flex justify-between border-b border-white/5 pb-6">
+                    <Skeleton className="h-10 w-48 bg-neutral-800" />
+                    <Skeleton className="h-10 w-32 bg-neutral-800" />
+                </div>
+                <div className="space-y-4">
+                    {[...Array(5)].map((_, i) => (
+                        <Skeleton key={i} className="h-20 w-full rounded-xl bg-neutral-900" />
+                    ))}
+                </div>
+            </div>
+        )
+    }
 
     return (
         <div className="space-y-8">

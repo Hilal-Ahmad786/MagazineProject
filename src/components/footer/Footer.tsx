@@ -96,6 +96,9 @@ export function Footer({
               <Link href="/iletisim" className="text-zinc-400 hover:text-white transition-colors">
                 İletişim
               </Link>
+              <Link href="/sitemap.xml" className="text-zinc-400 hover:text-white transition-colors">
+                Site Haritası
+              </Link>
             </div>
 
             {/* Copyright */}

@@ -44,8 +44,8 @@ export function InstallPrompt({
     const dismissed = localStorage.getItem(STORAGE_KEYS.pwaPromptDismissed)
     if (dismissed) {
       const dismissedTime = parseInt(dismissed, 10)
-      // Show again after 7 days
-      if (Date.now() - dismissedTime < 7 * 24 * 60 * 60 * 1000) {
+      // Show again after 30 days (increased from 7)
+      if (Date.now() - dismissedTime < 30 * 24 * 60 * 60 * 1000) {
         return
       }
     }
@@ -53,6 +53,11 @@ export function InstallPrompt({
     // Listen for install prompt
     const handleBeforeInstall = (e: Event) => {
       e.preventDefault()
+
+      // Double check dismissal inside event to be safe
+      const d = localStorage.getItem(STORAGE_KEYS.pwaPromptDismissed)
+      if (d && (Date.now() - parseInt(d, 10) < 30 * 24 * 60 * 60 * 1000)) return;
+
       setDeferredPrompt(e as BeforeInstallPromptEvent)
 
       // Show prompt after delay

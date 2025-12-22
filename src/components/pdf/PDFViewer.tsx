@@ -22,6 +22,7 @@ export function PDFViewer({ url, title, onClose }: PDFViewerProps) {
   const [scale, setScale] = useState<number>(1)
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
+  const [viewMode, setViewMode] = useState<'single' | 'scroll'>('scroll') // Default to scroll as requested
 
   const onDocumentLoadSuccess = ({ numPages }: { numPages: number }) => {
     setNumPages(numPages)
@@ -42,25 +43,27 @@ export function PDFViewer({ url, title, onClose }: PDFViewerProps) {
   // Keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'ArrowLeft') goToPrevPage()
-      if (e.key === 'ArrowRight') goToNextPage()
+      if (viewMode === 'single') {
+        if (e.key === 'ArrowLeft') goToPrevPage()
+        if (e.key === 'ArrowRight') goToNextPage()
+      }
       if (e.key === 'Escape' && onClose) onClose()
       if (e.key === '+' || e.key === '=') zoomIn()
       if (e.key === '-') zoomOut()
     }
     document.addEventListener('keydown', handleKeyDown)
     return () => document.removeEventListener('keydown', handleKeyDown)
-  }, [numPages, onClose, goToPrevPage, goToNextPage, zoomIn, zoomOut])
+  }, [numPages, onClose, goToPrevPage, goToNextPage, zoomIn, zoomOut, viewMode])
 
   return (
-    <div className="flex flex-col h-full bg-gray-900">
+    <div className="flex flex-col h-full bg-neutral-900">
       {/* Toolbar */}
-      <div className="flex items-center justify-between px-4 py-3 bg-black border-b border-gray-800">
+      <div className="flex items-center justify-between px-4 py-3 bg-black border-b border-white/10 text-white z-50 shadow-lg">
         <div className="flex items-center gap-4">
           {onClose && (
             <button
               onClick={onClose}
-              className="p-2 hover:bg-gray-800 transition-colors"
+              className="p-2 hover:bg-neutral-800 rounded-lg transition-colors text-white/80 hover:text-white"
               aria-label="Kapat"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -68,97 +71,85 @@ export function PDFViewer({ url, title, onClose }: PDFViewerProps) {
               </svg>
             </button>
           )}
-          {title && <span className="font-bold truncate max-w-[200px]">{title}</span>}
+          {title && <span className="font-bold truncate max-w-[150px] md:max-w-md hidden md:block">{title}</span>}
         </div>
 
-        {/* Page controls */}
+        {/* Center Controls */}
         <div className="flex items-center gap-2">
-          <button
-            onClick={goToPrevPage}
-            disabled={pageNumber <= 1}
-            className="p-2 hover:bg-gray-800 disabled:opacity-30 transition-colors"
-            aria-label="Önceki sayfa"
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-          </button>
-
-          <span className="text-sm px-3">
-            {pageNumber} / {numPages}
-          </span>
-
-          <button
-            onClick={goToNextPage}
-            disabled={pageNumber >= numPages}
-            className="p-2 hover:bg-gray-800 disabled:opacity-30 transition-colors"
-            aria-label="Sonraki sayfa"
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
+          {viewMode === 'single' ? (
+            <>
+              <button
+                onClick={goToPrevPage}
+                disabled={pageNumber <= 1}
+                className="p-2 hover:bg-neutral-800 rounded-lg disabled:opacity-30 transition-colors"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+              <span className="text-sm font-medium w-16 text-center">{pageNumber} / {numPages}</span>
+              <button
+                onClick={goToNextPage}
+                disabled={pageNumber >= numPages}
+                className="p-2 hover:bg-neutral-800 rounded-lg disabled:opacity-30 transition-colors"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            </>
+          ) : (
+            <span className="text-sm font-medium text-white/50">{numPages} Sayfa</span>
+          )}
         </div>
 
-        {/* Zoom controls */}
+        {/* Right Controls */}
         <div className="flex items-center gap-2">
-          <button
-            onClick={zoomOut}
-            disabled={scale <= 0.5}
-            className="p-2 hover:bg-gray-800 disabled:opacity-30 transition-colors"
-            aria-label="Uzaklaştır"
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 12H4" />
-            </svg>
+          {/* View Mode Toggle */}
+          <div className="flex items-center bg-neutral-800 rounded-lg p-1 mr-2">
+            <button
+              onClick={() => setViewMode('scroll')}
+              className={`p-1.5 rounded transition-all ${viewMode === 'scroll' ? 'bg-neutral-600 text-white shadow-sm' : 'text-neutral-400 hover:text-white'}`}
+              title="Dikey Kaydırma"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+              </svg>
+            </button>
+            <button
+              onClick={() => setViewMode('single')}
+              className={`p-1.5 rounded transition-all ${viewMode === 'single' ? 'bg-neutral-600 text-white shadow-sm' : 'text-neutral-400 hover:text-white'}`}
+              title="Tek Sayfa"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+              </svg>
+            </button>
+          </div>
+
+          <button onClick={zoomOut} disabled={scale <= 0.5} className="p-2 hover:bg-neutral-800 rounded-lg transition-colors">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 12H4" /></svg>
           </button>
-
-          <span className="text-sm w-16 text-center">{Math.round(scale * 100)}%</span>
-
-          <button
-            onClick={zoomIn}
-            disabled={scale >= 3}
-            className="p-2 hover:bg-gray-800 disabled:opacity-30 transition-colors"
-            aria-label="Yakınlaştır"
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
-            </svg>
+          <span className="text-sm w-12 text-center hidden md:block">{Math.round(scale * 100)}%</span>
+          <button onClick={zoomIn} disabled={scale >= 3} className="p-2 hover:bg-neutral-800 rounded-lg transition-colors">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" /></svg>
           </button>
-
-          <a
-            href={url}
-            download
-            className="p-2 hover:bg-gray-800 transition-colors ml-2"
-            aria-label="İndir"
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-            </svg>
-          </a>
         </div>
       </div>
 
       {/* PDF Content */}
-      <div className="flex-1 overflow-auto flex items-start justify-center p-4">
+      <div className="flex-1 overflow-y-auto overflow-x-hidden bg-neutral-900 flex flex-col items-center p-4">
         {isLoading && (
-          <div className="flex flex-col items-center justify-center h-full">
-            <div className="w-12 h-12 border-4 border-yellow-400 border-t-transparent rounded-full animate-spin mb-4" />
-            <p className="text-gray-400">PDF yükleniyor...</p>
+          <div className="flex flex-col items-center justify-center p-20">
+            <div className="w-10 h-10 border-4 border-yellow-400 border-t-transparent rounded-full animate-spin mb-4" />
+            <p className="text-neutral-400">PDF yükleniyor...</p>
           </div>
         )}
 
         {error && (
-          <div className="flex flex-col items-center justify-center h-full text-center">
-            <svg className="w-16 h-16 text-red-500 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-            </svg>
+          <div className="flex flex-col items-center justify-center p-20 text-center">
             <p className="text-red-400 mb-4">{error}</p>
-            <a
-              href={url}
-              download
-              className="px-6 py-3 bg-yellow-400 text-black font-bold hover:bg-yellow-300 transition-colors"
-            >
+            <a href={url} download className="px-6 py-3 bg-yellow-400 text-black font-bold rounded-lg hover:bg-yellow-300">
               PDF&apos;i İndir
             </a>
           </div>
@@ -169,36 +160,39 @@ export function PDFViewer({ url, title, onClose }: PDFViewerProps) {
             file={url}
             onLoadSuccess={onDocumentLoadSuccess}
             onLoadError={onDocumentLoadError}
-            loading=""
+            loading={null}
+            className="flex flex-col items-center gap-8 py-8"
           >
-            <Page
-              pageNumber={pageNumber}
-              scale={scale}
-              renderTextLayer={true}
-              renderAnnotationLayer={true}
-              className="shadow-2xl"
-            />
+            {viewMode === 'single' ? (
+              <Page
+                pageNumber={pageNumber}
+                scale={scale}
+                renderTextLayer={true}
+                renderAnnotationLayer={true}
+                className="shadow-2xl bg-white"
+                loading={<div className="w-[600px] h-[800px] bg-neutral-800 animate-pulse rounded-lg" />}
+              />
+            ) : (
+              /* Scroll Mode - Render all pages */
+              Array.from({ length: numPages }, (_, i) => (
+                <div key={i} className="relative">
+                  <Page
+                    pageNumber={i + 1}
+                    scale={scale}
+                    renderTextLayer={true}
+                    renderAnnotationLayer={true}
+                    className="shadow-2xl bg-white"
+                    loading={<div className="w-[600px] h-[800px] bg-neutral-800 animate-pulse rounded-lg mb-8" />}
+                  />
+                  <div className="absolute top-2 -right-12 text-xs text-neutral-500 font-mono hidden xl:block">
+                    #{i + 1}
+                  </div>
+                </div>
+              ))
+            )}
           </Document>
         )}
       </div>
-
-      {/* Page thumbnails bar */}
-      {numPages > 0 && (
-        <div className="flex items-center gap-2 px-4 py-3 bg-black border-t border-gray-800 overflow-x-auto">
-          {Array.from({ length: numPages }, (_, i) => i + 1).map(page => (
-            <button
-              key={page}
-              onClick={() => setPageNumber(page)}
-              className={`flex-shrink-0 w-10 h-14 flex items-center justify-center text-sm font-bold transition-colors ${page === pageNumber
-                ? 'bg-yellow-400 text-black'
-                : 'bg-gray-800 hover:bg-gray-700'
-                }`}
-            >
-              {page}
-            </button>
-          ))}
-        </div>
-      )}
     </div>
   )
 }

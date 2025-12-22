@@ -109,7 +109,7 @@ export function HeroFeatured({
 
           {/* Title */}
           <Link href={`/yazilar/${item.slug}`}>
-            <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight hover:text-primary transition-colors">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black bg-gradient-to-r from-white to-neutral-400 bg-clip-text text-transparent mb-6 leading-none uppercase tracking-tight hover:text-yellow-400 transition-colors">
               {item.title}
             </h1>
           </Link>

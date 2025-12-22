@@ -5,6 +5,8 @@ import Link from "next/link";
 import { Plus, Edit2, Trash2, CheckCircle, Circle, BookOpen } from "lucide-react";
 import Image from "next/image";
 
+import { Skeleton } from "@/components/ui/Skeleton";
+
 interface Issue {
     id: string;
     title: string;
@@ -60,7 +62,23 @@ export default function IssuesPage() {
         }
     }
 
-    if (isLoading) return <div className="p-8 text-white">Yükleniyor...</div>;
+
+
+    if (isLoading) {
+        return (
+            <div className="space-y-8 animate-in fade-in">
+                <div className="flex items-center justify-between border-b border-white/5 pb-6">
+                    <Skeleton className="h-10 w-48 bg-neutral-800" />
+                    <Skeleton className="h-10 w-32 bg-neutral-800" />
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    {[...Array(8)].map((_, i) => (
+                        <Skeleton key={i} className="aspect-[3/4] w-full rounded-xl bg-neutral-900" />
+                    ))}
+                </div>
+            </div>
+        )
+    }
 
     return (
         <div className="space-y-8">

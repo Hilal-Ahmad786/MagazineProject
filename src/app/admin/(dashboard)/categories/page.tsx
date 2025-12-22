@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Plus, Edit, Trash2, Search, Folder } from "lucide-react";
+import { Skeleton } from "@/components/ui/Skeleton";
 
 interface Category {
     id: string;
@@ -59,7 +60,21 @@ export default function CategoriesPage() {
         c.name.toLowerCase().includes(search.toLowerCase())
     );
 
-    if (isLoading) return <div className="p-8">Yükleniyor...</div>;
+    if (isLoading) {
+        return (
+            <div className="space-y-6 animate-in fade-in">
+                <div className="flex justify-between border-b border-white/5 pb-6">
+                    <Skeleton className="h-8 w-48 bg-neutral-800" />
+                    <Skeleton className="h-10 w-32 bg-neutral-800" />
+                </div>
+                <div className="space-y-4">
+                    {[...Array(5)].map((_, i) => (
+                        <Skeleton key={i} className="h-16 w-full rounded-xl bg-neutral-900" />
+                    ))}
+                </div>
+            </div>
+        )
+    }
 
     return (
         <div className="space-y-6">

@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Search, FileText, Edit, Trash2, ExternalLink } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { Skeleton } from "@/components/ui/Skeleton";
 
 interface Article {
     id: string;
@@ -138,8 +139,8 @@ export default function GlobalArticlesPage() {
                                     </td>
                                     <td className="py-4 px-6">
                                         <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium border ${article.status === 'published'
-                                                ? 'bg-green-500/10 text-green-400 border-green-500/20'
-                                                : 'bg-yellow-500/10 text-yellow-400 border-yellow-500/20'
+                                            ? 'bg-green-500/10 text-green-400 border-green-500/20'
+                                            : 'bg-yellow-500/10 text-yellow-400 border-yellow-500/20'
                                             }`}>
                                             {article.status === 'published' ? 'Yayında' : 'Taslak'}
                                         </span>
@@ -176,11 +177,15 @@ export default function GlobalArticlesPage() {
                                 </tr>
                             )}
                             {isLoading && (
-                                <tr>
-                                    <td colSpan={5} className="py-12 text-center text-neutral-500">
-                                        Yükleniyor...
-                                    </td>
-                                </tr>
+                                [...Array(5)].map((_, i) => (
+                                    <tr key={i}>
+                                        <td className="py-4 px-6"><Skeleton className="h-8 w-48 bg-neutral-800" /></td>
+                                        <td className="py-4 px-6"><Skeleton className="h-4 w-24 bg-neutral-800" /></td>
+                                        <td className="py-4 px-6"><Skeleton className="h-4 w-32 bg-neutral-800" /></td>
+                                        <td className="py-4 px-6"><Skeleton className="h-6 w-16 rounded-full bg-neutral-800" /></td>
+                                        <td className="py-4 px-6"><Skeleton className="h-8 w-20 ml-auto bg-neutral-800" /></td>
+                                    </tr>
+                                ))
                             )}
                         </tbody>
                     </table>

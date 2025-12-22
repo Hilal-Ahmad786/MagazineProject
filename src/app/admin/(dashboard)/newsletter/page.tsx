@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { Trash2, Mail, Plus, Download, Search } from "lucide-react";
 
 import { useToast } from "@/context/ToastContext";
+import { Skeleton } from "@/components/ui/Skeleton";
 
 interface Subscriber {
     id: string;
@@ -94,7 +95,21 @@ export default function NewsletterPage() {
         sub.email.toLowerCase().includes(searchQuery.toLowerCase())
     );
 
-    if (isLoading) return <div className="p-8 text-white">Yükleniyor...</div>;
+    if (isLoading) {
+        return (
+            <div className="space-y-8 animate-in fade-in">
+                <div className="flex justify-between border-b border-white/5 pb-6">
+                    <Skeleton className="h-10 w-48 bg-neutral-800" />
+                    <Skeleton className="h-10 w-32 bg-neutral-800" />
+                </div>
+                <div className="space-y-4">
+                    {[...Array(5)].map((_, i) => (
+                        <Skeleton key={i} className="h-16 w-full rounded-xl bg-neutral-900" />
+                    ))}
+                </div>
+            </div>
+        )
+    }
 
     return (
         <div className="space-y-8">
