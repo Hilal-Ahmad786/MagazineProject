@@ -9,7 +9,7 @@ interface Application {
     id: string
     name: string
     email: string
-    status: 'pending' | 'approved' | 'rejected'
+    status: 'pending' | 'accepted' | 'rejected'
     createdAt: string
     [key: string]: any
 }

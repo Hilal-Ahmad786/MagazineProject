@@ -10,7 +10,7 @@ export async function PATCH(
 ) {
     try {
         const session = await getServerSession(authOptions)
-        if (!session || !['admin', 'editor'].includes(session.user.role)) {
+        if (!session || !session.user || !['admin', 'editor'].includes((session.user as any).role)) {
             return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
         }
 
@@ -22,7 +22,7 @@ export async function PATCH(
             data: {
                 ...(status && { status }),
                 ...(notes && { notes }),
-                reviewedBy: session.user.id === 'env-admin' ? null : session.user.id,
+                reviewedBy: (session.user as any).id === 'env-admin' ? null : (session.user as any).id,
                 reviewedAt: new Date(),
             },
         })
@@ -43,7 +43,7 @@ export async function DELETE(
 ) {
     try {
         const session = await getServerSession(authOptions)
-        if (!session || session.user.role !== 'admin') {
+        if (!session || !session.user || (session.user as any).role !== 'admin') {
             return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
         }
 

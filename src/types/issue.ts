@@ -22,6 +22,7 @@ export interface Issue {
   publishMonth?: string
   status?: string
   articles?: Article[]
+  articleCount?: number
 }
 
 export interface IssueWithArticles extends Issue {
