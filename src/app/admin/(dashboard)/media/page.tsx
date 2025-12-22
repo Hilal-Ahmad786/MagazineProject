@@ -47,10 +47,16 @@ export default function MediaPage() {
             // Import dynamically to avoid SSR issues with client modules if any
             const { upload } = await import('@vercel/blob/client');
 
-            const newBlob = await upload(file.name, file, {
+            // Strategy: Add timestamp to filename to avoid "File exists" errors and caching issues
+            // This is better than random suffix because it's readable and sorted.
+            const timestamp = new Date().getTime();
+            const safeName = file.name.replace(/[^a-zA-Z0-9.-]/g, '_'); // Sanitize filename
+            const filename = `${timestamp}-${safeName}`;
+
+            const newBlob = await upload(filename, file, {
                 access: 'public',
                 handleUploadUrl: '/api/admin/media/upload',
-                addRandomSuffix: true, // Prevent filename conflicts
+                // No need for addRandomSuffix or allowOverwrite because timestamp guarantees uniqueness
             });
 
             fetchMedia(); // Refresh list
