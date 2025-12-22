@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { revalidatePath } from "next/cache";
 import { getServerSession } from "next-auth";
 import prisma from "@/lib/db";
 
@@ -89,6 +90,12 @@ export async function PUT(request: Request, { params }: { params: { id: string }
                 // Add other fields as necessary from schema
             }
         });
+
+        // Revalidate paths
+        revalidatePath(`/sayilar/${updatedIssue.id}`);
+        revalidatePath(`/sayilar/${updatedIssue.slug}`);
+        revalidatePath('/sayilar');
+        revalidatePath('/');
 
         return NextResponse.json(updatedIssue);
     } catch (error) {

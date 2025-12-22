@@ -50,6 +50,7 @@ export default function MediaPage() {
             const newBlob = await upload(file.name, file, {
                 access: 'public',
                 handleUploadUrl: '/api/admin/media/upload',
+                addRandomSuffix: true, // Prevent filename conflicts
             });
 
             fetchMedia(); // Refresh list
