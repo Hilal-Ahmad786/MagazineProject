@@ -10,7 +10,7 @@ import Link from "next/link";
 import { TipTapEditor } from "./TipTapEditor";
 import { useToast } from "@/context/ToastContext";
 
-// Zod Schema
+// Zod Schemaa
 const articleSchema = z.object({
     title: z.string().min(1, "Başlık gereklidir"),
     slug: z.string().optional(),
