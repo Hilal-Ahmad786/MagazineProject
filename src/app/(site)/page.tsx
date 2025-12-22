@@ -19,20 +19,34 @@ export default async function Home() {
     getLatestArticles(5)
   ])
 
+  // Get articles specifically from the latest issue if available
+  let heroArticles: import('@/types').Article[] = []
+  if (latestIssue) {
+    // We need to import this function
+    const { getArticlesByIssue } = await import('@/lib/data/articles')
+    const issueArticles = await getArticlesByIssue(latestIssue.id)
+    heroArticles = issueArticles.slice(0, 5) // Top 5
+  }
+
+  // Fallback to latest global articles if no issue articles (or no issue)
+  if (heroArticles.length === 0) {
+    heroArticles = latestArticles
+  }
+
   const heroArticle = featuredArticles[0] || latestArticles[0]
 
   return (
     <main className="min-h-screen">
       {latestIssue && quote && (
         <HeroFeatured
-          article={heroArticle as unknown as import('@/types').Article}
+          article={heroArticle}
           variant="fullscreen"
         />
       )}
 
       {latestIssue && <LatestIssue issue={latestIssue} />}
 
-      <FeaturedArticles articles={featuredArticles} />
+      <FeaturedArticles articles={heroArticles} />
 
       <AuthorsSection authors={authors} />
 

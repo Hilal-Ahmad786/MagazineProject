@@ -83,6 +83,12 @@ export function Header() {
               >
                 Giriş Yap
               </Link>
+              <Link
+                href="/yazar-ol"
+                className="hidden lg:flex items-center justify-center px-4 py-2 text-sm font-bold text-white border border-white/20 hover:bg-white/10 rounded-full transition-colors mr-2"
+              >
+                Yazar Ol
+              </Link>
               <div className="hidden md:block">
                 <SearchButton variant="input" size="md" />
               </div>

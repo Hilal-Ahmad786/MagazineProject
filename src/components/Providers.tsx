@@ -10,6 +10,7 @@ import { ReadingListProvider } from '@/contexts/ReadingListContext'
 import { CommentsProvider } from '@/contexts/CommentsContext'
 import { AnalyticsProvider } from '@/contexts/AnalyticsContext'
 import { LanguageProvider } from '@/contexts/LanguageContext'
+import { ToastProvider } from '@/context/ToastContext'
 
 interface ProvidersProps {
   children: ReactNode
@@ -30,7 +31,9 @@ export function Providers({ children, articles, authors, issues }: ProvidersProp
           >
             <ReadingListProvider>
               <CommentsProvider>
-                {children}
+                <ToastProvider>
+                  {children}
+                </ToastProvider>
               </CommentsProvider>
             </ReadingListProvider>
           </SearchProvider>

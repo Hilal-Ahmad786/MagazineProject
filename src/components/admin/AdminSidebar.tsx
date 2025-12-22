@@ -67,6 +67,7 @@ export function AdminSidebar({ user }: AdminSidebarProps) {
                     <NavItem href="/admin/issues" icon={<BookOpen size={18} />} label="Sayılar" active={isActive("/admin/issues")} onClick={() => setIsOpen(false)} />
                     <NavItem href="/admin/authors" icon={<Users size={18} />} label="Yazarlar" active={isActive("/admin/authors")} onClick={() => setIsOpen(false)} />
                     <NavItem href="/admin/comments" icon={<MessageCircle size={18} />} label="Yorumlar" active={isActive("/admin/comments")} onClick={() => setIsOpen(false)} />
+                    <NavItem href="/admin/author-applications" icon={<Users size={18} />} label="Yazar Başvuruları" active={isActive("/admin/author-applications")} onClick={() => setIsOpen(false)} />
 
                     <div className="pt-6 pb-2 px-4 text-xs font-bold text-neutral-600 uppercase tracking-wider">Medya & İletişim</div>
                     <NavItem href="/admin/media" icon={<ImageIcon size={18} />} label="Medya Kütüphanesi" active={isActive("/admin/media")} onClick={() => setIsOpen(false)} />

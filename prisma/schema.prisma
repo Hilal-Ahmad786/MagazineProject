@@ -23,10 +23,9 @@ model Author {
   articleCount Int       @default(0) @map("article_count")
   active       Boolean   @default(true)
   featured     Boolean   @default(false)
-  createdAt    DateTime  @default(now()) @map("created_at") @db.Timestamptz
-  updatedAt    DateTime  @updatedAt @map("updated_at") @db.Timestamptz
-
-  articles Article[]
+  createdAt    DateTime  @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt    DateTime  @updatedAt @map("updated_at") @db.Timestamptz(6)
+  articles     Article[]
 
   @@index([slug])
   @@index([role])
@@ -35,16 +34,15 @@ model Author {
 }
 
 model Category {
-  id           String   @id @default(uuid()) @db.Uuid
-  name         String   @db.VarChar(100)
-  slug         String   @unique @db.VarChar(100)
+  id           String    @id @default(uuid()) @db.Uuid
+  name         String    @db.VarChar(100)
+  slug         String    @unique @db.VarChar(100)
   description  String?
-  color        String?  @default("#facc15") @db.VarChar(20)
-  icon         String?  @db.VarChar(50)
-  articleCount Int      @default(0) @map("article_count")
-  createdAt    DateTime @default(now()) @map("created_at") @db.Timestamptz
-
-  articles Article[]
+  color        String?   @default("#facc15") @db.VarChar(20)
+  icon         String?   @db.VarChar(50)
+  articleCount Int       @default(0) @map("article_count")
+  createdAt    DateTime  @default(now()) @map("created_at") @db.Timestamptz(6)
+  articles     Article[]
 
   @@index([slug])
   @@map("categories")
@@ -68,10 +66,9 @@ model Issue {
   featured     Boolean   @default(false)
   articleCount Int       @default(0) @map("article_count")
   viewCount    Int       @default(0) @map("view_count")
-  createdAt    DateTime  @default(now()) @map("created_at") @db.Timestamptz
-  updatedAt    DateTime  @updatedAt @map("updated_at") @db.Timestamptz
-
-  articles Article[]
+  createdAt    DateTime  @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt    DateTime  @updatedAt @map("updated_at") @db.Timestamptz(6)
+  articles     Article[]
 
   @@index([slug])
   @@index([number])
@@ -84,43 +81,41 @@ model Tag {
   name         String       @unique @db.VarChar(100)
   slug         String       @unique @db.VarChar(100)
   articleCount Int          @default(0) @map("article_count")
-  createdAt    DateTime     @default(now()) @map("created_at") @db.Timestamptz
-
-  articles ArticleTag[]
+  createdAt    DateTime     @default(now()) @map("created_at") @db.Timestamptz(6)
+  articles     ArticleTag[]
 
   @@index([slug])
   @@map("tags")
 }
 
 model Article {
-  id             String    @id @default(uuid()) @db.Uuid
-  slug           String    @unique @db.VarChar(255)
-  title          String    @db.VarChar(500)
-  subtitle       String?   @db.VarChar(255)
+  id             String       @id @default(uuid()) @db.Uuid
+  slug           String       @unique @db.VarChar(255)
+  title          String       @db.VarChar(500)
+  subtitle       String?      @db.VarChar(255)
   excerpt        String?
   content        String?
-  image          String?   @db.VarChar(500)
-  imageAlt       String?   @map("image_alt") @db.VarChar(255)
-  imageCaption   String?   @map("image_caption") @db.VarChar(255)
-  authorId       String?   @map("author_id") @db.Uuid
-  issueId        String?   @map("issue_id") @db.Uuid
-  categoryId     String?   @map("category_id") @db.Uuid
-  readTime       Int       @default(5) @map("read_time")
-  viewCount      Int       @default(0) @map("view_count")
-  publishDate    DateTime? @map("publish_date") @db.Timestamptz
-  status         String    @default("draft") @db.VarChar(20)
-  featured       Boolean   @default(false)
-  seoTitle       String?   @map("seo_title") @db.VarChar(255)
-  seoDescription String?   @map("seo_description")
-  seoKeywords    String[]  @map("seo_keywords")
-  createdAt      DateTime  @default(now()) @map("created_at") @db.Timestamptz
-  updatedAt      DateTime  @updatedAt @map("updated_at") @db.Timestamptz
-
-  author   Author?      @relation(fields: [authorId], references: [id], onDelete: SetNull)
-  issue    Issue?       @relation(fields: [issueId], references: [id], onDelete: SetNull)
-  category Category?    @relation(fields: [categoryId], references: [id], onDelete: SetNull)
-  tags     ArticleTag[]
-  comments Comment[]
+  image          String?      @db.VarChar(500)
+  imageAlt       String?      @map("image_alt") @db.VarChar(255)
+  imageCaption   String?      @map("image_caption") @db.VarChar(255)
+  authorId       String?      @map("author_id") @db.Uuid
+  issueId        String?      @map("issue_id") @db.Uuid
+  categoryId     String?      @map("category_id") @db.Uuid
+  readTime       Int          @default(5) @map("read_time")
+  viewCount      Int          @default(0) @map("view_count")
+  publishDate    DateTime?    @map("publish_date") @db.Timestamptz(6)
+  status         String       @default("draft") @db.VarChar(20)
+  featured       Boolean      @default(false)
+  seoTitle       String?      @map("seo_title") @db.VarChar(255)
+  seoDescription String?      @map("seo_description")
+  seoKeywords    String[]     @map("seo_keywords")
+  createdAt      DateTime     @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt      DateTime     @updatedAt @map("updated_at") @db.Timestamptz(6)
+  tags           ArticleTag[]
+  author         Author?      @relation(fields: [authorId], references: [id])
+  category       Category?    @relation(fields: [categoryId], references: [id])
+  issue          Issue?       @relation(fields: [issueId], references: [id])
+  comments       Comment[]
 
   @@index([slug])
   @@index([authorId])
@@ -134,10 +129,9 @@ model Article {
 model ArticleTag {
   articleId String   @map("article_id") @db.Uuid
   tagId     String   @map("tag_id") @db.Uuid
-  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz
-
-  article Article @relation(fields: [articleId], references: [id], onDelete: Cascade)
-  tag     Tag     @relation(fields: [tagId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+  article   Article  @relation(fields: [articleId], references: [id], onDelete: Cascade)
+  tag       Tag      @relation(fields: [tagId], references: [id], onDelete: Cascade)
 
   @@id([articleId, tagId])
   @@index([articleId])
@@ -153,11 +147,11 @@ model Subscriber {
   source            String?   @default("website") @db.VarChar(50)
   ipAddress         String?   @map("ip_address") @db.VarChar(45)
   userAgent         String?   @map("user_agent")
-  subscribedAt      DateTime  @default(now()) @map("subscribed_at") @db.Timestamptz
-  unsubscribedAt    DateTime? @map("unsubscribed_at") @db.Timestamptz
-  confirmedAt       DateTime? @map("confirmed_at") @db.Timestamptz
+  subscribedAt      DateTime  @default(now()) @map("subscribed_at") @db.Timestamptz(6)
+  unsubscribedAt    DateTime? @map("unsubscribed_at") @db.Timestamptz(6)
+  confirmedAt       DateTime? @map("confirmed_at") @db.Timestamptz(6)
   confirmationToken String?   @map("confirmation_token") @db.VarChar(255)
-  createdAt         DateTime  @default(now()) @map("created_at") @db.Timestamptz
+  createdAt         DateTime  @default(now()) @map("created_at") @db.Timestamptz(6)
 
   @@index([email])
   @@index([status])
@@ -175,49 +169,48 @@ model Message {
   notes     String?
   ipAddress String?   @map("ip_address") @db.VarChar(45)
   userAgent String?   @map("user_agent")
-  repliedAt DateTime? @map("replied_at") @db.Timestamptz
-  createdAt DateTime  @default(now()) @map("created_at") @db.Timestamptz
+  repliedAt DateTime? @map("replied_at") @db.Timestamptz(6)
+  createdAt DateTime  @default(now()) @map("created_at") @db.Timestamptz(6)
 
   @@index([status])
   @@map("messages")
 }
 
 model AuthorApplication {
-  id              String    @id @default(uuid()) @db.Uuid
-  name            String    @db.VarChar(255)
-  email           String    @db.VarChar(255)
-  phone           String?   @db.VarChar(50)
-  bio             String?
-  sampleWork      String?   @map("sample_work")
-  sampleWorkFile  String?   @map("sample_work_file") @db.VarChar(500)
-  portfolioUrl    String?   @map("portfolio_url") @db.VarChar(500)
-  socialLinks     Json      @default("{}") @map("social_links")
-  topicsOfInterest String[] @map("topics_of_interest")
-  status          String    @default("pending") @db.VarChar(20)
-  notes           String?
-  reviewedBy      String?   @map("reviewed_by") @db.Uuid
-  reviewedAt      DateTime? @map("reviewed_at") @db.Timestamptz
-  createdAt       DateTime  @default(now()) @map("created_at") @db.Timestamptz
+  id               String    @id @default(uuid()) @db.Uuid
+  name             String    @db.VarChar(255)
+  email            String    @db.VarChar(255)
+  phone            String?   @db.VarChar(50)
+  bio              String?
+  sampleWork       String?   @map("sample_work")
+  sampleWorkFile   String?   @map("sample_work_file") @db.VarChar(500)
+  portfolioUrl     String?   @map("portfolio_url") @db.VarChar(500)
+  socialLinks      Json      @default("{}") @map("social_links")
+  topicsOfInterest String[]  @map("topics_of_interest")
+  status           String    @default("pending") @db.VarChar(20)
+  notes            String?
+  reviewedBy       String?   @map("reviewed_by") @db.Uuid
+  reviewedAt       DateTime? @map("reviewed_at") @db.Timestamptz(6)
+  createdAt        DateTime  @default(now()) @map("created_at") @db.Timestamptz(6)
 
   @@index([status])
   @@map("author_applications")
 }
 
 model User {
-  id            String    @id @default(uuid()) @db.Uuid
-  email         String    @unique @db.VarChar(255)
-  passwordHash  String?   @map("password_hash") @db.VarChar(255)
-  name          String?   @db.VarChar(255)
-  avatar        String?   @db.VarChar(500)
-  role          String    @default("viewer") @db.VarChar(50)
-  authorId      String?   @map("author_id") @db.Uuid
-  active        Boolean   @default(true)
-  emailVerified Boolean   @default(false) @map("email_verified")
-  lastLogin     DateTime? @map("last_login") @db.Timestamptz
-  loginCount    Int       @default(0) @map("login_count")
-  createdAt     DateTime  @default(now()) @map("created_at") @db.Timestamptz
-  updatedAt     DateTime  @updatedAt @map("updated_at") @db.Timestamptz
-
+  id                  String               @id @default(uuid()) @db.Uuid
+  email               String               @unique @db.VarChar(255)
+  passwordHash        String?              @map("password_hash") @db.VarChar(255)
+  name                String?              @db.VarChar(255)
+  avatar              String?              @db.VarChar(500)
+  role                String               @default("viewer") @db.VarChar(50)
+  authorId            String?              @map("author_id") @db.Uuid
+  active              Boolean              @default(true)
+  emailVerified       Boolean              @default(false) @map("email_verified")
+  lastLogin           DateTime?            @map("last_login") @db.Timestamptz(6)
+  loginCount          Int                  @default(0) @map("login_count")
+  createdAt           DateTime             @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt           DateTime             @updatedAt @map("updated_at") @db.Timestamptz(6)
   media               Media[]
   newsletterCampaigns NewsletterCampaign[]
 
@@ -242,9 +235,8 @@ model Media {
   caption      String?
   uploadedById String?  @map("uploaded_by") @db.Uuid
   usedIn       Json     @default("[]") @map("used_in")
-  createdAt    DateTime @default(now()) @map("created_at") @db.Timestamptz
-
-  uploadedBy User? @relation(fields: [uploadedById], references: [id], onDelete: SetNull)
+  createdAt    DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+  uploadedBy   User?    @relation(fields: [uploadedById], references: [id])
 
   @@index([type])
   @@index([folder])
@@ -265,7 +257,7 @@ model PageView {
   browser    String?  @db.VarChar(100)
   os         String?  @db.VarChar(100)
   sessionId  String?  @map("session_id") @db.VarChar(100)
-  createdAt  DateTime @default(now()) @map("created_at") @db.Timestamptz
+  createdAt  DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
 
   @@index([articleId])
   @@index([issueId])
@@ -286,13 +278,12 @@ model NewsletterCampaign {
   clickCount       Int       @default(0) @map("click_count")
   bounceCount      Int       @default(0) @map("bounce_count")
   unsubscribeCount Int       @default(0) @map("unsubscribe_count")
-  scheduledAt      DateTime? @map("scheduled_at") @db.Timestamptz
-  sentAt           DateTime? @map("sent_at") @db.Timestamptz
+  scheduledAt      DateTime? @map("scheduled_at") @db.Timestamptz(6)
+  sentAt           DateTime? @map("sent_at") @db.Timestamptz(6)
   createdById      String?   @map("created_by") @db.Uuid
-  createdAt        DateTime  @default(now()) @map("created_at") @db.Timestamptz
-  updatedAt        DateTime  @updatedAt @map("updated_at") @db.Timestamptz
-
-  createdBy User? @relation(fields: [createdById], references: [id])
+  createdAt        DateTime  @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt        DateTime  @updatedAt @map("updated_at") @db.Timestamptz(6)
+  createdBy        User?     @relation(fields: [createdById], references: [id])
 
   @@index([status])
   @@map("newsletter_campaigns")
@@ -305,8 +296,8 @@ model Setting {
   description String?
   category    String?  @default("general") @db.VarChar(50)
   updatedById String?  @map("updated_by") @db.Uuid
-  createdAt   DateTime @default(now()) @map("created_at") @db.Timestamptz
-  updatedAt   DateTime @updatedAt @map("updated_at") @db.Timestamptz
+  createdAt   DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt   DateTime @updatedAt @map("updated_at") @db.Timestamptz(6)
 
   @@index([key])
   @@index([category])
@@ -323,7 +314,7 @@ model ActivityLog {
   newValues  Json?    @map("new_values")
   ipAddress  String?  @map("ip_address") @db.VarChar(45)
   userAgent  String?  @map("user_agent")
-  createdAt  DateTime @default(now()) @map("created_at") @db.Timestamptz
+  createdAt  DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
 
   @@index([userId])
   @@index([entityType, entityId])
@@ -331,18 +322,17 @@ model ActivityLog {
 }
 
 model Comment {
-  id        String   @id @default(uuid()) @db.Uuid
-  articleId String   @map("article_id") @db.Uuid
-  parentId  String?  @map("parent_id") @db.Uuid
-  name      String   @db.VarChar(255)
-  email     String   @db.VarChar(255)
+  id        String    @id @default(uuid()) @db.Uuid
+  articleId String    @map("article_id") @db.Uuid
+  parentId  String?   @map("parent_id") @db.Uuid
+  name      String    @db.VarChar(255)
+  email     String    @db.VarChar(255)
   content   String
-  status    String   @default("active") @db.VarChar(20)
-  likes     Int      @default(0)
-  isAdmin   Boolean  @default(false) @map("is_admin")
-  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz
-  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamptz
-
+  status    String    @default("active") @db.VarChar(20)
+  likes     Int       @default(0)
+  isAdmin   Boolean   @default(false) @map("is_admin")
+  createdAt DateTime  @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt DateTime  @updatedAt @map("updated_at") @db.Timestamptz(6)
   article   Article   @relation(fields: [articleId], references: [id], onDelete: Cascade)
   parent    Comment?  @relation("CommentReplies", fields: [parentId], references: [id], onDelete: Cascade)
   replies   Comment[] @relation("CommentReplies")

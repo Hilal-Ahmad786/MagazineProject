@@ -46,7 +46,7 @@ export function AuthorApplicationForm() {
     setStatus('loading')
 
     try {
-      const res = await fetch('/api/author-application', {
+      const res = await fetch('/api/author-applications', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
@@ -173,11 +173,10 @@ export function AuthorApplicationForm() {
               key={interest}
               type="button"
               onClick={() => handleInterestToggle(interest)}
-              className={`px-4 py-2 text-sm font-bold transition-colors ${
-                formData.interests.includes(interest)
+              className={`px-4 py-2 text-sm font-bold transition-colors ${formData.interests.includes(interest)
                   ? 'bg-yellow-400 text-black'
                   : 'bg-gray-800 text-gray-400 hover:bg-gray-700'
-              }`}
+                }`}
             >
               {interest}
             </button>
