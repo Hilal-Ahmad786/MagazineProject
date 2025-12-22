@@ -3,6 +3,8 @@ import { getAllArticles } from '@/lib/data/articles'
 import { getAllAuthors } from '@/lib/data/authors'
 import { getAllIssues } from '@/lib/data/issues'
 
+export const dynamic = 'force-dynamic'
+
 export async function GET(request: NextRequest) {
   try {
     const [articles, authors, issues] = await Promise.all([

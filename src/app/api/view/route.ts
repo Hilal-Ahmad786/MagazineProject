@@ -3,6 +3,8 @@ import { NextRequest, NextResponse } from 'next/server'
 // In-memory store (replace with database in production)
 const viewCounts: Record<string, number> = {}
 
+export const dynamic = 'force-dynamic'
+
 export async function POST(request: NextRequest) {
   try {
     const { articleId } = await request.json()
