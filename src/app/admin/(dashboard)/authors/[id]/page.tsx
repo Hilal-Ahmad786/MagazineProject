@@ -177,6 +177,7 @@ export default function EditAuthorPage({ params }: { params: { id: string } }) {
                             >
                                 <option value="guest">Konuk Yazar</option>
                                 <option value="editor">Editör</option>
+                                <option value="writer">Yazar</option>
                                 <option value="founder">Kurucu</option>
                             </select>
                         </div>

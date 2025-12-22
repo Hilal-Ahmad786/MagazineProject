@@ -183,11 +183,17 @@ export function IssueCard({ issue, variant = 'default', className }: IssueCardPr
         )}
 
         {(issue as any).articles && (
-          <div className="flex items-center gap-1.5 text-neutral-500 text-sm">
+          <div className="flex items-center gap-1.5 text-neutral-500 text-sm mb-4">
             <FileText className="w-4 h-4" />
             <span>{(issue as any).articles.length} Yazı</span>
           </div>
         )}
+
+        <div className="pt-2">
+          <span className="inline-block px-4 py-2 bg-yellow-500 text-neutral-900 text-sm font-bold rounded-lg hover:bg-yellow-400 transition-colors">
+            Okumaya Başla
+          </span>
+        </div>
       </div>
     </Link>
   );

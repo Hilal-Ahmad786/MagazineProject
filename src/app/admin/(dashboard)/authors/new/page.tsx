@@ -129,6 +129,7 @@ export default function NewAuthorPage() {
                                 >
                                     <option value="guest">Konuk Yazar</option>
                                     <option value="editor">Editör</option>
+                                    <option value="writer">Yazar</option>
                                     <option value="founder">Kurucu</option>
                                 </select>
                                 <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-neutral-400">

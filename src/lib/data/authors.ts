@@ -78,7 +78,7 @@ export async function searchAuthors(query: string): Promise<Author[]> {
 }
 
 export function getAuthorRoles(): string[] {
-  return ['founder', 'editor', 'guest'];
+  return ['founder', 'editor', 'guest', 'writer'];
 }
 
 

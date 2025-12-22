@@ -56,7 +56,7 @@ export async function PUT(request: Request, { params }: { params: { id: string }
         if (error.code === 'P2025') {
             return NextResponse.json({ error: "Author not found" }, { status: 404 });
         }
-        return NextResponse.json({ error: "Failed to update author" }, { status: 500 });
+        return NextResponse.json({ error: "Failed to update author: " + error.message }, { status: 500 });
     }
 }
 

@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Plus, Edit2, Trash2, Users, Search } from "lucide-react";
+import { getRoleLabel } from "@/lib/constants/roles";
 
 interface Author {
     id: string;
@@ -123,10 +124,10 @@ export default function AuthorsPage() {
                                     </td>
                                     <td className="px-6 py-4 whitespace-nowrap">
                                         <span className={`inline-flex rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider border ${author.role === 'founder' ? 'bg-indigo-500/20 text-indigo-400 border-indigo-500/30' :
-                                                author.role === 'editor' ? 'bg-purple-500/20 text-purple-400 border-purple-500/30' :
-                                                    'bg-neutral-500/20 text-neutral-400 border-neutral-500/30'
+                                            author.role === 'editor' ? 'bg-purple-500/20 text-purple-400 border-purple-500/30' :
+                                                'bg-neutral-500/20 text-neutral-400 border-neutral-500/30'
                                             }`}>
-                                            {author.role}
+                                            {getRoleLabel(author.role)}
                                         </span>
                                     </td>
                                     <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
