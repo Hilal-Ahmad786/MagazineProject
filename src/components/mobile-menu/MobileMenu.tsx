@@ -96,9 +96,16 @@ export function MobileMenu({
           </ul>
         </nav>
 
-        {/* Newsletter CTA */}
-        {showNewsletter && (
-          <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-neutral-800 bg-neutral-950">
+        {/* Newsletter CTA & Login */}
+        <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-neutral-800 bg-neutral-950 space-y-3">
+          <Link
+            href="/admin/login"
+            onClick={onClose}
+            className="block w-full py-3 px-4 bg-neutral-800 text-white hover:bg-neutral-700 font-bold text-center rounded-lg transition-colors border border-neutral-700"
+          >
+            Giriş Yap
+          </Link>
+          {showNewsletter && (
             <Link
               href="/bulten"
               onClick={onClose}
@@ -106,8 +113,8 @@ export function MobileMenu({
             >
               Bültene Abone Ol
             </Link>
-          </div>
-        )}
+          )}
+        </div>
       </div>
     </>
   )

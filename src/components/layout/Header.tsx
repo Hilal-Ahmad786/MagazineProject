@@ -77,6 +77,12 @@ export function Header() {
             </div>
 
             <div className="flex items-center gap-1 md:gap-2">
+              <Link
+                href="/admin/login"
+                className="hidden lg:flex items-center justify-center px-4 py-2 text-sm font-bold text-neutral-900 bg-yellow-500 hover:bg-yellow-400 rounded-full transition-colors mr-2"
+              >
+                Giriş Yap
+              </Link>
               <div className="hidden md:block">
                 <SearchButton variant="input" size="md" />
               </div>

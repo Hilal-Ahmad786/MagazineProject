@@ -7,6 +7,7 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import { useToast } from "@/context/ToastContext";
 
 const schema = z.object({
     title: z.string().min(2, "Başlık gereklidir"),
@@ -23,6 +24,7 @@ type FormData = z.infer<typeof schema>;
 export default function EditIssuePage({ params }: { params: { id: string } }) {
     const router = useRouter();
     const [isLoading, setIsLoading] = useState(true);
+    const { showToast } = useToast();
 
     const {
         register,
@@ -46,7 +48,7 @@ export default function EditIssuePage({ params }: { params: { id: string } }) {
                 setValue("status", issue.status || "draft");
                 setValue("slug", issue.slug);
             } else {
-                alert("Sayı bulunamadı");
+                showToast("Sayı bulunamadı", "error");
                 router.push("/admin/issues");
             }
         } catch (error) {
@@ -54,7 +56,7 @@ export default function EditIssuePage({ params }: { params: { id: string } }) {
         } finally {
             setIsLoading(false);
         }
-    }, [params.id, router, setValue]);
+    }, [params.id, router, setValue, showToast]);
 
     useEffect(() => {
         fetchIssue();
@@ -69,14 +71,15 @@ export default function EditIssuePage({ params }: { params: { id: string } }) {
             });
 
             if (res.ok) {
+                showToast("Değişiklikler kaydedildi", "success");
                 router.push("/admin/issues");
             } else {
                 const error = await res.json();
-                alert(`Hata: ${error.error}`);
+                showToast(`Hata: ${error.error}`, "error");
             }
         } catch (error) {
             console.error(error);
-            alert("Bir hata oluştu.");
+            showToast("Bir hata oluştu.", "error");
         }
     };
 

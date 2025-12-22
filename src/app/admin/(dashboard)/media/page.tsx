@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Copy, Upload, Image as ImageIcon, Search } from "lucide-react";
+import { useToast } from "@/context/ToastContext";
 
 interface MediaFile {
     name: string;
@@ -15,6 +16,8 @@ export default function MediaPage() {
     const [isLoading, setIsLoading] = useState(true);
     const [isUploading, setIsUploading] = useState(false);
     const [searchQuery, setSearchQuery] = useState("");
+
+    const { showToast } = useToast();
 
     useEffect(() => {
         fetchMedia();
@@ -50,12 +53,13 @@ export default function MediaPage() {
 
             if (res.ok) {
                 fetchMedia(); // Refresh list
+                showToast("Görsel başarıyla yüklendi", "success");
             } else {
-                alert("Yükleme başarısız");
+                showToast("Yükleme başarısız", "error");
             }
         } catch (error) {
             console.error(error);
-            alert("Hata oluştu");
+            showToast("Hata oluştu", "error");
         } finally {
             setIsUploading(false);
         }
@@ -63,7 +67,7 @@ export default function MediaPage() {
 
     const copyToClipboard = (url: string) => {
         navigator.clipboard.writeText(url);
-        alert("URL kopyalandı!");
+        showToast("URL kopyalandı!", "success");
     };
 
     const filteredFiles = files.filter(file =>

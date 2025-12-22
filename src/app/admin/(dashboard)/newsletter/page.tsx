@@ -3,6 +3,8 @@
 import { useState, useEffect } from "react";
 import { Trash2, Mail, Plus, Download, Search } from "lucide-react";
 
+import { useToast } from "@/context/ToastContext";
+
 interface Subscriber {
     id: string;
     email: string;
@@ -12,6 +14,7 @@ interface Subscriber {
 
 export default function NewsletterPage() {
     const [subscribers, setSubscribers] = useState<Subscriber[]>([]);
+    const { showToast } = useToast();
     const [isLoading, setIsLoading] = useState(true);
     const [newEmail, setNewEmail] = useState("");
     const [searchQuery, setSearchQuery] = useState("");
@@ -48,12 +51,14 @@ export default function NewsletterPage() {
             if (res.ok) {
                 setNewEmail("");
                 fetchSubscribers();
+                showToast("Abone eklendi", "success");
             } else {
                 const err = await res.json();
-                alert(err.error || "Hata oluştu");
+                showToast(err.error || "Hata oluştu", "error");
             }
         } catch (error) {
             console.error(error);
+            showToast("Hata oluştu", "error");
         }
     };
 

@@ -257,8 +257,11 @@ function SocialSettings() {
     );
 }
 
+import { useToast } from "@/context/ToastContext";
+
 function AdminAccountSettings() {
     const [loading, setLoading] = useState(false);
+    const { showToast } = useToast();
     const [formData, setFormData] = useState({
         email: "",
         currentPassword: "",
@@ -293,13 +296,13 @@ function AdminAccountSettings() {
             const data = await res.json();
 
             if (res.ok) {
-                alert("Yönetici bilgileri güncellendi!");
+                showToast("Yönetici bilgileri güncellendi!", "success");
                 setFormData(prev => ({ ...prev, currentPassword: "", newPassword: "" }));
             } else {
-                alert("Hata: " + data.error);
+                showToast("Hata: " + data.error, "error");
             }
         } catch (error) {
-            alert("Bir hata oluştu.");
+            showToast("Bir hata oluştu.", "error");
         } finally {
             setLoading(false);
         }
