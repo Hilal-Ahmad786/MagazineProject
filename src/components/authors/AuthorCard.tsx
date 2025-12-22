@@ -7,17 +7,13 @@ interface AuthorCardProps {
   articleCount?: number
 }
 
+import { getRoleLabel } from '@/lib/constants/roles'
+
 export function AuthorCard({ author, articleCount = 0 }: AuthorCardProps) {
   const roleColors: Record<string, string> = {
     'founder': 'bg-yellow-400 text-black',
     'editor': 'bg-gray-700 text-white',
     'guest': 'bg-gray-800 text-gray-300',
-  }
-
-  const roleLabels: Record<string, string> = {
-    'founder': 'Kurucu',
-    'editor': 'Editör',
-    'guest': 'Konuk Yazar',
   }
 
   return (
@@ -61,7 +57,7 @@ export function AuthorCard({ author, articleCount = 0 }: AuthorCardProps) {
 
         {author.role && (
           <p className="text-yellow-400/80 text-sm mb-4 font-medium uppercase tracking-wider">
-            {author.role}
+            {getRoleLabel(author.role)}
           </p>
         )}
 

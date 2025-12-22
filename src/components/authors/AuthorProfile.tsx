@@ -6,12 +6,9 @@ interface AuthorProfileProps {
   articleCount: number
 }
 
+import { getRoleLabel } from '@/lib/constants/roles'
+
 export function AuthorProfile({ author, articleCount }: AuthorProfileProps) {
-  const roleLabels: Record<string, string> = {
-    'founder': 'Kurucu',
-    'editor': 'Editör',
-    'guest': 'Konuk Yazar',
-  }
 
   // Helper to construct social URLs from usernames
   const getSocialUrl = (platform: string, value: string): string => {
@@ -95,7 +92,7 @@ export function AuthorProfile({ author, articleCount }: AuthorProfileProps) {
           {/* Role badge */}
           {author.role && (
             <p className="text-yellow-400 text-lg md:text-xl font-bold uppercase tracking-wider mb-6">
-              {author.role}
+              {getRoleLabel(author.role)}
             </p>
           )}
 

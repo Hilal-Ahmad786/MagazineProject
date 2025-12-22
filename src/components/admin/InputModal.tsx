@@ -46,7 +46,7 @@ export function InputModal({
     };
 
     return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
             <div className="relative w-full max-w-md bg-neutral-900 border border-neutral-800 rounded-xl shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200">
                 <div className="flex items-center justify-between p-4 border-b border-neutral-800">
                     <h3 className="text-lg font-semibold text-white">{title}</h3>

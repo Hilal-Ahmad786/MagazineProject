@@ -28,7 +28,12 @@ export default function IssuesPage() {
             const res = await fetch("/api/admin/issues");
             if (res.ok) {
                 const data = await res.json();
-                setIssues(data);
+                if (Array.isArray(data)) {
+                    setIssues(data);
+                } else {
+                    console.error("Values is not an array", data);
+                    setIssues([]);
+                }
             }
         } catch (error) {
             console.error("Failed to fetch issues", error);
@@ -98,8 +103,8 @@ export default function IssuesPage() {
                             {/* Status Badge */}
                             <div className="absolute top-3 right-3">
                                 <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider border shadow-sm backdrop-blur-md ${issue.status === 'published'
-                                        ? 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30'
-                                        : 'bg-amber-500/20 text-amber-400 border-amber-500/30'
+                                    ? 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30'
+                                    : 'bg-amber-500/20 text-amber-400 border-amber-500/30'
                                     }`}>
                                     {issue.status === 'published' ? <CheckCircle size={10} /> : <Circle size={10} />}
                                     {issue.status === 'published' ? 'Yayında' : 'Taslak'}

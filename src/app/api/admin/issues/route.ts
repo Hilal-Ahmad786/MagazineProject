@@ -58,6 +58,7 @@ export async function POST(request: Request) {
                 publishDate: data.date ? new Date(data.date) : new Date(),
                 coverImage: data.coverImage,
                 status: data.status || 'draft',
+                pdfUrl: data.pdfUrl,
                 // Default theme if needed
                 theme: 'dark'
             }

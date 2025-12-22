@@ -60,7 +60,7 @@ export function HeroFeatured({
   // Auto-advance
   useEffect(() => {
     if (slides.length <= 1) return
-    const timer = setInterval(nextSlide, 8000)
+    const timer = setInterval(nextSlide, 3000)
     return () => clearInterval(timer)
   }, [slides.length, nextSlide])
 

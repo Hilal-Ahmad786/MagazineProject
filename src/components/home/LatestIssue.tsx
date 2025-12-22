@@ -18,7 +18,7 @@ export function LatestIssue({ issue }: LatestIssueProps) {
           </div>
 
           <h2 className="text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-8">
-            {issue.theme?.toUpperCase() || 'GENEL'}
+            {issue.title?.toUpperCase()}
             <br />
             <span className="text-gray-400">SAYISI</span>
           </h2>
@@ -56,7 +56,7 @@ export function LatestIssue({ issue }: LatestIssueProps) {
               <div className="text-[180px] md:text-[220px] font-black text-black/10 leading-none text-center">
                 {issue.number}
                 <br />
-                <span className="text-[40px] md:text-[60px]">{issue.theme?.toUpperCase() || 'GENEL'}</span>
+                <span className="text-[40px] md:text-[60px]">{issue.title?.toUpperCase()}</span>
               </div>
             </div>
           </div>

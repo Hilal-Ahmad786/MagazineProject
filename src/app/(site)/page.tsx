@@ -39,7 +39,7 @@ export default async function Home() {
     <main className="min-h-screen">
       {latestIssue && quote && (
         <HeroFeatured
-          article={heroArticle}
+          articles={featuredArticles.length > 0 ? featuredArticles : [latestArticles[0]]}
           variant="fullscreen"
         />
       )}

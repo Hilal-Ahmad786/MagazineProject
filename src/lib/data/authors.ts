@@ -81,14 +81,7 @@ export function getAuthorRoles(): string[] {
   return ['founder', 'editor', 'guest'];
 }
 
-export function getRoleLabel(role: string): string {
-  const labels: Record<string, string> = {
-    founder: 'Kurucu Yazar',
-    editor: 'Editör',
-    guest: 'Konuk Yazar',
-  };
-  return labels[role] || role;
-}
+
 
 // Helper to map Prisma result to Author type
 function mapPrismaAuthorToType(author: any): Author {

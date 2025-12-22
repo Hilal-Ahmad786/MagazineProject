@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { getRoleLabel } from '@/lib/constants/roles'
 import { Article } from '@/types'
 import { ROUTES } from '@/lib/constants/routes'
 import { formatDate } from '@/lib/utils/date'
@@ -73,7 +74,7 @@ export function ArticleDetail({ article }: ArticleDetailProps) {
                       {article.author.name}
                     </p>
                     <p className="text-sm text-gray-500">
-                      {article.author.role}
+                      {getRoleLabel(article.author.role)}
                     </p>
                   </div>
                 </Link>

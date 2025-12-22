@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { getRoleLabel } from '@/lib/constants/roles'
 import { Author } from '@/types/author'
 import { ROUTES } from '@/lib/constants/routes'
 
@@ -43,7 +44,7 @@ export function AuthorInfo({ author, publishDate, readingTime }: AuthorInfoProps
           {author.name}
         </Link>
         <div className="flex items-center gap-2 text-sm text-gray-400">
-          {author.role && <span>{author.role}</span>}
+          {author.role && <span>{getRoleLabel(author.role)}</span>}
           {publishDate && (
             <>
               <span>•</span>

@@ -84,6 +84,7 @@ export async function PUT(request: Request, { params }: { params: { id: string }
                 publishMonth: data.publishMonth,
                 publishDate: data.date ? new Date(data.date) : undefined,
                 coverImage: data.coverImage,
+                pdfUrl: data.pdfUrl,
                 status: data.status,
                 // Add other fields as necessary from schema
             }

@@ -49,8 +49,8 @@ export function IssueList({
       );
     }
 
-    // Sort by date descending
-    return filtered.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+    // Sort by number descending
+    return filtered.sort((a, b) => b.number - a.number);
   }, [issues, selectedYear, showFeatured, featuredIssue]);
 
   return (

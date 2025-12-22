@@ -28,7 +28,7 @@ function getImages(dir: string, fileList: any[] = []) {
                 getImages(filePath, fileList);
             }
         } else {
-            if (/\.(jpg|jpeg|png|webp|gif|svg)$/i.test(file)) {
+            if (/\.(jpg|jpeg|png|webp|gif|svg|pdf)$/i.test(file)) {
                 // Get relative path from public
                 const relativePath = filePath.split("public")[1];
                 fileList.push({

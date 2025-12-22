@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { Author } from '@/types/author'
 import { ROUTES } from '@/lib/constants/routes'
+import { getRoleLabel } from '@/lib/constants/roles'
 
 interface AuthorsSectionProps {
   authors: Author[]
@@ -42,7 +43,7 @@ export function AuthorsSection({ authors }: AuthorsSectionProps) {
               </h3>
               {author.role && (
                 <p className="text-sm text-gray-400 uppercase tracking-wider">
-                  {author.role}
+                  {getRoleLabel(author.role)}
                 </p>
               )}
               {/* title removed */}

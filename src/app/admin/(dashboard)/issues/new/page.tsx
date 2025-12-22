@@ -16,7 +16,8 @@ const schema = z.object({
     coverImage: z.string().optional(),
     status: z.enum(["draft", "published"]),
     slug: z.string().optional(),
-    theme: z.string().min(2, "Sayı teması gereklidir") // Added theme field
+    theme: z.string().min(2, "Sayı teması gereklidir"),
+    pdfUrl: z.string().optional() // Added pdfUrl field
 });
 
 type FormData = z.infer<typeof schema>;
@@ -184,6 +185,25 @@ export default function NewIssuePage() {
                                     </button>
                                 </div>
                                 <p className="text-xs text-neutral-500">Kapak resmi için dosya yolunu girin.</p>
+                            </div>
+
+                            <div className="space-y-2">
+                                <label className="text-xs font-bold text-neutral-500 uppercase tracking-wider">PDF URL</label>
+                                <div className="flex gap-2">
+                                    <input
+                                        {...register("pdfUrl")}
+                                        className="flex-1 rounded-lg bg-neutral-800 border border-white/10 text-white p-3 focus:ring-amber-500 focus:border-amber-500 transition-all placeholder-neutral-600"
+                                        placeholder="/uploads/issues/..."
+                                    />
+                                    <button
+                                        type="button"
+                                        onClick={() => window.open('/admin/media', '_blank')}
+                                        className="px-4 py-2 bg-neutral-700 text-white rounded-lg hover:bg-neutral-600 transition-colors border border-white/5 text-sm"
+                                    >
+                                        Medya Seç
+                                    </button>
+                                </div>
+                                <p className="text-xs text-neutral-500">Dergisi PDF dosyası için URL girin.</p>
                             </div>
 
                             <div className="space-y-2">

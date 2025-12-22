@@ -17,6 +17,7 @@ const schema = z.object({
     coverImage: z.string().optional(),
     status: z.enum(["draft", "published"]),
     slug: z.string().optional(),
+    pdfUrl: z.string().optional(),
 });
 
 type FormData = z.infer<typeof schema>;
@@ -45,6 +46,7 @@ export default function EditIssuePage({ params }: { params: { id: string } }) {
                 setValue("publishMonth", issue.publishMonth);
                 setValue("date", issue.date);
                 setValue("coverImage", issue.coverImage);
+                setValue("pdfUrl", issue.pdfUrl);
                 setValue("status", issue.status || "draft");
                 setValue("slug", issue.slug);
             } else {
@@ -138,10 +140,37 @@ export default function EditIssuePage({ params }: { params: { id: string } }) {
 
                     <div className="space-y-2">
                         <label className="text-xs font-bold text-neutral-500 uppercase tracking-wider">Kapak Resmi URL</label>
-                        <input
-                            {...register("coverImage")}
-                            className="w-full rounded-lg bg-neutral-800 border border-white/10 text-white p-3 focus:ring-amber-500 focus:border-amber-500"
-                        />
+                        <div className="flex gap-2">
+                            <input
+                                {...register("coverImage")}
+                                className="flex-1 rounded-lg bg-neutral-800 border border-white/10 text-white p-3 focus:ring-amber-500 focus:border-amber-500"
+                            />
+                            <button
+                                type="button"
+                                onClick={() => window.open('/admin/media', '_blank')}
+                                className="px-4 py-2 bg-neutral-700 text-white rounded-lg hover:bg-neutral-600 transition-colors border border-white/5 text-sm"
+                            >
+                                Medya Seç
+                            </button>
+                        </div>
+                    </div>
+
+                    <div className="space-y-2">
+                        <label className="text-xs font-bold text-neutral-500 uppercase tracking-wider">PDF URL</label>
+                        <div className="flex gap-2">
+                            <input
+                                {...register("pdfUrl")}
+                                className="flex-1 rounded-lg bg-neutral-800 border border-white/10 text-white p-3 focus:ring-amber-500 focus:border-amber-500"
+                            />
+                            <button
+                                type="button"
+                                onClick={() => window.open('/admin/media', '_blank')}
+                                className="px-4 py-2 bg-neutral-700 text-white rounded-lg hover:bg-neutral-600 transition-colors border border-white/5 text-sm"
+                            >
+                                Medya Seç
+                            </button>
+                        </div>
+                        <p className="text-xs text-neutral-500">Dergisi PDF dosyası için URL girin.</p>
                     </div>
 
                     <div className="space-y-2">
