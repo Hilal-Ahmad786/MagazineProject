@@ -36,10 +36,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export async function generateStaticParams() {
-  const issues = await getAllIssues();
-  return issues.map((issue) => ({
-    id: issue.id,
-  }));
+  try {
+    const issues = await getAllIssues();
+    return issues.map((issue) => ({
+      id: issue.id,
+    }));
+  } catch (error) {
+    console.warn('Failed to generate static params for issues:', error);
+    return [];
+  }
 }
 
 export default async function IssueDetailPage({ params }: Props) {

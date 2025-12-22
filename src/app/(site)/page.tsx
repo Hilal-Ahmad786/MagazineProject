@@ -10,14 +10,14 @@ import { getAllAuthors } from '@/lib/data/authors'
 
 export default async function Home() {
   // Fetch data
-  const quote = await getRandomQuote()
-  const latestIssue = await getLatestIssue()
-  const featuredArticles = await getFeaturedArticles(5)
-  const authors = await getAllAuthors()
-
-
-
-  const latestArticles = await getLatestArticles(5)
+  // Fetch data in parallel to avoid waterfalls and timeouts
+  const [quote, latestIssue, featuredArticles, authors, latestArticles] = await Promise.all([
+    getRandomQuote(),
+    getLatestIssue(),
+    getFeaturedArticles(5),
+    getAllAuthors(),
+    getLatestArticles(5)
+  ])
 
   const heroArticle = featuredArticles[0] || latestArticles[0]
 

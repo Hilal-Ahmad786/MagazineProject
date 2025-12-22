@@ -11,10 +11,15 @@ interface ArticlePageProps {
 
 // Generate static params for all articles
 export async function generateStaticParams() {
-  const articles = await getAllArticles()
-  return articles.map((article) => ({
-    slug: article.slug,
-  }))
+  try {
+    const articles = await getAllArticles()
+    return articles.map((article) => ({
+      slug: article.slug,
+    }))
+  } catch (error) {
+    console.warn('Failed to generate static params for articles:', error)
+    return []
+  }
 }
 
 // Generate metadata for SEO

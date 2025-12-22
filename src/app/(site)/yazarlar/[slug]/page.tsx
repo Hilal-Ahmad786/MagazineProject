@@ -11,10 +11,15 @@ interface AuthorPageProps {
 
 // Generate static params for all authors
 export async function generateStaticParams() {
-  const authors = await getAllAuthors()
-  return authors.map((author) => ({
-    slug: author.slug,
-  }))
+  try {
+    const authors = await getAllAuthors()
+    return authors.map((author) => ({
+      slug: author.slug,
+    }))
+  } catch (error) {
+    console.warn('Failed to generate static params for authors:', error)
+    return []
+  }
 }
 
 // Generate metadata for SEO

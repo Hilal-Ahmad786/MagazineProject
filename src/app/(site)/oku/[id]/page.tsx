@@ -13,8 +13,13 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
-  const issues = await getAllIssues()
-  return issues.map(issue => ({ id: issue.id }))
+  try {
+    const issues = await getAllIssues()
+    return issues.map(issue => ({ id: issue.id }))
+  } catch (error) {
+    console.warn('Failed to generate static params for reader:', error)
+    return []
+  }
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
