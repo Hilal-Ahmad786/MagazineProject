@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from 'next'
+import { Analytics } from "@vercel/analytics/next"
 import { Inter } from 'next/font/google'
 import { Providers } from '@/components/Providers'
 import { getAllArticles } from '@/lib/data/articles'
@@ -62,6 +63,7 @@ export default async function RootLayout({
             }}
           />
           {children}
+          <Analytics />
         </Providers>
       </body>
     </html>

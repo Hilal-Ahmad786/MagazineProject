@@ -42,26 +42,25 @@ export default function MediaPage() {
 
         setIsUploading(true);
         const file = e.target.files[0];
-        const formData = new FormData();
-        formData.append("file", file);
 
         try {
-            const res = await fetch("/api/admin/media", {
-                method: "POST",
-                body: formData,
+            // Import dynamically to avoid SSR issues with client modules if any
+            const { upload } = await import('@vercel/blob/client');
+
+            const newBlob = await upload(file.name, file, {
+                access: 'public',
+                handleUploadUrl: '/api/admin/media/upload',
             });
 
-            if (res.ok) {
-                fetchMedia(); // Refresh list
-                showToast("Görsel başarıyla yüklendi", "success");
-            } else {
-                showToast("Yükleme başarısız", "error");
-            }
+            fetchMedia(); // Refresh list
+            showToast("Dosya başarıyla yüklendi", "success");
         } catch (error) {
             console.error(error);
-            showToast("Hata oluştu", "error");
+            showToast("Yükleme başarısız", "error");
         } finally {
             setIsUploading(false);
+            // Reset input
+            e.target.value = '';
         }
     };
 
