@@ -9,7 +9,7 @@
         "category": "BİREYSEL YAZILAR",
         "image": "/images/covers/sayi-7-muhabbet-ve-selam.png",
         "author": {
-            "id": "author_011",
+            "id": "author_009",
             "name": "Seyyid Ali Ayaz",
             "slug": "seyyid-ali-ayaz",
             "avatar": "/images/authors/seyyid-ali-ayaz.jpg",
@@ -26,7 +26,8 @@
             "sosyal bağlar",
             "kültür"
         ],
-        "status": "published"
+        "status": "published",
+        "authorId": "author_009"
     },
     {
         "id": "art_702",
@@ -38,7 +39,7 @@
         "category": "BİREYSEL YAZILAR",
         "image": "/images/covers/sayi-7-muhabbet-ve-selam.png",
         "author": {
-            "id": "author_012",
+            "id": "author_008",
             "name": "Mücahit Pehlivan",
             "slug": "mucahit-pehlivan",
             "avatar": "/images/author-placeholder.jpg",
@@ -55,7 +56,8 @@
             "selam",
             "şehir hayatı"
         ],
-        "status": "published"
+        "status": "published",
+        "authorId": "author_008"
     },
     {
         "id": "art_703",
@@ -67,7 +69,7 @@
         "category": "BİREYSEL YAZILAR",
         "image": "/images/covers/sayi-7-muhabbet-ve-selam.png",
         "author": {
-            "id": "author_003",
+            "id": "author_001",
             "name": "Mehmet Oktay Yetiş",
             "slug": "mehmet-oktay-yetis",
             "avatar": "/images/authors/mehmet-oktay-yetis.jpg",
@@ -84,7 +86,8 @@
             "gönül",
             "sünnet"
         ],
-        "status": "published"
+        "status": "published",
+        "authorId": "author_001"
     },
     {
         "id": "art_704",
@@ -96,7 +99,7 @@
         "category": "BİREYSEL YAZILAR",
         "image": "/images/covers/sayi-7-muhabbet-ve-selam.png",
         "author": {
-            "id": "author_004",
+            "id": "author_010",
             "name": "Muhammet Kürşat Çolak",
             "slug": "muhammet-kursat-colak",
             "avatar": "/images/authors/muhammet-kursat-colak.jpg",
@@ -113,7 +116,8 @@
             "komşuluk",
             "iletişim"
         ],
-        "status": "published"
+        "status": "published",
+        "authorId": "author_010"
     },
     {
         "id": "art_705",
@@ -125,7 +129,7 @@
         "category": "BİREYSEL YAZILAR",
         "image": "/images/covers/sayi-7-muhabbet-ve-selam.png",
         "author": {
-            "id": "author_017",
+            "id": "author_007",
             "name": "Eren Salih Aksu",
             "slug": "eren-salih-aksu",
             "avatar": "/images/authors/eren-salih-aksu.jpg",
@@ -142,7 +146,8 @@
             "iletişim",
             "dil"
         ],
-        "status": "published"
+        "status": "published",
+        "authorId": "author_007"
     },
     {
         "id": "art_706",
@@ -154,7 +159,7 @@
         "category": "BİREYSEL YAZILAR",
         "image": "/images/covers/sayi-7-muhabbet-ve-selam.png",
         "author": {
-            "id": "author_009",
+            "id": "author_012",
             "name": "Ahmet Talha Çamcı",
             "slug": "ahmet-talha-camci",
             "avatar": "/images/authors/ahmet-talha-camci.jpg",
@@ -171,6 +176,7 @@
             "iz bırakmak",
             "empati"
         ],
-        "status": "published"
+        "status": "published",
+        "authorId": "author_012"
     }
 ]

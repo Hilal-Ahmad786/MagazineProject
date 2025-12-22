@@ -47,15 +47,24 @@ export function FooterNewsletter({
     setStatus('loading')
 
     try {
-      // Simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 1000))
-      
+      // Call API
+      const res = await fetch('/api/newsletter/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: email.trim() }),
+      });
+
+      if (!res.ok) {
+        throw new Error('Subscription failed');
+      }
+
       localStorage.setItem('newsletter_subscribed', 'true')
       localStorage.setItem('newsletter_email', email.trim())
-      
+
       setStatus('success')
       setIsSubscribed(true)
-    } catch {
+    } catch (err) {
+      console.error(err);
       setStatus('error')
       setError('Bir hata oluştu')
     }

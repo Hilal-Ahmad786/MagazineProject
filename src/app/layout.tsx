@@ -1,19 +1,12 @@
 import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
-import { Header } from '@/components/layout/Header'
-import { Footer } from '@/components/footer/Footer'
 import { Providers } from '@/components/Providers'
-import { SearchModal } from '@/components/search/SearchModal'
-import { ReadingListDrawer } from '@/components/reading-list/ReadingListDrawer'
-import { PWARegister } from '@/components/pwa/PWARegister'
-import { InstallPrompt } from '@/components/pwa/InstallPrompt'
-import { OfflineIndicator } from '@/components/pwa/OfflineIndicator'
-import { NewsletterModal } from '@/components/newsletter/NewsletterModal'
-import { ScrollToTop } from '@/components/common/ScrollToTop'
 import { getAllArticles } from '@/lib/data/articles'
 import { getAllAuthors } from '@/lib/data/authors'
 import { getAllIssues } from '@/lib/data/issues'
-import '@/styles/globals.css'
+import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
+import { GoogleTagManager, GoogleTagManagerNoScript } from "@/components/analytics/GoogleTagManager";
+import "@/styles/globals.css";
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -47,13 +40,11 @@ export default async function RootLayout({
         <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
       </head>
       <body className={`${inter.className} bg-black text-white antialiased`}>
-        <Providers articles={articles} authors={authors} issues={issues}>
-          {/* PWA disabled for development stability */}
-          {/* <PWARegister /> */}
-          {/* <InstallPrompt variant="banner" delay={30000} /> */}
-          {/* <OfflineIndicator variant="toast" /> */}
+        <GoogleTagManagerNoScript />
+        <GoogleTagManager />
+        <GoogleAnalytics gaId="G-0RLMRKVQ7L" />
 
-          {/* Aggressively unregister any existing Service Workers to fix loading issues */}
+        <Providers articles={articles} authors={authors} issues={issues}>
           <script
             dangerouslySetInnerHTML={{
               __html: `
@@ -70,14 +61,7 @@ export default async function RootLayout({
               `
             }}
           />
-
-          <NewsletterModal delay={60000} />
-          <Header />
           {children}
-          <Footer />
-          <SearchModal />
-          <ReadingListDrawer />
-          <ScrollToTop />
         </Providers>
       </body>
     </html>

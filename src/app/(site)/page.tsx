@@ -15,11 +15,17 @@ export default async function Home() {
   const featuredArticles = await getFeaturedArticles(5)
   const authors = await getAllAuthors()
 
+
+
+  const latestArticles = await getLatestArticles(5)
+
+  const heroArticle = featuredArticles[0] || latestArticles[0]
+
   return (
     <main className="min-h-screen">
       {latestIssue && quote && (
         <HeroFeatured
-          article={featuredArticles[0] as unknown as import('@/types').Article}
+          article={heroArticle as unknown as import('@/types').Article}
           variant="fullscreen"
         />
       )}

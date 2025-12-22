@@ -27,7 +27,8 @@
             "insaniyet",
             "şahitlik"
         ],
-        "status": "published"
+        "status": "published",
+        "authorId": "author_018"
     },
     {
         "id": "art_802",
@@ -39,7 +40,7 @@
         "category": "BİREYSEL YAZILAR",
         "image": "/images/covers/sayi-8-mesuliyet.jpg",
         "author": {
-            "id": "author_010",
+            "id": "author_009",
             "name": "Seyyid Ali Ayaz",
             "slug": "seyyid-ali-ayaz",
             "avatar": "/images/authors/seyyid-ali-ayaz.jpg",
@@ -56,7 +57,8 @@
             "vatan özlemi",
             "meslek"
         ],
-        "status": "published"
+        "status": "published",
+        "authorId": "author_009"
     },
     {
         "id": "art_803",
@@ -68,7 +70,7 @@
         "category": "BİREYSEL YAZILAR",
         "image": "/images/covers/sayi-8-mesuliyet.jpg",
         "author": {
-            "id": "author_004",
+            "id": "author_010",
             "name": "Muhammet Kürşat Çolak",
             "slug": "muhammet-kursat-colak",
             "avatar": "/images/authors/muhammet-kursat-colak.jpg",
@@ -85,7 +87,8 @@
             "içsel yolculuk",
             "modern zamanlar"
         ],
-        "status": "published"
+        "status": "published",
+        "authorId": "author_010"
     },
     {
         "id": "art_804",
@@ -97,7 +100,7 @@
         "category": "BİREYSEL YAZILAR",
         "image": "/images/covers/sayi-8-mesuliyet.jpg",
         "author": {
-            "id": "author_016",
+            "id": "author_008",
             "name": "Mücahit Pehlivan",
             "slug": "mucahit-pehlivan",
             "avatar": "/images/author-placeholder.jpg",
@@ -115,7 +118,8 @@
             "tasavvuf",
             "kimlik"
         ],
-        "status": "published"
+        "status": "published",
+        "authorId": "author_008"
     },
     {
         "id": "art_805",
@@ -127,7 +131,7 @@
         "category": "BİREYSEL YAZILAR",
         "image": "/images/covers/sayi-8-mesuliyet.jpg",
         "author": {
-            "id": "author_003",
+            "id": "author_001",
             "name": "Mehmet Oktay Yetiş",
             "slug": "mehmet-oktay-yetis",
             "avatar": "/images/authors/mehmet-oktay-yetis.jpg",
@@ -144,7 +148,8 @@
             "sılaya hasret",
             "göç"
         ],
-        "status": "published"
+        "status": "published",
+        "authorId": "author_001"
     },
     {
         "id": "art_806",
@@ -156,7 +161,7 @@
         "category": "BİREYSEL YAZILAR",
         "image": "/images/covers/sayi-8-mesuliyet.jpg",
         "author": {
-            "id": "author_015",
+            "id": "author_011",
             "name": "Furkan Ahmet Aydın",
             "slug": "furkan-ahmet-aydin",
             "avatar": "/images/authors/furkan-ahmet-aydin.jpg",
@@ -173,7 +178,8 @@
             "bayram",
             "hasret"
         ],
-        "status": "published"
+        "status": "published",
+        "authorId": "author_011"
     },
     {
         "id": "art_807",
@@ -185,7 +191,7 @@
         "category": "BİREYSEL YAZILAR",
         "image": "/images/covers/sayi-8-mesuliyet.jpg",
         "author": {
-            "id": "author_017",
+            "id": "author_007",
             "name": "Eren Salih Aksu",
             "slug": "eren-salih-aksu",
             "avatar": "/images/authors/eren-salih-aksu.jpg",
@@ -202,6 +208,7 @@
             "anılar",
             "değişim"
         ],
-        "status": "published"
+        "status": "published",
+        "authorId": "author_007"
     }
 ]

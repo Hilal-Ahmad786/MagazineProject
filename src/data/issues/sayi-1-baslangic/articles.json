@@ -25,7 +25,8 @@
             "Ortadoğu",
             "siyaset"
         ],
-        "status": "published"
+        "status": "published",
+        "authorId": "author_009"
     },
     {
         "id": "art_013",
@@ -53,7 +54,8 @@
             "maneviyat",
             "niyet"
         ],
-        "status": "published"
+        "status": "published",
+        "authorId": "author_001"
     },
     {
         "id": "art_014",
@@ -81,7 +83,8 @@
             "anlam",
             "hayat"
         ],
-        "status": "published"
+        "status": "published",
+        "authorId": "author_008"
     },
     {
         "id": "art_015",
@@ -109,7 +112,8 @@
             "teknoloji",
             "iletişim"
         ],
-        "status": "published"
+        "status": "published",
+        "authorId": "author_010"
     },
     {
         "id": "art_016",
@@ -137,6 +141,7 @@
             "psikoloji",
             "savaş"
         ],
-        "status": "published"
+        "status": "published",
+        "authorId": "author_007"
     }
 ]

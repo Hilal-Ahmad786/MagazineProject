@@ -25,7 +25,8 @@
             "insan",
             "gelecek"
         ],
-        "status": "published"
+        "status": "published",
+        "authorId": "author_012"
     },
     {
         "id": "art_302",
@@ -54,7 +55,8 @@
             "teoman",
             "sistem"
         ],
-        "status": "published"
+        "status": "published",
+        "authorId": "author_007"
     },
     {
         "id": "art_303",
@@ -83,7 +85,8 @@
             "gelişim",
             "farkındalık"
         ],
-        "status": "published"
+        "status": "published",
+        "authorId": "author_011"
     },
     {
         "id": "art_304",
@@ -112,7 +115,8 @@
             "niyet",
             "hazırlık"
         ],
-        "status": "published"
+        "status": "published",
+        "authorId": "author_010"
     },
     {
         "id": "art_305",
@@ -141,7 +145,8 @@
             "islam",
             "yolculuk"
         ],
-        "status": "published"
+        "status": "published",
+        "authorId": "author_001"
     },
     {
         "id": "art_306",
@@ -170,7 +175,8 @@
             "modernleşme",
             "kültür"
         ],
-        "status": "published"
+        "status": "published",
+        "authorId": "author_008"
     },
     {
         "id": "art_307",
@@ -199,6 +205,7 @@
             "persona",
             "mutluluk"
         ],
-        "status": "published"
+        "status": "published",
+        "authorId": "author_009"
     }
 ]

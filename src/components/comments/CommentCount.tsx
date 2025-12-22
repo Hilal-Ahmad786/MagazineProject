@@ -3,8 +3,8 @@
 
 'use client'
 
+import { useState, useEffect } from 'react'
 import { cn } from '@/lib/utils'
-import { useComments } from '@/contexts/CommentsContext'
 
 interface CommentCountProps {
   articleId: string
@@ -23,11 +23,22 @@ export function CommentCount({
   onClick,
   className,
 }: CommentCountProps) {
-  const { getCommentCount } = useComments()
-  const count = getCommentCount(articleId)
+  const [count, setCount] = useState<number | null>(null)
 
-  // Don't render if zero and showZero is false
-  if (count === 0 && !showZero) return null
+  useEffect(() => {
+    fetch(`/api/comments?articleId=${articleId}`)
+      .then(res => res.json())
+      .then(data => {
+        // Simple count calculation from nested structure
+        const countTotal = (comments: any[]): number =>
+          comments.reduce((acc, c) => acc + 1 + countTotal(c.replies || []), 0)
+        setCount(countTotal(data))
+      })
+      .catch(err => console.error(err))
+  }, [articleId])
+
+  // Don't render until loaded or if zero and showZero is false
+  if (count === null || (count === 0 && !showZero)) return null
 
   const sizeClasses = {
     sm: 'text-xs gap-1',

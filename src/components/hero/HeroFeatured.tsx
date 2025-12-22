@@ -27,7 +27,11 @@ export function HeroFeatured({
   showDate = true,
   className,
 }: HeroFeaturedProps) {
-  const readingTime = article.readTime ? `${article.readTime} dk okuma` : getReadingTime(article.content || '')
+  const contentText = typeof article.content === 'string'
+    ? article.content
+    : article.content.map(b => b.content || '').join(' ')
+
+  const readingTime = article.readTime ? `${article.readTime} dk okuma` : getReadingTime(contentText)
 
   // Side by side variant
   if (variant === 'side-by-side') {

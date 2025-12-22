@@ -1,13 +1,10 @@
-// src/components/comments/CommentSection.tsx
-// Main comment section container
-
 'use client'
 
-import { useCallback } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { cn } from '@/lib/utils'
-import { useComments } from '@/contexts/CommentsContext'
 import { CommentForm } from './CommentForm'
 import { CommentList } from './CommentList'
+import type { Comment } from '@/types'
 
 interface CommentSectionProps {
   articleId: string
@@ -20,51 +17,96 @@ export function CommentSection({
   title = 'Yorumlar',
   className,
 }: CommentSectionProps) {
-  const {
-    getComments,
-    getCommentCount,
-    addComment,
-    addReply,
-    likeComment,
-    deleteComment,
-  } = useComments()
+  const [comments, setComments] = useState<Comment[]>([])
+  const [isLoading, setIsLoading] = useState(true)
 
-  const comments = getComments(articleId)
-  const commentCount = getCommentCount(articleId)
+  // Fetch comments
+  const fetchComments = useCallback(async () => {
+    try {
+      const res = await fetch(`/api/comments?articleId=${articleId}`)
+      if (res.ok) {
+        const data = await res.json()
+        setComments(data)
+      }
+    } catch (error) {
+      console.error('Failed to fetch comments:', error)
+    } finally {
+      setIsLoading(false)
+    }
+  }, [articleId])
+
+  useEffect(() => {
+    fetchComments()
+  }, [fetchComments])
+
+  // Count comments helper
+  const countComments = (list: Comment[]): number => {
+    return list.reduce((acc, curr) => acc + 1 + countComments(curr.replies || []), 0)
+  }
+
+  const commentCount = countComments(comments)
 
   // Handle new comment
-  const handleAddComment = useCallback(
-    (data: { name: string; email: string; content: string }) => {
-      addComment(articleId, data)
-    },
-    [articleId, addComment]
-  )
+  const handleAddComment = async (data: { name: string; email: string; content: string }) => {
+    try {
+      const res = await fetch('/api/comments', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          articleId,
+          ...data
+        }),
+      })
+
+      if (res.ok) {
+        await fetchComments() // Refresh list
+      }
+    } catch (error) {
+      console.error('Failed to post comment:', error)
+    }
+  }
 
   // Handle reply
-  const handleReply = useCallback(
-    (parentId: string, data: { name: string; email: string; content: string }) => {
-      addReply(articleId, parentId, data)
-    },
-    [articleId, addReply]
-  )
+  const handleReply = async (parentId: string, data: { name: string; email: string; content: string }) => {
+    try {
+      const res = await fetch('/api/comments', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          articleId,
+          parentId,
+          ...data
+        }),
+      })
+
+      if (res.ok) {
+        await fetchComments() // Refresh list
+      }
+    } catch (error) {
+      console.error('Failed to post reply:', error)
+    }
+  }
 
   // Handle like
-  const handleLike = useCallback(
-    (commentId: string) => {
-      likeComment(articleId, commentId)
-    },
-    [articleId, likeComment]
-  )
+  const handleLike = async (commentId: string) => {
+    try {
+      // Optimistic update could be done here, but for now just fire and forget or refresh
+      await fetch(`/api/comments/${commentId}/like`, { method: 'POST' })
+      // We can refresh or let it be (likes often don't need instant strict sync)
+      // Let's refresh to show the new count
+      // Or update local state for better perf? 
+      // Simple:
+      fetchComments()
+    } catch (error) {
+      console.error('Failed to like comment:', error)
+    }
+  }
 
-  // Handle delete
-  const handleDelete = useCallback(
-    (commentId: string) => {
-      if (window.confirm('Bu yorumu silmek istediğinize emin misiniz?')) {
-        deleteComment(articleId, commentId)
-      }
-    },
-    [articleId, deleteComment]
-  )
+  // Handle delete (Admin only realistically, but keeping prop signature)
+  // Since this is public facing, we probably don't expose delete here unless user is admin?
+  // Current design implies admin manages from admin panel. Public users shouldn't delete.
+  // We can pass undefined for onDelete or implement if we have auth.
+  // For now, let's leave handleLike and ignore delete in public view.
 
   return (
     <section className={cn('', className)}>
@@ -100,13 +142,16 @@ export function CommentSection({
       </div>
 
       {/* Comment List */}
-      <CommentList
-        comments={comments}
-        articleId={articleId}
-        onReply={handleReply}
-        onLike={handleLike}
-        onDelete={handleDelete}
-      />
+      {isLoading ? (
+        <div className="text-center py-8 text-zinc-500">Yükleniyor...</div>
+      ) : (
+        <CommentList
+          comments={comments}
+          articleId={articleId}
+          onReply={handleReply}
+          onLike={handleLike}
+        />
+      )}
     </section>
   )
 }

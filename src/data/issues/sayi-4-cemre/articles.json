@@ -9,7 +9,7 @@
         "category": "Deneme",
         "image": "/images/covers/sayi-4-cemre.jpg",
         "author": {
-            "id": "author_005",
+            "id": "author_012",
             "name": "Ahmet Talha Çamcı",
             "slug": "ahmet-talha-camci",
             "avatar": "/images/authors/ahmet-talha-camci.jpg",
@@ -26,6 +26,7 @@
             "bahar",
             "uyanış"
         ],
-        "status": "published"
+        "status": "published",
+        "authorId": "author_012"
     }
 ]

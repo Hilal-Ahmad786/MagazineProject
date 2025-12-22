@@ -27,7 +27,8 @@
             "direniş",
             "kimlik"
         ],
-        "status": "published"
+        "status": "published",
+        "authorId": "author_009"
     },
     {
         "id": "art_602",
@@ -56,7 +57,8 @@
             "siyonizm",
             "direniş"
         ],
-        "status": "published"
+        "status": "published",
+        "authorId": "author_008"
     },
     {
         "id": "art_603",
@@ -68,7 +70,7 @@
         "category": "BİREYSEL YAZILAR",
         "image": "/images/covers/sayi-6-filistin.jpg",
         "author": {
-            "id": "author_010",
+            "id": "author_001",
             "name": "Mehmet Oktay Yetiş",
             "slug": "mehmet-oktay-yetis",
             "avatar": "/images/authors/mehmet-oktay-yetis.jpg",
@@ -85,7 +87,8 @@
             "cihad",
             "sorumluluk"
         ],
-        "status": "published"
+        "status": "published",
+        "authorId": "author_001"
     },
     {
         "id": "art_604",
@@ -97,7 +100,7 @@
         "category": "BİREYSEL YAZILAR",
         "image": "/images/covers/sayi-6-filistin.jpg",
         "author": {
-            "id": "author_011",
+            "id": "author_010",
             "name": "Muhammet Kürşat Çolak",
             "slug": "muhammet-kursat-colak",
             "avatar": "/images/authors/muhammet-kursat-colak.jpg",
@@ -114,7 +117,8 @@
             "vicdan",
             "sorumluluk"
         ],
-        "status": "published"
+        "status": "published",
+        "authorId": "author_010"
     },
     {
         "id": "art_605",
@@ -126,7 +130,7 @@
         "category": "BİREYSEL YAZILAR",
         "image": "/images/covers/sayi-6-filistin.jpg",
         "author": {
-            "id": "author_013",
+            "id": "author_011",
             "name": "Furkan Ahmet Aydın",
             "slug": "furkan-ahmet-aydin",
             "avatar": "/images/authors/furkan-ahmet-aydin.jpg",
@@ -143,7 +147,8 @@
             "iki yüzlülük",
             "direniş"
         ],
-        "status": "published"
+        "status": "published",
+        "authorId": "author_011"
     },
     {
         "id": "art_606",
@@ -172,7 +177,8 @@
             "boykot",
             "sorumluluk"
         ],
-        "status": "published"
+        "status": "published",
+        "authorId": "UNKNOWN_AUTHOR"
     },
     {
         "id": "art_607",
@@ -201,7 +207,8 @@
             "siyaset",
             "medya"
         ],
-        "status": "published"
+        "status": "published",
+        "authorId": "author_group_001"
     },
     {
         "id": "art_608",
@@ -230,7 +237,8 @@
             "nakba",
             "işgal"
         ],
-        "status": "published"
+        "status": "published",
+        "authorId": "author_group_002"
     },
     {
         "id": "art_609",
@@ -259,7 +267,8 @@
             "diplomasi",
             "dış politika"
         ],
-        "status": "published"
+        "status": "published",
+        "authorId": "author_group_003"
     },
     {
         "id": "art_610",
@@ -288,7 +297,8 @@
             "maneviyat",
             "tarih"
         ],
-        "status": "published"
+        "status": "published",
+        "authorId": "author_014"
     },
     {
         "id": "art_611",
@@ -317,7 +327,8 @@
             "sorumluluk",
             "islam"
         ],
-        "status": "published"
+        "status": "published",
+        "authorId": "author_015"
     },
     {
         "id": "art_612",
@@ -346,6 +357,7 @@
             "insani yardım",
             "savaş"
         ],
-        "status": "published"
+        "status": "published",
+        "authorId": "author_016"
     }
 ]

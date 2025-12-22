@@ -3,8 +3,9 @@
 
 export interface CommentAuthor {
   name: string
-  email: string
+  email?: string
   avatar?: string
+  isAdmin?: boolean
 }
 
 export interface Comment {
@@ -39,7 +40,7 @@ export function getCommentAvatarUrl(name: string): string {
     .join('')
     .toUpperCase()
     .slice(0, 2)
-  
+
   // Use UI Avatars service or return initials
   return `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&background=facc15&color=000&bold=true`
 }
@@ -49,7 +50,7 @@ export function getTimeAgo(dateString: string): string {
   const date = new Date(dateString)
   const now = new Date()
   const seconds = Math.floor((now.getTime() - date.getTime()) / 1000)
-  
+
   const intervals = {
     yıl: 31536000,
     ay: 2592000,
@@ -58,13 +59,13 @@ export function getTimeAgo(dateString: string): string {
     saat: 3600,
     dakika: 60,
   }
-  
+
   for (const [unit, secondsInUnit] of Object.entries(intervals)) {
     const interval = Math.floor(seconds / secondsInUnit)
     if (interval >= 1) {
       return `${interval} ${unit}${interval > 1 ? '' : ''} önce`
     }
   }
-  
+
   return 'Az önce'
 }

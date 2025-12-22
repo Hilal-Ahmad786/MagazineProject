@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { sendContactNotification } from '@/lib/emailjs'
 
 type Status = 'idle' | 'loading' | 'success' | 'error'
 
@@ -28,21 +29,33 @@ export function ContactForm() {
     setStatus('loading')
 
     try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+      // Send email via EmailJS
+      const emailResult = await sendContactNotification({
+        name: formData.name,
+        email: formData.email,
+        title: formData.subject,
+        message: formData.message,
       })
 
-      const data = await res.json()
+      if (emailResult.success) {
+        // Optionally also save to database via API
+        try {
+          await fetch('/api/contact', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData),
+          })
+        } catch {
+          // API save failed but email sent - still show success
+          console.log('API save failed but email was sent')
+        }
 
-      if (res.ok) {
         setStatus('success')
         setMessage('Mesajınız alındı! En kısa sürede yanıt vereceğiz.')
         setFormData({ name: '', email: '', subject: '', message: '' })
       } else {
         setStatus('error')
-        setMessage(data.error || 'Bir hata oluştu.')
+        setMessage('E-posta gönderilemedi. Lütfen tekrar deneyin.')
       }
     } catch (error) {
       setStatus('error')

@@ -26,7 +26,8 @@
             "ilişkiler",
             "sosyal yaşam"
         ],
-        "status": "published"
+        "status": "published",
+        "authorId": "author_009"
     },
     {
         "id": "art_502",
@@ -55,7 +56,8 @@
             "toplum",
             "ahlak"
         ],
-        "status": "published"
+        "status": "published",
+        "authorId": "author_008"
     },
     {
         "id": "art_503",
@@ -84,7 +86,8 @@
             "toplum",
             "adalet"
         ],
-        "status": "published"
+        "status": "published",
+        "authorId": "author_001"
     },
     {
         "id": "art_504",
@@ -113,7 +116,8 @@
             "farkındalık",
             "toprak"
         ],
-        "status": "published"
+        "status": "published",
+        "authorId": "author_010"
     },
     {
         "id": "art_505",
@@ -142,7 +146,8 @@
             "psikoloji",
             "toplum"
         ],
-        "status": "published"
+        "status": "published",
+        "authorId": "author_011"
     },
     {
         "id": "art_506",
@@ -171,7 +176,8 @@
             "vicdan",
             "toplum"
         ],
-        "status": "published"
+        "status": "published",
+        "authorId": "author_007"
     },
     {
         "id": "art_507",
@@ -200,6 +206,7 @@
             "anlayış",
             "dijital"
         ],
-        "status": "published"
+        "status": "published",
+        "authorId": "author_012"
     }
 ]

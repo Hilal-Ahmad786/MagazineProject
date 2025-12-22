@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server'
+import prisma from "@/lib/db";
 
 export async function POST(request: Request) {
     try {
@@ -12,11 +13,24 @@ export async function POST(request: Request) {
             )
         }
 
-        // Mock delay to simulate API call
-        await new Promise((resolve) => setTimeout(resolve, 1000))
+        // Check availability
+        const existing = await prisma.subscriber.findUnique({
+            where: { email }
+        });
 
-        // Here you would typically integrate with Mailchimp, ConvertKit, etc.
-        // await addToMailingList(email)
+        if (existing) {
+            // Already subscribed, treat as success
+            return NextResponse.json({ success: true, message: "Already subscribed" });
+        }
+
+        // Create subscriber
+        await prisma.subscriber.create({
+            data: {
+                email,
+                source: 'website',
+                status: 'active'
+            }
+        });
 
         console.log(`[Newsletter] New subscriber: ${email}`)
 

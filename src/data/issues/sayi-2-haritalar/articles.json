@@ -26,7 +26,8 @@
             "suriye",
             "coğrafya"
         ],
-        "status": "published"
+        "status": "published",
+        "authorId": "author_007"
     },
     {
         "id": "art_202",
@@ -54,7 +55,8 @@
             "gönül coğrafyası",
             "piri reis"
         ],
-        "status": "published"
+        "status": "published",
+        "authorId": "author_011"
     },
     {
         "id": "art_203",
@@ -83,7 +85,8 @@
             "suriye",
             "tarih"
         ],
-        "status": "published"
+        "status": "published",
+        "authorId": "author_010"
     },
     {
         "id": "art_204",
@@ -112,7 +115,8 @@
             "islam",
             "keşif"
         ],
-        "status": "published"
+        "status": "published",
+        "authorId": "author_001"
     },
     {
         "id": "art_205",
@@ -141,6 +145,7 @@
             "ekonomi",
             "konum"
         ],
-        "status": "published"
+        "status": "published",
+        "authorId": "author_009"
     }
 ]

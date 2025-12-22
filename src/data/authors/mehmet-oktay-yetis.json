@@ -1,18 +1,18 @@
 {
-    "id": "author_001",
-    "slug": "mehmet-oktay-yetis",
-    "name": "Mehmet Oktay Yetiş",
-    "role": "founder",
-    "title": "İmtiyaz Sahibi / Genel Yayın Yönetmeni",
-    "avatar": "/images/authors/mehmet-oktay-yetis.jpg",
-    "bio": "Mazhar Dergisi İmtiyaz Sahibi ve Genel Yayın Yönetmeni.",
-    "longBio": "Mehmet Oktay, lisans eğitimini Sakarya Üniversitesi İnşaat Mühendisliği bölümünde tamamlamıştır. Meslek hayatına aynı şehirde bir çelik konstrüksiyon firmasında mühendis olarak başlamıştır. Farklı alanlardaki tecrübeleriyle dikkat çeken Oktay, geçmişte kasaplık ve aşçılık gibi işlerde de çalışmıştır. Spor geçmişi ise millî takımlar düzeyinde hentbol kariyeriyle öne çıkmaktadır. Edebiyata olan ilgisi küçük yaşlarda başlamış, zamanla divan edebiyatına yönelmiştir. Nâbî, Nef’î ve Şeyh Gâlib gibi üstatların eserlerinden ilham alarak bu alanda kendini derinleştirmiştir. Üniversite yıllarında çeşitli sivil toplum kuruluşlarında gönüllü görevler üstlenmiş, kaldığı yurtta yöneticilik yapmıştır. Sanata olan ilgisi müzikle de devam etmekte; bağlama, ud ve perküsyon gibi enstrümanlara ilgi duymaktadır. Çok yönlü kişiliğiyle sosyal, sanatsal ve akademik alanlarda aktif bir duruş sergilemektedir.",
-    "email": "oktay@mazhardergisi.com",
-    "social": {
-        "twitter": "https://twitter.com/moktayyetis",
-        "instagram": "https://instagram.com/moktayyetis"
-    },
-    "joinedAt": "2023-01-01",
-    "articleCount": 1,
-    "featured": true
+  "id": "author_001",
+  "slug": "mehmet-oktay-yetis",
+  "name": "Mehmet Oktay Yetiş",
+  "role": "founder",
+  "title": "İmtiyaz Sahibi / Genel Yayın Yönetmeni",
+  "avatar": "/images/authors/mehmet-oktay-yetis.jpg",
+  "bio": "Testing",
+  "longBio": "Mehmet Oktay, lisans eğitimini Sakarya Üniversitesi İnşaat Mühendisliği bölümünde tamamlamıştır. Meslek hayatına aynı şehirde bir çelik konstrüksiyon firmasında mühendis olarak başlamıştır. Farklı alanlardaki tecrübeleriyle dikkat çeken Oktay, geçmişte kasaplık ve aşçılık gibi işlerde de çalışmıştır. Spor geçmişi ise millî takımlar düzeyinde hentbol kariyeriyle öne çıkmaktadır. Edebiyata olan ilgisi küçük yaşlarda başlamış, zamanla divan edebiyatına yönelmiştir. Nâbî, Nef’î ve Şeyh Gâlib gibi üstatların eserlerinden ilham alarak bu alanda kendini derinleştirmiştir. Üniversite yıllarında çeşitli sivil toplum kuruluşlarında gönüllü görevler üstlenmiş, kaldığı yurtta yöneticilik yapmıştır. Sanata olan ilgisi müzikle de devam etmekte; bağlama, ud ve perküsyon gibi enstrümanlara ilgi duymaktadır. Çok yönlü kişiliğiyle sosyal, sanatsal ve akademik alanlarda aktif bir duruş sergilemektedir.",
+  "email": "oktay@mazhardergisi.com",
+  "social": {
+    "twitter": "https://twitter.com/moktayyetis",
+    "instagram": "https://instagram.com/moktayyetis"
+  },
+  "joinedAt": "2023-01-01",
+  "articleCount": 1,
+  "featured": true
 }

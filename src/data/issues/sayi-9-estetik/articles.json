@@ -9,7 +9,7 @@
         "category": "BİREYSEL YAZILAR",
         "image": "/images/covers/sayi-9-estetik.jpg",
         "author": {
-            "id": "author_010",
+            "id": "author_009",
             "name": "Seyyid Ali Ayaz",
             "slug": "seyyid-ali-ayaz",
             "avatar": "/images/authors/seyyid-ali-ayaz.jpg",
@@ -26,7 +26,8 @@
             "yapaylık",
             "sosyal medya"
         ],
-        "status": "published"
+        "status": "published",
+        "authorId": "author_009"
     },
     {
         "id": "art_902",
@@ -38,7 +39,7 @@
         "category": "BİREYSEL YAZILAR",
         "image": "/images/covers/sayi-9-estetik.jpg",
         "author": {
-            "id": "author_004",
+            "id": "author_010",
             "name": "Muhammet Kürşat Çolak",
             "slug": "muhammet-kursat-colak",
             "avatar": "/images/authors/muhammet-kursat-colak.jpg",
@@ -55,7 +56,8 @@
             "emek",
             "sessizlik"
         ],
-        "status": "published"
+        "status": "published",
+        "authorId": "author_010"
     },
     {
         "id": "art_903",
@@ -67,7 +69,7 @@
         "category": "BİREYSEL YAZILAR",
         "image": "/images/covers/sayi-9-estetik.jpg",
         "author": {
-            "id": "author_016",
+            "id": "author_008",
             "name": "Mücahit Pehlivan",
             "slug": "mucahit-pehlivan",
             "avatar": "/images/author-placeholder.jpg",
@@ -84,7 +86,8 @@
             "mimari",
             "tevhid"
         ],
-        "status": "published"
+        "status": "published",
+        "authorId": "author_008"
     },
     {
         "id": "art_904",
@@ -96,7 +99,7 @@
         "category": "BİREYSEL YAZILAR",
         "image": "/images/covers/sayi-9-estetik.jpg",
         "author": {
-            "id": "author_003",
+            "id": "author_001",
             "name": "Mehmet Oktay Yetiş",
             "slug": "mehmet-oktay-yetis",
             "avatar": "/images/authors/mehmet-oktay-yetis.jpg",
@@ -113,7 +116,8 @@
             "modern çağ",
             "sosyal medya"
         ],
-        "status": "published"
+        "status": "published",
+        "authorId": "author_001"
     },
     {
         "id": "art_905",
@@ -125,7 +129,7 @@
         "category": "BİREYSEL YAZILAR",
         "image": "/images/covers/sayi-9-estetik.jpg",
         "author": {
-            "id": "author_005",
+            "id": "author_011",
             "name": "Furkan Ahmet Aydın",
             "slug": "furkan-ahmet-aydin",
             "avatar": "/images/authors/furkan-ahmet-aydin.jpg",
@@ -142,7 +146,8 @@
             "ezan",
             "futbol"
         ],
-        "status": "published"
+        "status": "published",
+        "authorId": "author_011"
     },
     {
         "id": "art_906",
@@ -154,7 +159,7 @@
         "category": "BİREYSEL YAZILAR",
         "image": "/images/covers/sayi-9-estetik.jpg",
         "author": {
-            "id": "author_006",
+            "id": "author_007",
             "name": "Eren Salih Aksu",
             "slug": "eren-salih-aksu",
             "avatar": "/images/authors/eren-salih-aksu.jpg",
@@ -171,7 +176,8 @@
             "şehir",
             "ahlak"
         ],
-        "status": "published"
+        "status": "published",
+        "authorId": "author_007"
     },
     {
         "id": "art_907",
@@ -183,7 +189,7 @@
         "category": "BİREYSEL YAZILAR",
         "image": "/images/covers/sayi-9-estetik.jpg",
         "author": {
-            "id": "author_009",
+            "id": "author_012",
             "name": "Ahmet Talha Çamcı",
             "slug": "ahmet-talha-camci",
             "avatar": "/images/authors/ahmet-talha-camci.jpg",
@@ -200,6 +206,7 @@
             "duygu",
             "yaşam"
         ],
-        "status": "published"
+        "status": "published",
+        "authorId": "author_012"
     }
 ]
