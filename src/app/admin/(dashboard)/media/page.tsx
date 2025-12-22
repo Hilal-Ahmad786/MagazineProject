@@ -54,9 +54,9 @@ export default function MediaPage() {
 
             fetchMedia(); // Refresh list
             showToast("Dosya başarıyla yüklendi", "success");
-        } catch (error) {
+        } catch (error: any) {
             console.error(error);
-            showToast("Yükleme başarısız", "error");
+            showToast(`Yükleme başarısız: ${error.message || "Bilinmeyen hata"}`, "error");
         } finally {
             setIsUploading(false);
             // Reset input
