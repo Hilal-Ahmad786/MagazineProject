@@ -320,7 +320,7 @@ export default function ArticleForm({ issueId, initialData, isEditMode = false }
                                 />
                                 <div className="flex flex-col">
                                     <span className="font-medium text-white text-sm">Öne Çıkan Yazı</span>
-                                    <span className="text-xs text-neutral-500">Ana sayfa slider'da gösterilir</span>
+                                    <span className="text-xs text-neutral-500">Ana sayfa slider&apos;da gösterilir</span>
                                 </div>
                             </label>
                         </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -49,11 +49,7 @@ export default function EditAuthorPage({ params }: { params: { id: string } }) {
         resolver: zodResolver(schema),
     });
 
-    useEffect(() => {
-        fetchAuthor();
-    }, []);
-
-    async function fetchAuthor() {
+    const fetchAuthor = useCallback(async () => {
         try {
             const res = await fetch("/api/admin/authors");
             if (res.ok) {
@@ -93,7 +89,11 @@ export default function EditAuthorPage({ params }: { params: { id: string } }) {
         } finally {
             setIsLoading(false);
         }
-    }
+    }, [params.id, router, setValue]);
+
+    useEffect(() => {
+        fetchAuthor();
+    }, [fetchAuthor]);
 
 
     const onSubmit = async (data: FormData) => {

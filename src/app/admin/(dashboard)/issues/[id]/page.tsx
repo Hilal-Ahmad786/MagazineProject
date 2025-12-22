@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -33,11 +33,7 @@ export default function EditIssuePage({ params }: { params: { id: string } }) {
         resolver: zodResolver(schema),
     });
 
-    useEffect(() => {
-        fetchIssue();
-    }, []);
-
-    async function fetchIssue() {
+    const fetchIssue = useCallback(async () => {
         try {
             const res = await fetch(`/api/admin/issues/${params.id}`);
             if (res.ok) {
@@ -58,7 +54,11 @@ export default function EditIssuePage({ params }: { params: { id: string } }) {
         } finally {
             setIsLoading(false);
         }
-    }
+    }, [params.id, router, setValue]);
+
+    useEffect(() => {
+        fetchIssue();
+    }, [fetchIssue]);
 
     const onSubmit = async (data: FormData) => {
         try {

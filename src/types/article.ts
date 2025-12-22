@@ -21,15 +21,20 @@ export interface Article {
   id: string
   slug: string
   title: string
-  excerpt: string
+  excerpt?: string
   content: string | ArticleContentBlock[] // HTML or Markdown or Structured Blocks
   image: string
+  imageAlt?: string
+  imageCaption?: string
   category: string
+  categoryId?: string
   tags: string[]
   author: ArticleAuthor
+  authorId?: string
   date: string // ISO date string
   readTime: number // minutes
   featured: boolean
+  subtitle?: string
   issueId?: string
   page?: number // page number in issue
   viewCount?: number

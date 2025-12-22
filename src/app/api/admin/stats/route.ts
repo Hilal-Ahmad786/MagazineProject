@@ -22,15 +22,7 @@ export async function GET(req: NextRequest) {
             prisma.subscriber.count(),
             prisma.activityLog.findMany({
                 take: 5,
-                orderBy: { createdAt: 'desc' },
-                include: {
-                    // Try to include user name if possible, or just user ID
-                    // The schema has userId mapping to User model? 
-                    // Let's check schema. ActivityLog has userId but no relation defined in the provided schema for User?
-                    // Wait, let me double check the provided schema in memory.
-                    // ActivityLog: userId String? @map("user_id") @db.Uuid ... no relation field.
-                    // So we might just get the ID.
-                }
+                orderBy: { createdAt: 'desc' }
             })
         ]);
 

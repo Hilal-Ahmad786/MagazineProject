@@ -8,6 +8,5 @@ config({ path: '.env.local' })
 config({ path: '.env' })
 
 export default defineConfig({
-  earlyAccess: true,
   schema: path.join(__dirname, 'prisma', 'schema.prisma'),
 })

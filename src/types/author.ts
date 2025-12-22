@@ -17,8 +17,9 @@ export interface Author {
   id: string
   slug: string
   name: string
-  avatar: string
-  role: AuthorRole
+  avatar?: string
+  role: AuthorRole | string
+  title?: string
   bio: string
   shortBio?: string
   email?: string

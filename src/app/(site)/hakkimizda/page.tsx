@@ -254,7 +254,7 @@ export default async function AboutPage() {
                 <h3 className="text-xl font-bold text-white mb-1 group-hover:text-yellow-400 transition-colors">
                   {author.name}
                 </h3>
-                <p className="text-gray-500 text-sm">{AUTHOR_ROLE_LABELS[author.role]}</p>
+                <p className="text-gray-500 text-sm">{AUTHOR_ROLE_LABELS[author.role as keyof typeof AUTHOR_ROLE_LABELS] || author.role}</p>
               </Link>
             ))}
           </div>

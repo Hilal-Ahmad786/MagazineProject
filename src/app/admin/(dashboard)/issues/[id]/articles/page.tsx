@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import Link from "next/link";
 import { ArrowLeft, Plus, Edit2, Trash2, FileText, User, CheckCircle, Circle, Star } from "lucide-react";
 import { useRouter } from "next/navigation";
@@ -22,11 +22,7 @@ export default function ArticlesListPage({ params }: { params: { id: string } })
     const [articles, setArticles] = useState<Article[]>([]);
     const [isLoading, setIsLoading] = useState(true);
 
-    useEffect(() => {
-        fetchArticles();
-    }, []);
-
-    async function fetchArticles() {
+    const fetchArticles = useCallback(async () => {
         try {
             const res = await fetch(`/api/admin/issues/${params.id}/articles`);
             if (res.ok) {
@@ -38,7 +34,11 @@ export default function ArticlesListPage({ params }: { params: { id: string } })
         } finally {
             setIsLoading(false);
         }
-    }
+    }, [params.id]);
+
+    useEffect(() => {
+        fetchArticles();
+    }, [fetchArticles]);
 
     const handleDelete = async (articleId: string) => {
         if (!confirm("Bu yazıyı silmek istediğinize emin misiniz?")) return;

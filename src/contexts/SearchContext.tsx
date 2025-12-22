@@ -115,7 +115,7 @@ export function SearchProvider({
       articles.forEach((article) => {
         if (
           article.title.toLowerCase().includes(query) ||
-          article.excerpt.toLowerCase().includes(query) ||
+          (article.excerpt || '').toLowerCase().includes(query) ||
           article.category.toLowerCase().includes(query) ||
           article.tags.some((tag) => tag.toLowerCase().includes(query))
         ) {
@@ -134,7 +134,7 @@ export function SearchProvider({
       authors.forEach((author) => {
         if (
           author.name.toLowerCase().includes(query) ||
-          author.bio.toLowerCase().includes(query)
+          (author.bio || '').toLowerCase().includes(query)
         ) {
           searchResults.push({
             type: 'author',
