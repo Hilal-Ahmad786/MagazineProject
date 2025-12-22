@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LayoutDashboard, BookOpen, Users, Settings, LogOut, Image as ImageIcon, Mail as MailIcon, Menu, X, MessageCircle } from "lucide-react";
+import { LayoutDashboard, BookOpen, Users, Settings, LogOut, Image as ImageIcon, Mail as MailIcon, Menu, X, MessageCircle, FileText } from "lucide-react";
 import { LogoutButton } from "@/components/admin/LogoutButton";
 
 interface AdminSidebarProps {
@@ -65,7 +65,9 @@ export function AdminSidebar({ user }: AdminSidebarProps) {
 
                     <div className="pt-6 pb-2 px-4 text-xs font-bold text-neutral-600 uppercase tracking-wider">İçerik</div>
                     <NavItem href="/admin/issues" icon={<BookOpen size={18} />} label="Sayılar" active={isActive("/admin/issues")} onClick={() => setIsOpen(false)} />
+                    <NavItem href="/admin/articles" icon={<FileText size={18} />} label="Yazılar" active={isActive("/admin/articles")} onClick={() => setIsOpen(false)} />
                     <NavItem href="/admin/authors" icon={<Users size={18} />} label="Yazarlar" active={isActive("/admin/authors")} onClick={() => setIsOpen(false)} />
+                    <NavItem href="/admin/categories" icon={<BookOpen size={18} />} label="Kategoriler" active={isActive("/admin/categories")} onClick={() => setIsOpen(false)} />
                     <NavItem href="/admin/comments" icon={<MessageCircle size={18} />} label="Yorumlar" active={isActive("/admin/comments")} onClick={() => setIsOpen(false)} />
                     <NavItem href="/admin/author-applications" icon={<Users size={18} />} label="Yazar Başvuruları" active={isActive("/admin/author-applications")} onClick={() => setIsOpen(false)} />
 

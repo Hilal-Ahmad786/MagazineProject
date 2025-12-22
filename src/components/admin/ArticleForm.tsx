@@ -18,7 +18,7 @@ const articleSchema = z.object({
     authorId: z.string().min(1, "Yazar seçilmelidir"),
     date: z.string().optional(),
     readTime: z.coerce.number().min(1),
-    category: z.string().optional(),
+    categoryId: z.string().optional(),
     status: z.enum(["draft", "published"]),
     featured: z.boolean().optional(),
     image: z.string().optional(), // Cover image
@@ -32,6 +32,11 @@ interface Author {
     name: string;
 }
 
+interface Category {
+    id: string;
+    name: string;
+}
+
 interface ArticleFormProps {
     issueId: string;
     initialData?: any;
@@ -41,6 +46,7 @@ interface ArticleFormProps {
 export default function ArticleForm({ issueId, initialData, isEditMode = false }: ArticleFormProps) {
     const router = useRouter();
     const [authors, setAuthors] = useState<Author[]>([]);
+    const [categories, setCategories] = useState<Category[]>([]);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const { showToast } = useToast();
 
@@ -63,7 +69,7 @@ export default function ArticleForm({ issueId, initialData, isEditMode = false }
             authorId: initialData?.authorId || initialData?.author?.id || "",
             date: initialData?.date || initialData?.publishDate || new Date().toISOString().split("T")[0],
             readTime: initialData?.readTime || 5,
-            category: initialData?.category || "",
+            categoryId: initialData?.categoryId || initialData?.category?.id || "",
             status: initialData?.status || "draft",
             featured: initialData?.featured || false,
             image: initialData?.image || "",
@@ -76,6 +82,12 @@ export default function ArticleForm({ issueId, initialData, isEditMode = false }
         fetch("/api/admin/authors")
             .then((res) => res.json())
             .then((data) => setAuthors(data))
+            .catch((err) => console.error(err));
+
+        // Fetch categories
+        fetch("/api/admin/categories")
+            .then((res) => res.json())
+            .then((data) => setCategories(data))
             .catch((err) => console.error(err));
     }, []);
 
@@ -187,6 +199,17 @@ export default function ArticleForm({ issueId, initialData, isEditMode = false }
                                 ))}
                             </select>
                             {errors.authorId && <p className="text-red-400 text-xs">{errors.authorId.message}</p>}
+                        </div>
+
+                        <div className="space-y-2">
+                            <label className="text-xs font-bold text-neutral-500 uppercase tracking-wider">Kategori</label>
+                            <select {...register("categoryId")} className="w-full rounded-lg bg-neutral-800 border border-white/10 text-white text-sm p-2.5 focus:ring-amber-500 focus:border-amber-500">
+                                <option value="">Kategori Seçiniz...</option>
+                                {categories.map(category => (
+                                    <option key={category.id} value={category.id}>{category.name}</option>
+                                ))}
+                            </select>
+                            {errors.categoryId && <p className="text-red-400 text-xs">{errors.categoryId.message}</p>}
                         </div>
 
                         <div className="space-y-2">

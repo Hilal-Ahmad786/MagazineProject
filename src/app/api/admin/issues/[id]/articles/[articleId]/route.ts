@@ -46,7 +46,8 @@ export async function PUT(request: Request, { params }: { params: { id: string, 
             publishDate: body.date ? new Date(body.date) : (body.publishDate ? new Date(body.publishDate) : undefined),
             authorId: body.authorId,
             image: body.image,
-            featured: body.featured
+            featured: body.featured,
+            categoryId: body.categoryId || null
         };
 
         // If content is provided

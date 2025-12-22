@@ -1,43 +1,41 @@
-'use client'
-
-import { Theme } from '@/types/theme'
+import { Category } from '@/types'
 import { cn } from '@/lib/utils/cn'
 
 interface ArticleFiltersProps {
-  themes: Theme[]
-  selectedTheme: string | null
-  onThemeChange: (themeId: string | null) => void
+  categories: Category[]
+  selectedCategory: string | null
+  onCategoryChange: (categoryId: string | null) => void
 }
 
-export function ArticleFilters({ themes, selectedTheme, onThemeChange }: ArticleFiltersProps) {
+export function ArticleFilters({ categories, selectedCategory, onCategoryChange }: ArticleFiltersProps) {
   return (
     <div className="mb-12">
-      {/* Theme Tabs */}
+      {/* Category Tabs */}
       <div className="flex flex-wrap gap-3">
         <button
-          onClick={() => onThemeChange(null)}
+          onClick={() => onCategoryChange(null)}
           className={cn(
             'px-5 py-2.5 text-sm font-bold uppercase tracking-wider transition-all duration-300',
-            selectedTheme === null
+            selectedCategory === null
               ? 'bg-yellow-400 text-black'
               : 'bg-gray-800 text-gray-400 hover:bg-gray-700 hover:text-white'
           )}
         >
           Tümü
         </button>
-        
-        {themes.map((theme) => (
+
+        {categories.map((category) => (
           <button
-            key={theme.id}
-            onClick={() => onThemeChange(theme.id)}
+            key={category.id}
+            onClick={() => onCategoryChange(category.id)}
             className={cn(
               'px-5 py-2.5 text-sm font-bold uppercase tracking-wider transition-all duration-300',
-              selectedTheme === theme.id
+              selectedCategory === category.id
                 ? 'bg-yellow-400 text-black'
                 : 'bg-gray-800 text-gray-400 hover:bg-gray-700 hover:text-white'
             )}
           >
-            {theme.name}
+            {category.name}
           </button>
         ))}
       </div>

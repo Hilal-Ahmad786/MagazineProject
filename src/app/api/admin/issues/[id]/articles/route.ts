@@ -126,7 +126,9 @@ export async function POST(request: Request, { params }: { params: { id: string 
                 issueId: issueId,
                 authorId: data.authorId,
                 featured: data.featured || false,
-                image: data.image
+
+                image: data.image,
+                categoryId: data.categoryId || null
             }
         });
 

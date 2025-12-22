@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { Check, X, Clock, Eye, Trash } from 'lucide-react'
 import { useToast } from '@/context/ToastContext'
 import { ConfirmModal } from '@/components/admin/ConfirmModal'
@@ -21,11 +21,7 @@ export default function ApplicationsPage() {
     const [selectedApp, setSelectedApp] = useState<Application | null>(null)
     const [deleteId, setDeleteId] = useState<string | null>(null)
 
-    useEffect(() => {
-        fetchApplications()
-    }, [])
-
-    const fetchApplications = async () => {
+    const fetchApplications = useCallback(async () => {
         try {
             const res = await fetch('/api/admin/author-applications')
             if (res.ok) {
@@ -38,7 +34,11 @@ export default function ApplicationsPage() {
         } finally {
             setLoading(false)
         }
-    }
+    }, [showToast])
+
+    useEffect(() => {
+        fetchApplications()
+    }, [fetchApplications])
 
     const handleUpdateStatus = async (id: string, newStatus: string) => {
         try {

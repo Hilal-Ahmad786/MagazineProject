@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import { ArticleList } from '@/components/articles/ArticleList'
 import { getPublishedArticles } from '@/lib/data/articles'
-import { getAllThemes } from '@/lib/data/themes'
+import { getAllCategories } from '@/lib/data/categories'
 
 export const metadata: Metadata = {
   title: 'Yazılar | Mazhar Dergisi',
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default async function ArticlesPage() {
   const articles = await getPublishedArticles()
-  const themes = await getAllThemes()
+  const categories = await getAllCategories()
 
   return (
     <main className="min-h-screen pt-32 pb-20">
@@ -29,7 +29,7 @@ export default async function ArticlesPage() {
       {/* Articles Section */}
       <section className="px-6 md:px-12">
         <div className="max-w-[1600px] mx-auto">
-          <ArticleList articles={articles} themes={themes} />
+          <ArticleList articles={articles} categories={categories} />
         </div>
       </section>
     </main>

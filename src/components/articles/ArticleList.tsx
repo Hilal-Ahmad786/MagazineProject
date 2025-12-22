@@ -1,27 +1,26 @@
 'use client'
 
 import { useState, useMemo } from 'react'
-import { Article } from '@/types'
-import { Theme } from '@/types/theme'
+import { Article, Category } from '@/types'
 import { ArticleCard } from './ArticleCard'
 import { ArticleFilters } from './ArticleFilters'
 
 interface ArticleListProps {
   articles: Article[]
-  themes: Theme[]
+  categories: Category[]
 }
 
-export function ArticleList({ articles, themes }: ArticleListProps) {
-  const [selectedTheme, setSelectedTheme] = useState<string | null>(null)
+export function ArticleList({ articles, categories }: ArticleListProps) {
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null)
   const [visibleCount, setVisibleCount] = useState(9)
 
-  // Filter articles by theme
+  // Filter articles by category
   const filteredArticles = useMemo(() => {
-    if (!selectedTheme) return articles
+    if (!selectedCategory) return articles
     return articles.filter(article =>
-      article.themeIds?.includes(selectedTheme)
+      article.categoryId === selectedCategory
     )
-  }, [articles, selectedTheme])
+  }, [articles, selectedCategory])
 
   // Get visible articles
   const visibleArticles = filteredArticles.slice(0, visibleCount)
@@ -31,8 +30,8 @@ export function ArticleList({ articles, themes }: ArticleListProps) {
     setVisibleCount(prev => prev + 6)
   }
 
-  const handleThemeChange = (themeId: string | null) => {
-    setSelectedTheme(themeId)
+  const handleCategoryChange = (categoryId: string | null) => {
+    setSelectedCategory(categoryId)
     setVisibleCount(9) // Reset pagination on filter change
   }
 
@@ -40,18 +39,18 @@ export function ArticleList({ articles, themes }: ArticleListProps) {
     <div>
       {/* Filters */}
       <ArticleFilters
-        themes={themes}
-        selectedTheme={selectedTheme}
-        onThemeChange={handleThemeChange}
+        categories={categories}
+        selectedCategory={selectedCategory}
+        onCategoryChange={handleCategoryChange}
       />
 
       {/* Results count */}
       <div className="mb-8">
         <p className="text-gray-400 text-sm">
           <span className="text-yellow-400 font-bold">{filteredArticles.length}</span> yazı bulundu
-          {selectedTheme && (
+          {selectedCategory && (
             <button
-              onClick={() => handleThemeChange(null)}
+              onClick={() => handleCategoryChange(null)}
               className="ml-3 text-yellow-400 hover:underline"
             >
               Filtreyi temizle
@@ -68,7 +67,7 @@ export function ArticleList({ articles, themes }: ArticleListProps) {
               <ArticleCard
                 key={article.id}
                 article={article}
-                variant={index === 0 && !selectedTheme ? 'large' : 'default'}
+                variant={index === 0 && !selectedCategory ? 'large' : 'default'}
               />
             ))}
           </div>
@@ -87,9 +86,9 @@ export function ArticleList({ articles, themes }: ArticleListProps) {
         </>
       ) : (
         <div className="text-center py-20">
-          <p className="text-gray-400 text-lg mb-4">Bu filtreye uygun yazı bulunamadı.</p>
+          <p className="text-gray-400 text-lg mb-4">Bu kategoriye uygun yazı bulunamadı.</p>
           <button
-            onClick={() => handleThemeChange(null)}
+            onClick={() => handleCategoryChange(null)}
             className="text-yellow-400 hover:underline"
           >
             Tüm yazıları göster
