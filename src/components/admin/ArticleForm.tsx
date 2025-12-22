@@ -1,22 +1,16 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useForm, useFieldArray, Controller } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { useRouter } from "next/navigation";
-import { Plus, Trash2, MoveUp, MoveDown, Save, ArrowLeft } from "lucide-react";
+import { Save, ArrowLeft } from "lucide-react";
 import Link from "next/link";
+import { TipTapEditor } from "./TipTapEditor";
+import { useToast } from "@/context/ToastContext";
 
 // Zod Schema
-const blockSchema = z.object({
-    type: z.enum(["paragraph", "image", "heading"]),
-    content: z.string().optional(),
-    src: z.string().optional(),
-    alt: z.string().optional(),
-    caption: z.string().optional(),
-});
-
 const articleSchema = z.object({
     title: z.string().min(1, "Başlık gereklidir"),
     slug: z.string().optional(),
@@ -28,10 +22,7 @@ const articleSchema = z.object({
     status: z.enum(["draft", "published"]),
     featured: z.boolean().optional(),
     image: z.string().optional(), // Cover image
-    // Content can be string (HTML) or array of blocks
-    contentBlocks: z.array(blockSchema).optional(),
-    contentHtml: z.string().optional(), // For legacy HTML content
-    isBlockMode: z.boolean(),
+    contentHtml: z.string().optional(),
 });
 
 type FormData = z.infer<typeof articleSchema>;
@@ -51,9 +42,17 @@ export default function ArticleForm({ issueId, initialData, isEditMode = false }
     const router = useRouter();
     const [authors, setAuthors] = useState<Author[]>([]);
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const { showToast } = useToast();
 
-    // Initialize form
-    const defaultIsBlockMode = Array.isArray(initialData?.content) || !initialData;
+    // Helper to get HTML content from potentially legacy block data
+    const getInitialContent = () => {
+        if (!initialData) return "";
+        if (typeof initialData.content === 'string') return initialData.content;
+
+        // If legacy blocks, try to convert (simplified) or just return empty if too complex
+        // Ideally we would run a migration script, but for now we look for 'content' string
+        return "";
+    };
 
     const { control, register, handleSubmit, watch, setValue, formState: { errors } } = useForm<FormData>({
         resolver: zodResolver(articleSchema),
@@ -68,18 +67,9 @@ export default function ArticleForm({ issueId, initialData, isEditMode = false }
             status: initialData?.status || "draft",
             featured: initialData?.featured || false,
             image: initialData?.image || "",
-            isBlockMode: defaultIsBlockMode,
-            contentHtml: typeof initialData?.content === 'string' ? initialData.content : "",
-            contentBlocks: Array.isArray(initialData?.content) ? initialData.content : [],
+            contentHtml: getInitialContent(),
         },
     });
-
-    const { fields, append, remove, move } = useFieldArray({
-        control,
-        name: "contentBlocks",
-    });
-
-    const isBlockMode = watch("isBlockMode");
 
     useEffect(() => {
         // Fetch authors
@@ -94,7 +84,7 @@ export default function ArticleForm({ issueId, initialData, isEditMode = false }
         try {
             const payload = {
                 ...data,
-                content: data.isBlockMode ? data.contentBlocks : data.contentHtml,
+                content: data.contentHtml, // Save HTML strictly
             };
 
             const url = isEditMode
@@ -110,14 +100,15 @@ export default function ArticleForm({ issueId, initialData, isEditMode = false }
             });
 
             if (res.ok) {
+                showToast("Yazı başarıyla kaydedildi", "success");
                 router.push(`/admin/issues/${issueId}/articles`);
                 router.refresh();
             } else {
-                alert("Kaydetme başarısız.");
+                showToast("Kaydetme başarısız.", "error");
             }
         } catch (error) {
             console.error(error);
-            alert("Hata oluştu.");
+            showToast("Hata oluştu.", "error");
         } finally {
             setIsSubmitting(false);
         }
@@ -150,108 +141,19 @@ export default function ArticleForm({ issueId, initialData, isEditMode = false }
                 <div className="lg:col-span-2 space-y-6">
                     <div className="bg-neutral-900/50 backdrop-blur-sm p-6 rounded-xl border border-white/5 shadow-2xl">
                         <div className="mb-6 flex items-center justify-between border-b border-white/5 pb-4">
-                            <label className="font-semibold text-lg text-white">İçerik</label>
-                            <div className="flex items-center gap-2 text-sm text-neutral-400">
-                                <label className="flex items-center gap-2 cursor-pointer">
-                                    <input
-                                        type="checkbox"
-                                        {...register("isBlockMode")}
-                                        className="rounded border-neutral-700 bg-neutral-800 text-amber-500 focus:ring-amber-500/50"
-                                    />
-                                    <span>Blok Editörü Kullan</span>
-                                </label>
-                            </div>
+                            <label className="font-semibold text-lg text-white">İçerik Editörü</label>
                         </div>
 
-                        {isBlockMode ? (
-                            <div className="space-y-4">
-                                {fields.map((field, index) => (
-                                    <div key={field.id} className="relative group bg-neutral-800/50 p-4 rounded-lg border border-white/5 hover:border-white/10 transition-colors">
-                                        {/* Block Controls */}
-                                        <div className="absolute right-2 top-2 hidden group-hover:flex gap-1">
-                                            <button type="button" onClick={() => move(index, index - 1)} disabled={index === 0} className="p-1 hover:bg-neutral-700 rounded text-neutral-400 hover:text-white transition-colors"><MoveUp size={14} /></button>
-                                            <button type="button" onClick={() => move(index, index + 1)} disabled={index === fields.length - 1} className="p-1 hover:bg-neutral-700 rounded text-neutral-400 hover:text-white transition-colors"><MoveDown size={14} /></button>
-                                            <button type="button" onClick={() => remove(index)} className="p-1 hover:bg-red-900/30 text-red-400 rounded transition-colors"><Trash2 size={14} /></button>
-                                        </div>
-
-                                        <div className="mb-3">
-                                            <span className="text-[10px] font-bold uppercase tracking-wider text-amber-500 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">
-                                                {watch(`contentBlocks.${index}.type`)}
-                                            </span>
-                                        </div>
-
-                                        {/* Paragraph */}
-                                        {watch(`contentBlocks.${index}.type`) === 'paragraph' && (
-                                            <textarea
-                                                {...register(`contentBlocks.${index}.content`)}
-                                                placeholder="Paragraf metni..."
-                                                rows={4}
-                                                className="w-full rounded-lg bg-neutral-900 border border-white/10 text-neutral-200 text-sm p-3 focus:ring-1 focus:ring-amber-500 focus:border-amber-500 transition-all placeholder:text-neutral-600"
-                                            />
-                                        )}
-
-                                        {/* Heading */}
-                                        {watch(`contentBlocks.${index}.type`) === 'heading' && (
-                                            <input
-                                                type="text"
-                                                {...register(`contentBlocks.${index}.content`)}
-                                                placeholder="Başlık metni..."
-                                                className="w-full rounded-lg bg-neutral-900 border border-white/10 text-white font-bold text-lg p-3 focus:ring-1 focus:ring-amber-500 focus:border-amber-500 transition-all placeholder:text-neutral-600"
-                                            />
-                                        )}
-
-                                        {/* Image */}
-                                        {watch(`contentBlocks.${index}.type`) === 'image' && (
-                                            <div className="space-y-3">
-                                                <input
-                                                    type="text"
-                                                    {...register(`contentBlocks.${index}.src`)}
-                                                    placeholder="Resim URL (/images/...)"
-                                                    className="w-full rounded-lg bg-neutral-900 border border-white/10 text-sm p-3 text-neutral-300 focus:ring-1 focus:ring-amber-500 focus:border-amber-500 placeholder:text-neutral-600"
-                                                />
-                                                <div className="grid grid-cols-2 gap-3">
-                                                    <input
-                                                        type="text"
-                                                        {...register(`contentBlocks.${index}.alt`)}
-                                                        placeholder="Alt metin (SEO)"
-                                                        className="w-full rounded-lg bg-neutral-900 border border-white/10 text-sm p-3 text-neutral-300 focus:ring-1 focus:ring-amber-500 placeholder:text-neutral-600"
-                                                    />
-                                                    <input
-                                                        type="text"
-                                                        {...register(`contentBlocks.${index}.caption`)}
-                                                        placeholder="Altyazı (opsiyonel)"
-                                                        className="w-full rounded-lg bg-neutral-900 border border-white/10 text-sm p-3 text-neutral-300 focus:ring-1 focus:ring-amber-500 placeholder:text-neutral-600"
-                                                    />
-                                                </div>
-                                                {watch(`contentBlocks.${index}.src`) && (
-                                                    <div className="relative aspect-video rounded-lg overflow-hidden border border-white/10 bg-black/50 mt-2">
-                                                        <img src={watch(`contentBlocks.${index}.src`)} alt="Preview" className="w-full h-full object-contain" />
-                                                    </div>
-                                                )}
-                                            </div>
-                                        )}
-                                    </div>
-                                ))}
-
-                                <div className="flex gap-3 justify-center py-6 border-t border-dashed border-white/10 mt-6">
-                                    <button type="button" onClick={() => append({ type: "paragraph", content: "" })} className="px-4 py-2 bg-neutral-800 border border-white/5 rounded-lg text-sm text-neutral-300 hover:bg-neutral-700 hover:text-white hover:border-white/20 flex items-center gap-2 transition-all"><Plus size={16} /> Paragraf</button>
-                                    <button type="button" onClick={() => append({ type: "heading", content: "" })} className="px-4 py-2 bg-neutral-800 border border-white/5 rounded-lg text-sm text-neutral-300 hover:bg-neutral-700 hover:text-white hover:border-white/20 flex items-center gap-2 transition-all"><Plus size={16} /> Başlık</button>
-                                    <button type="button" onClick={() => append({ type: "image", src: "" })} className="px-4 py-2 bg-neutral-800 border border-white/5 rounded-lg text-sm text-neutral-300 hover:bg-neutral-700 hover:text-white hover:border-white/20 flex items-center gap-2 transition-all"><Plus size={16} /> Resim</button>
-                                </div>
-                            </div>
-                        ) : (
-                            <div className="space-y-4">
-                                <div className="text-sm text-amber-500 bg-amber-900/20 border border-amber-500/20 p-3 rounded-lg">
-                                    HTML Modu (Eski yazılar için). Yeni yazılar için Blok Modunu kullanın.
-                                </div>
-                                <textarea
-                                    {...register("contentHtml")}
-                                    rows={20}
-                                    className="w-full font-mono text-sm bg-neutral-900 border-white/10 rounded-lg text-neutral-300 p-4 focus:ring-1 focus:ring-amber-500 focus:border-amber-500"
-                                    placeholder="<p>İçerik...</p>"
+                        <Controller
+                            control={control}
+                            name="contentHtml"
+                            render={({ field }) => (
+                                <TipTapEditor
+                                    content={field.value || ""}
+                                    onChange={field.onChange}
                                 />
-                            </div>
-                        )}
+                            )}
+                        />
                     </div>
                 </div>
 

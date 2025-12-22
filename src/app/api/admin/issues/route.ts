@@ -1,9 +1,6 @@
 import { NextResponse } from "next/server";
-import fs from "fs";
-import path from "path";
 import { getServerSession } from "next-auth";
-
-const issuesDirectory = path.join(process.cwd(), "src/data/issues");
+import prisma from "@/lib/db";
 
 async function isAuthenticated() {
     const session = await getServerSession();
@@ -11,31 +8,16 @@ async function isAuthenticated() {
 }
 
 export async function GET() {
-    // if (!await isAuthenticated()) {
-    //   return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-    // }
-
     try {
-        if (!fs.existsSync(issuesDirectory)) {
-            return NextResponse.json([]);
-        }
-
-        const folders = fs.readdirSync(issuesDirectory);
-        const issues = folders
-            .map((folder) => {
-                const filePath = path.join(issuesDirectory, folder, "issue.json");
-                if (fs.existsSync(filePath)) {
-                    const content = fs.readFileSync(filePath, "utf8");
-                    return JSON.parse(content);
-                }
-                return null;
-            })
-            .filter((issue) => issue !== null)
-            // Sort by Issue Number (descending)
-            .sort((a, b) => (b.number || 0) - (a.number || 0));
+        const issues = await prisma.issue.findMany({
+            orderBy: {
+                number: 'desc'
+            }
+        });
 
         return NextResponse.json(issues);
     } catch (error) {
+        console.error("Failed to fetch issues", error);
         return NextResponse.json({ error: "Failed to fetch issues" }, { status: 500 });
     }
 }
@@ -47,32 +29,43 @@ export async function POST(request: Request) {
 
     try {
         const data = await request.json();
-        const slug = data.slug || `sayi-${data.number}`;
-        const folderPath = path.join(issuesDirectory, slug);
 
-        if (fs.existsSync(folderPath)) {
+        // Check if slug exists
+        const slug = data.slug || `sayi-${data.number}`;
+        const existingSlug = await prisma.issue.findUnique({
+            where: { slug }
+        });
+
+        if (existingSlug) {
             return NextResponse.json({ error: "Issue with this slug already exists" }, { status: 400 });
         }
 
-        // Create folder
-        fs.mkdirSync(folderPath);
+        // Check if number exists
+        const existingNumber = await prisma.issue.findUnique({
+            where: { number: parseInt(data.number) }
+        });
 
-        // Create issue.json
-        const issueData = {
-            id: `issue_${String(data.number).padStart(3, '0')}`,
-            slug,
-            ...data,
-            articles: [] // Initialize with empty articles
-        };
+        if (existingNumber) {
+            return NextResponse.json({ error: "Issue number already exists" }, { status: 400 });
+        }
 
-        fs.writeFileSync(path.join(folderPath, "issue.json"), JSON.stringify(issueData, null, 2));
+        const issue = await prisma.issue.create({
+            data: {
+                title: data.title,
+                number: parseInt(data.number),
+                slug,
+                publishMonth: data.publishMonth,
+                publishDate: data.date ? new Date(data.date) : new Date(),
+                coverImage: data.coverImage,
+                status: data.status || 'draft',
+                // Default theme if needed
+                theme: 'dark'
+            }
+        });
 
-        // Create articles.json (empty list initially)
-        fs.writeFileSync(path.join(folderPath, "articles.json"), JSON.stringify([], null, 2));
-
-        return NextResponse.json(issueData);
+        return NextResponse.json(issue);
     } catch (error) {
-        console.error(error);
+        console.error("Failed to create issue", error);
         return NextResponse.json({ error: "Failed to create issue" }, { status: 500 });
     }
 }

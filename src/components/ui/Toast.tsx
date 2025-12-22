@@ -53,8 +53,8 @@ export function Toast({ id, message, type = 'info', duration = 3000, onClose }: 
         'min-w-[300px] max-w-md',
         styles[type],
         isVisible
-          ? 'translate-x-0 opacity-100'
-          : 'translate-x-full opacity-0'
+          ? 'opacity-100 scale-100 translate-y-0'
+          : 'opacity-0 scale-95 translate-y-2'
       )}
       role="alert"
     >
