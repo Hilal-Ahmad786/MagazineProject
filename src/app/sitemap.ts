@@ -40,7 +40,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
     const issueUrls = issues.map((issue) => ({
         url: `${SITE_CONFIG.url}/sayilar/${issue.id}`,
-        lastModified: issue.publishDate ? new Date(issue.publishDate).toISOString() : new Date().toISOString(),
+        lastModified: issue.date ? new Date(issue.date).toISOString() : new Date().toISOString(),
         changeFrequency: 'monthly' as const,
         priority: 0.6,
     }))
